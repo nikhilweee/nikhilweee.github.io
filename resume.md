@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<img src="/files/resume.jpg" alt="Resume" width="100%">
+<embed src="/files/resume.pdf" width="100%" height="1000px" alt="Resume"/>
 
 <ul class="pager main-pager">
   <li>
