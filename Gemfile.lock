@@ -250,6 +250,7 @@ DEPENDENCIES
   execjs
   github-pages
   jekyll-paginate
+  jekyll-redirect-from
   jemoji
   therubyracer
 
