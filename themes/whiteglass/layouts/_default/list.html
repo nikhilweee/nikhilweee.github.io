@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+<div class="home">
+
+  <p>{{ .Content }}</p>
+
+  <h1 class="page-heading">Recent Posts</h1>
+
+  <ul class="post-list">
+    {{ range .Pages }}
+      <li>
+        <div>
+          <div class="post-list-meta">
+            <span>
+              {{- .Date.Format "Jan 01, 2006" -}}
+            </span>
+          </div>
+          <div class="post-list-title">
+            <a href="{{- .Permalink | relURL -}}">
+              {{- .Title -}}
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="post-list-meta">
+            <a href="{{ relref . .Params.category }}">
+              {{- .Params.category -}}
+            </a>
+          </div>
+          <div class="post-list-subtitle">
+            <a href="{{ .Permalink | relURL }}">
+              {{- .Params.subtitle -}}
+            </a>
+          </div>
+        </div>
+      </li>
+    {{ end }}
+  </ul>
+
+  {{/* include pagination.html */}}
+
+</div>
+
+{{ end }}

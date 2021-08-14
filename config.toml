@@ -1,0 +1,8 @@
+baseURL = "https://nikhilweee.github.io"
+disablePathToLower = true
+languageCode = "en-us"
+title = "Nikhil Verma"
+theme = "whiteglass"
+
+[author]
+name = "Nikhil Verma"

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {{ partial "head" . }}
+
+  <body>
+
+    {{ partial "header" . }}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!-- <pre>{{ printf "themes/whiteglass/layouts/_default/baseof.html" }}</pre> -->
+        <!-- <pre>{{ printf "%#v" .File.Path }}</pre> -->
+        {{ block "main" . }}
+          {{ .Content }}
+        {{ end }}
+      </div>
+    </main>
+
+    {{ partial "footer" . }}
+
+  </body>
+
+</html>
