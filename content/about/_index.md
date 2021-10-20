@@ -1,5 +1,6 @@
 ---
-title: About Me
+title: About
+layout: page
 ---
 
 {{< rawhtml >}}
@@ -8,19 +9,18 @@ title: About Me
 
 Hi there! I'm Nikhil.
 
-I'm just another brick in the wall who is currently working on helping AI models create fashion models. In a previous life, I was busy finding ways to make machines talk in a more natural manner. Apart from work, you can find me travelling, reading, or sometimes just chilling out at home as well ¯\\\_(ツ)\_/¯ .
+I'm learning how machines learn so I could make them learn better. In a previous life (read: _a few months ago_), I was making AI models generate realistic images of fashion models. Even before that, I was finding ways to make machines talk in a more natural manner. Apart from work, you'll mostly find me wanting to chill out at home ¯\\\_(ツ)\_/¯ .
 
 
 ### Contact
 
 {{< rawhtml >}}
 <p class="post-list">
-  <a href="https://github.com/{{ site.github_username }}">GitHub</a> • 
-  <a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a> • 
-  <a href="https://linkedin.com/in/{{ site.linkedin_username }}">LinkedIn</a> • 
-  <a href="{% link resume.md %}">Resume</a>
+  <a href="https://github.com/nikhilweee">GitHub</a> • 
+  <a href="https://twitter.com/nikhilweee">Twitter</a> • 
+  <a href="https://linkedin.com/in/nikhilweee">LinkedIn</a> • 
+  <a href="/resume/">Resume</a>
 </p>
 {{< /rawhtml >}}
 
-You should find me by the alias _nikhilweee_ on all major social platforms. Feel free to get in touch! If you're the kind of person who likes the sight of good ol paper, you can also have a look at my resume.
-
+You should find me by the alias _nikhilweee_ on all major social platforms.

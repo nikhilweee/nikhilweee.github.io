@@ -51,9 +51,9 @@ It does, except that we have a little problem. Neural networks are essentially n
 
 ## Word Embeddings
 
-The way this is usually done is to use something called as word embeddings. The idea is to represent every character in the alphabet with its own $$ D $$ dimensional **embedding vector**, where $$ D $$ is usually called the embedding dimension. So let's say if we decide to use an `embedding_dim` of 5. This basically means that each of the 27 characters of the alphabet, `ABCDEFGHIJKLMNOPQRSTUVWXYZ-`, will have their own embedding vector of length 5.
+The way this is usually done is to use something called as word embeddings. The idea is to represent every character in the alphabet with its own $ D $ dimensional **embedding vector**, where $ D $ is usually called the embedding dimension. So let's say if we decide to use an `embedding_dim` of 5. This basically means that each of the 27 characters of the alphabet, `ABCDEFGHIJKLMNOPQRSTUVWXYZ-`, will have their own embedding vector of length 5.
 
-Often, these vectors are stored together as $$ V \times D $$ dimensional **embedding matrix**, $$ E $$, where each row $$ E[i] $$ of the matrix represents the embedding vector for the character with index $$ i $$ in the alphabet. Here $$ V $$ is the length of the vocabulary (alphabet), which is 27 in our case. As an example, the whole embedding matrix $$ E $$ might look something like the one shown below.
+Often, these vectors are stored together as $ V \times D $ dimensional **embedding matrix**, $ E $, where each row $ E[i] $ of the matrix represents the embedding vector for the character with index $ i $ in the alphabet. Here $ V $ is the length of the vocabulary (alphabet), which is 27 in our case. As an example, the whole embedding matrix $ E $ might look something like the one shown below.
 
 ```
 [[-1.4107, -0.8142,  0.8486,  2.8257, -0.7130],
@@ -62,7 +62,7 @@ Often, these vectors are stored together as $$ V \times D $$ dimensional **embed
  ...
  [ 2.7912,  1.3261,  1.7603,  3.3852, -2.1643]]
 ```
-$$ E[0] $$ then represents the word vector for `A`, which is `[-1.4107, -0.8142,  0.8486,  2.8257, -0.7130]`.
+$ E[0] $ then represents the word vector for `A`, which is `[-1.4107, -0.8142,  0.8486,  2.8257, -0.7130]`.
 
 [^char-embedding]Aside : but [I read something different!](#fn:char-embedding)
 
@@ -74,7 +74,7 @@ P.S. I'll be using alphabet and vocabulary interchangably throughout this tutori
 
 Now that we have enough background, let's get our hands dirty and finally jump in to writing some code. The first thing we have to do is to create a dataset. And to do that, we first need to implement the cipher. Although we implement it as a simple function, it might be a good idea to implement the cipher as a class in the future.
 
-{{ gist 13243631f8ed219167ccd3866ce3204e module-cipher.py }}
+{{< gist nikhilweee 13243631f8ed219167ccd3866ce3204e module-cipher.py >}}
 
 We create the `encode` function which uses the parameters `vocab` and `key` to encrypt each character. Since we're working with letters, `vocab` in this context simply means the alphabet.  The encryption algorithm should be fairly easy to understand. Notice how we use the modulo operator in line `8` to prevent the indexes from overflowing.
 
@@ -84,9 +84,9 @@ To check the implementation, you can check for some random inputs. For example, 
 
 Okay, let's finally build the dataset. For the sake of simplicity, we'll use a random sequence of characters as a message and encrypt it to create the input to the LSTM. To implement this, we create a simple function called `dataset` which takes in the parameter `num_examples` and returns a list of those many (input, output) pairs.
 
-{{ gist 13243631f8ed219167ccd3866ce3204e module-batch.py }}
+{{< gist nikhilweee 13243631f8ed219167ccd3866ce3204e module-batch.py >}}
 
-There's something strange about this function though. Have a look at line 24. We're not returning a pair of strings. We're first converting strings into a list of indices which represent their position in the alphabet. If you recall the section on [word embeddings](#word-embeddings), these indices will later be used to extract the corresponding embedding vectors from the embedding matrix $$ E $$. We're then converting these lists into a pair of tensors, which is what the function returns.
+There's something strange about this function though. Have a look at line 24. We're not returning a pair of strings. We're first converting strings into a list of indices which represent their position in the alphabet. If you recall the section on [word embeddings](#word-embeddings), these indices will later be used to extract the corresponding embedding vectors from the embedding matrix $ E $. We're then converting these lists into a pair of tensors, which is what the function returns.
 
 ## Tensors?
 
@@ -139,9 +139,9 @@ Getting back to code now, let's dissect our 'high level' understanding again.
 
 >... **feed in inputs** to an LSTM to get the predictions ...
 
-To feed in inputs, well, we first need to prepare the inputs. Remember the embedding matrix $$ E $$ we described [earlier](#the-dataset-finally)? we'll use $$ E $$ to convert the pair of indices we get from `dataset()` into the corresponding embedding vectors. Following the general paradigm, we create an instance of `torch.nn.Embedding`.
+To feed in inputs, well, we first need to prepare the inputs. Remember the embedding matrix $ E $ we described [earlier](#the-dataset-finally)? we'll use $ E $ to convert the pair of indices we get from `dataset()` into the corresponding embedding vectors. Following the general paradigm, we create an instance of `torch.nn.Embedding`.
 
-The [docs](https://pytorch.org/docs/stable/nn.html#torch.nn.Embedding) list two required parameters - `num_embeddings: the size of the dictionary of embeddings` and `embedding_dim: the size of each embedding vector`. In our case, these are `vocab_size` $$ V $$ and `embedding_dim` $$ D $$ respectively.
+The [docs](https://pytorch.org/docs/stable/nn.html#torch.nn.Embedding) list two required parameters - `num_embeddings: the size of the dictionary of embeddings` and `embedding_dim: the size of each embedding vector`. In our case, these are `vocab_size` $ V $ and `embedding_dim` $ D $ respectively.
 
 ```python
 # Step 1
@@ -189,9 +189,9 @@ As an example, consider the input-output pair `('ERPDRF', 'SECRET')`. Using an `
 
 </div>
 
-Generally, the LSTM is expected to run over the input sequence character by character to emit a probability distribution over all the letters in the vocabulary. So for every input character, we expect a $$ V $$ dimensional output tensor where $$ V $$ is 27 (the size of the vocabulary). The most probable letter is then chosen as the output at every timestep.
+Generally, the LSTM is expected to run over the input sequence character by character to emit a probability distribution over all the letters in the vocabulary. So for every input character, we expect a $ V $ dimensional output tensor where $ V $ is 27 (the size of the vocabulary). The most probable letter is then chosen as the output at every timestep.
 
-If you have a look at the output of the LSTM on the example pair `('ERPDRF', 'SECRET')` [above](#a-note-on-dimensionality), you can instantly make out that the dimensions are not right. The output dimension is `6 x 1 x 10` - which means that for every character, the output is a $$ D $$ (10) dimensional tensor instead of the expected 27.
+If you have a look at the output of the LSTM on the example pair `('ERPDRF', 'SECRET')` [above](#a-note-on-dimensionality), you can instantly make out that the dimensions are not right. The output dimension is `6 x 1 x 10` - which means that for every character, the output is a $ D $ (10) dimensional tensor instead of the expected 27.
 
 So how do we solve this?
 
@@ -199,9 +199,9 @@ So how do we solve this?
 
 >... feed in inputs to an LSTM to **get the predictions** ...
 
-The general workaround is to transform the $$ D $$ dimensional tensor into a $$ V $$ dimensional tensor through what is called an affine (or linear) transform. Sparing the definitions aside, the idea is to use matrix multiplication to get the desired dimensions.
+The general workaround is to transform the $ D $ dimensional tensor into a $ V $ dimensional tensor through what is called an affine (or linear) transform. Sparing the definitions aside, the idea is to use matrix multiplication to get the desired dimensions.
 
-Let's say the LSTM produces an output tensor $$ O $$ of size `seq_len x batch x hidden_dim`. Recall that we only feed in one example at a time, so `batch` is always `1`. This essentially gives us an output tensor $$ O $$ of size `seq_len x hidden_dim`. Now if we multiply this output tensor with another tensor $$ W $$ of size `hidden_dim x embedding_dim`, the resultant tensor $$ R = O \times W $$ has a size of `seq_len x embedding_dim`. Isn't this exactly what we wanted?
+Let's say the LSTM produces an output tensor $ O $ of size `seq_len x batch x hidden_dim`. Recall that we only feed in one example at a time, so `batch` is always `1`. This essentially gives us an output tensor $ O $ of size `seq_len x hidden_dim`. Now if we multiply this output tensor with another tensor $ W $ of size `hidden_dim x embedding_dim`, the resultant tensor $ R = O \times W $ has a size of `seq_len x embedding_dim`. Isn't this exactly what we wanted?
 
 To implement the linear layer, ... you guessed it! We create an instance of `torch.nn.Linear`. This time, the [docs](https://pytorch.org/docs/stable/nn.html#torch.nn.Linear) list the required parameters as `in_features:  size of each input sample` and `out_features:  size of each output sample`. Note that this only transforms the last dimension of the input tensor. So for example, if we pass in an input tensor of size `(d1, d2, d3, ..., dn, in_features)`, the output tensor will have the same size for all but the last dimension, and will be a tensor of size `(d1, d2, d3, ..., dn, out_features)`.
 
@@ -239,15 +239,15 @@ optimizer = torch.optim.Adam(list(embed.parameters()) + list(lstm.parameters())
 
 To summarize, here's how we initialize the required layers.
 
-{{ gist 13243631f8ed219167ccd3866ce3204e module-model.py }}
+{{< gist nikhilweee 13243631f8ed219167ccd3866ce3204e module-model.py >}}
 
 Let's wrap this up and consolidate the network. Have a look at the training script below. Most of the code should make sense on its own. There are a few helper operations like `torch.squeeze` and `torch.transpose` whose function can be inferred from the comments. You can also refer to the [docs](https://pytorch.org/docs/stable/torch.html) for more information.
 
-{{ gist 13243631f8ed219167ccd3866ce3204e module-train.py }}
+{{< gist nikhilweee 13243631f8ed219167ccd3866ce3204e module-train.py >}}
 
 After every training iteration, we need to evaluate the network. Have a look at the validation script below. After calculating the scores as in the training script, we calculate a softmax over the scores to get a probability distribution in line 9. We then aggregate the characters with the maximum probability in line 11. We then compare the predicted output `batch_out` with the target output `original` in line 15. At the end of the epoch, we calculate the accuracy in line 18.
 
-{{ gist 13243631f8ed219167ccd3866ce3204e module-valid.py }}
+{{< gist nikhilweee 13243631f8ed219167ccd3866ce3204e module-valid.py >}}
 
 Notice that the predicted outputs are still in the form of indices. Converting them back to characters is left as an exercise.
 

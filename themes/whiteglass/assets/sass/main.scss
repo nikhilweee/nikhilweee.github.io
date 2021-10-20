@@ -22,17 +22,17 @@ $base-font-size:   18px;
  * Home Page
  */
 
-//  Support for dark theme
-@media (prefers-color-scheme: dark) {
-  html {
-    background-color: invert($background-color);
-    filter: invert(95%) hue-rotate(180deg);
-  }
+// Support for dark theme
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     background-color: invert($background-color);
+//     filter: invert(95%) hue-rotate(180deg);
+//   }
 
-  iframe, img, video {
-    filter: invert(95%) hue-rotate(180deg);
-  }
-}
+//   iframe, img, video {
+//     filter: invert(95%) hue-rotate(180deg);
+//   }
+// }
 
 /**
  * Posts
@@ -98,18 +98,25 @@ sub {
 .post-list-meta {
   display: inline-block;
   min-width: 120px;
-  vertical-align: top;
+  line-height: $base-line-height;
+  vertical-align: text-top;
+  @include relative-font-size(0.9);
 }
 
 .post-list-title {
   display: inline-block;
   max-width: calc(100% - 125px);
+  line-height: $base-line-height;
+  vertical-align: top;
   @include relative-font-size(1.1);
 }
 
 .post-list-subtitle {
+  color: darken($brand-color, 10%);
   display: inline-block;
   max-width: calc(100% - 125px);
+  line-height: $base-line-height;
+  vertical-align: text-top;
   @include relative-font-size(0.9);
 }
 
@@ -169,10 +176,10 @@ sub {
 // Correct position of pagination markers
 .pagination {
   .previous {
-    float: right;
+    float: left;
   }
   .next {
-    float: left;
+    float: right;
   }
 }
 

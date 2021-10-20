@@ -1,8 +1,29 @@
 baseURL = "https://nikhilweee.github.io"
-disablePathToLower = true
 languageCode = "en-us"
-title = "Nikhil Verma"
+title = "weeelog"
 theme = "whiteglass"
 
+# Make URLs case insensitive
+disablePathToLower = true
+
+# Used under RSS
+copyright = "&copy; Nikhil Verma"
+
+# Number of items to show every page
+paginate = 100
+
+# Set feed to feed.xml
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss"
+    baseName = "feed"
+
+# Used under every post and in RSS.
 [author]
-name = "Nikhil Verma"
+  name = "Nikhil Verma"
+  email = "nikhilweee@gmail.com"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = "monokailight"

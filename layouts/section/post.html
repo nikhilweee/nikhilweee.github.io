@@ -1,3 +1,5 @@
+{{ define "main" }}
+{{"<!-- begin: layouts/section/post.html -->" | safeHTML }}
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -5,10 +7,11 @@
     <h2 class="post-subtitle" itemprop="abstract description">{{ .Params.subtitle }}</h2>
     <p class="post-meta">
       <time datetime="{{ .Date }}" itemprop="datePublished">{{ .Date.Format "Jan 01, 2006" }}</time>
-      {{ with .Author }}
-        {{ " • " }}<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ . }}</span></span>
-      {{- end -}}
-      {{/*  
+      {{ " • " }}<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ .Site.Author.name }}</span></span>
+      {{ range .Params.categories }}
+      {{ " • " }}<a href="/categories/{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+      {{/*
       {{- if page.categories != empty or page.tags != empty -}}
       {{ " • " }}<a href="{{ site.url }}category/{{ page.category | slugify }}">{{ page.category }}</a>
       {{- end -}}
@@ -22,10 +25,12 @@
 
   {{/*
   {{- if site.comments == true and page.comments != false -}}
-    <div class="post-comments" itemprop="comment">
-      {{- include comments.html -}}
-    </div>
+  <div class="post-comments" itemprop="comment">
+    {{- include comments.html -}}
+  </div>
   {{- endif -}}
   */}}
 
 </article>
+{{"<!-- end: layouts/section/post.html -->" | safeHTML }}
+{{ end }}

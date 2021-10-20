@@ -48,8 +48,6 @@
   }
 }
 
-
-
 /**
  * Site footer
  */
@@ -59,8 +57,6 @@
   color: $grey-color;
   text-align: center;
 }
-
-
 
 /**
  * Page content
@@ -89,6 +85,14 @@
       padding-top: $spacing-unit * 2;
     }
   }
+}
+
+p.post-list {
+  border-top: 1px solid $grey-color-light;
+  border-bottom: 1px solid $grey-color-light;
+  padding-top: $spacing-unit * 0.5;
+  padding-bottom: $spacing-unit * 0.5;
+  margin-bottom: $spacing-unit;
 }
 
 .post-archives {
@@ -138,8 +142,6 @@
   }
 }
 
-
-
 /**
  * Posts
  */
@@ -159,6 +161,10 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
+  border-top: 1px solid $grey-color-light;
+  border-bottom: 1px solid $grey-color-light;
+  padding-top: $spacing-unit * 0.5;
+  padding-bottom: $spacing-unit * 0.5;
 
   h1 {
     font-size: 38px;
@@ -192,8 +198,6 @@
     }
   }
 }
-
-
 
 /**
  * Pagination
