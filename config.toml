@@ -1,6 +1,6 @@
 baseURL = "https://nikhilweee.github.io"
 languageCode = "en-us"
-title = "weeelog"
+title = "weeeblog"
 theme = "whiteglass"
 
 # Make URLs case insensitive

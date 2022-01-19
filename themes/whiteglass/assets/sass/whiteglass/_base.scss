@@ -61,8 +61,9 @@ figure > img {
   display: block;
 }
 
-figcaption {
+figure > figcaption {
   font-size: $small-font-size;
+  padding-top: 10px;
 }
 
 
@@ -122,8 +123,7 @@ blockquote {
   color: $grey-color;
   border-left: 4px solid $grey-color-light;
   padding-left: $spacing-unit / 2;
-  font-size: 18px;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   font-style: italic;
 
   > :last-child {
