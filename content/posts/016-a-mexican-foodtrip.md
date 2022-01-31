@@ -1,11 +1,11 @@
----
-title: A Yucatecan foodtrip
-subtitle: Roadtrippin across the Yucatan in 9 days
-date: "2022-01-10"
-categories:
-- Travel
-draft: false
----
++++
+categories = ['Travel']
+date = '2022-01-10'
+draft = false
+subtitle = 'Roadtrippin across the Yucatan in 9 days'
+title = 'A Yucatecan Foodtrip'
+
++++
 
 > Disclaimer: Any recommendations made in the blog are solely based on personal experiences. There are no affiliate links, and I earn absolutely nothing if you click on any of the links in this blog. Links prefixed 🧭 are Google Maps locations, and links prefixed 🌎 are external websites.
 

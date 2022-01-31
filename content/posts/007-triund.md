@@ -1,19 +1,17 @@
----
-bigimg:
-- https://i.imgur.com/j5GcL6G.jpg: Dawn from Triund Hill
-- https://i.imgur.com/KRRbzAk.jpg: Sunset at the Triund Hill
-categories:
-- Travel
-date: "2016-12-18T00:00:00Z"
-published: true
-subtitle: The end-sem adventure
-tags:
-- travelogue
-- triund
-- trek
-- himalayas
-title: Triund
----
++++
+categories = ['Travel']
+date = '2016-12-18T00:00:00Z'
+published = true
+subtitle = 'The end-sem adventure'
+tags = ['travelogue', 'triund', 'trek', 'himalayas']
+title = 'Triund'
+[[bigimg]]
+'https://i.imgur.com/j5GcL6G.jpg' = 'Dawn from Triund Hill'
+[[bigimg]]
+'https://i.imgur.com/KRRbzAk.jpg' = 'Sunset at the Triund Hill'
+
+
++++
 ## Prologue
 
 It was early December and for most BITSians this was the compre[^compre] season. For me though, it is usually at this time of the year when weird ideas surface off. They did, this time too. Me and my friend Sameer were long planning to visit McLeodGanj in search of snow, and this was it. This was the long awaited break.

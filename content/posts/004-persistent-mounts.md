@@ -1,12 +1,11 @@
----
-categories:
-- Tutorials
-date: "2016-08-11T00:00:00Z"
-subtitle: Automatically mount partitions in linux via the terminal
-tags:
-- linux
-title: Persistent Mounts
----
++++
+categories = ['Tutorials']
+date = '2016-08-11T00:00:00Z'
+subtitle = 'Automatically mount partitions in linux via the terminal'
+tags = ['linux']
+title = 'Persistent Mounts'
+
++++
 After installing your linux distro, though you'll be able to access your Windows/NTFS partitions easily, things can get annoying sometimes with you having to mount the partition manually everytime. Here I describe how to get away with this mess by automatically mounting partitions on boot.
 
 You could also do the same from Unity using the **Disks** utility, but here I describe the so called _hard_ way. The way we do it is by editing the `/etc/fstab` file. This file gets executed everytime you boot up your system. We just instruct this file to also mount our desired partitions apart from what it normally does.

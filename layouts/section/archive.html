@@ -7,18 +7,17 @@
 
     {{- if gt (len .Site.Taxonomies.categories) 0 -}}
     <p class="post-list">
-        {{ range $name, $pages := .Site.Taxonomies.categories }}
-        <a href="#{{ $name | urlize }}-ref">
-            {{ $name }}
+        {{ range .Site.Taxonomies.categories }}
+        <a href="#{{ .Page.Title | urlize }}-ref">
+            {{ .Page.Title }}
         </a> &nbsp;
         {{- end -}}
     </p>
     <ul class="post-list">
         {{- range $name, $pages := .Site.Taxonomies.categories -}}
-
         <h2 id="{{ $name | urlize }}-ref" class="post-list-category">
             <a href="/categories/{{ $name | urlize }}">
-                {{ $name }}
+                {{ .Page.Title }}
             </a>
         </h2>
 

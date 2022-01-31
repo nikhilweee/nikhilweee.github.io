@@ -1,14 +1,12 @@
----
-categories:
-- Explanations
-date: "2017-04-12T00:00:00Z"
-published: true
-subtitle: A visual explanation of popular algorithms for the rubik's cube
-tags:
-- cube
-- algorithms
-title: Visual Cube
----
++++
+categories = ['Explanations']
+date = '2017-04-12T00:00:00Z'
+published = true
+subtitle = "A visual explanation of popular algorithms for the rubik's cube"
+tags = ['cube', 'algorithms']
+title = 'Visual Cube'
+
++++
 
 The rubik's cube needs no introduction. I've personally seen these since my childhood but I was never quite interested in solving the cube. As a kid, I used to play around, knowing that this is impossible for me to solve. I gave up easily. This was nothing more than a fidgeting toy.
 

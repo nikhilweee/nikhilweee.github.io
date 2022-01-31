@@ -1,19 +1,14 @@
----
-categories:
-- Explanations
-date: "2018-05-24T00:00:00Z"
-mathjax: true
-published: true
-redirect_from:
-- /posts/2018/first-rnn-pytorch-1/
-- /posts/2018/first-rnn-pytorch-2/
-- /posts/2018/first-rnn-pytorch-3/
-subtitle: with PyTorch 0.4!
-tags:
-- rnn
-- pytorch
-title: Building your first RNN
----
++++
+categories = ['Explanations']
+date = '2018-05-24T00:00:00Z'
+mathjax = true
+published = true
+redirect_from = ['/posts/2018/first-rnn-pytorch-1/', '/posts/2018/first-rnn-pytorch-2/', '/posts/2018/first-rnn-pytorch-3/']
+subtitle = 'with PyTorch 0.4!'
+tags = ['rnn', 'pytorch']
+title = 'Building your first RNN'
+
++++
 If you have some understanding of recurrent networks, want to get your hands dirty, but haven't really tried to do that on your own, then you are certainly at the right place. This tutorial is a practical guide about getting started with recurrent networks using PyTorch. We'll solve a simple cipher using PyTorch 0.4.0, which is the latest version at the time of this writing.  
 
 You are only expected to have some understanding of recurrent networks. If you don't, here's the link to the [golden resource](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) - Chris Olah's post on Understanding LSTMs. We'll use a single layer LSTM for the task of learning ciphers, which should be a fairly easy exercise.

@@ -3,14 +3,15 @@ languageCode = "en-us"
 title = "weeeblog"
 theme = "whiteglass"
 
-# Make URLs case insensitive
-disablePathToLower = true
-
 # Used under RSS
 copyright = "&copy; Nikhil Verma"
 
 # Number of items to show every page
-paginate = 100
+paginate = 20
+
+# Change permalink format
+[permalinks]
+  posts = 'posts/:slug/'
 
 # Set feed to feed.xml
 [outputFormats]

@@ -1,11 +1,11 @@
----
-title: Surviving a long-distance in 2021
-subtitle: It takes more than you think.
-date: "2021-12-31"
-categories:
-- Relationships
-draft: false
----
++++
+categories = ['Relationships']
+date = '2021-12-31'
+draft = false
+subtitle = 'It takes more than you think.'
+title = 'Surviving a long-distance in 2021'
+
++++
 
 Anushree and I have been in a long-distance relationship for about two years now. We first met in the beginning of January, 2020. Three months later, the nation went into a lockdown -- and so did we. At that time, the virus was still very new to the world and we would only get to know more about it as time progressed. Until then, it was best for everyone, including us, to adhere to the lockdown norms and stay in our homes.
 

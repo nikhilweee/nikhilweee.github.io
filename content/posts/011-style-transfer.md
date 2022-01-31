@@ -1,11 +1,11 @@
----
-categories:
-- Papers
-date: "2020-09-11T00:00:00Z"
-mathjax: true
-subtitle: Image Style Transfer Using Convolutional Neural Networks
-title: Intro to Style Transfer
----
++++
+categories = ['Papers']
+date = '2020-09-11T00:00:00Z'
+mathjax = true
+subtitle = 'Image Style Transfer Using Convolutional Neural Networks'
+title = 'Intro to Style Transfer'
+
++++
 ## Image Style Transfer Using Convolutional Neural Networks
 
 This paper introduced neural style transfer. It uses a VGGNet pre-trained on the ImageNet dataset for the purpose. The key idea is to be able to separate content and style from the representations of the network. Once that is done, a new image is synthesized from white noise where two different kind of losses are minimized - a style loss between the style image and the hybrid image, and a content loss between the content image and the hybrid image.

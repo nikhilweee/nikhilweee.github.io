@@ -1,7 +1,8 @@
----
-title: About
-layout: page
----
++++
+layout = 'page'
+title = 'About'
+
++++
 
 {{< rawhtml >}}
 <img class="profile-image" src="https://pbs.twimg.com/profile_images/1280782890444283904/ExaOkjTi_400x400.jpg" alt="Cheese!">

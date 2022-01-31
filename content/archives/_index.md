@@ -1,5 +1,6 @@
----
-layout: archive
----
++++
+layout = 'archive'
 
-This is the posts archive grouped by category.
++++
+
+Here's a list of posts grouped by their categories.
