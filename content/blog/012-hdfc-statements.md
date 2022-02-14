@@ -1,6 +1,7 @@
 +++
 categories = ['Misc']
 date = '2021-01-13T00:00:00Z'
+draft = true
 subtitle = 'Staying on top of your finances'
 title = 'Parsing HDFC Statements'
 

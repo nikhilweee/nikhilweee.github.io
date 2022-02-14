@@ -12,7 +12,6 @@
   font-size: 26px;
   font-weight: 300;
   line-height: 56px;
-  letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
 
@@ -48,6 +47,7 @@
   }
 }
 
+
 /**
  * Site footer
  */
@@ -58,15 +58,40 @@
   text-align: center;
 }
 
+
+/**
+ * Index
+ */
+.post-list-meta {
+  display: inline-block;
+  min-width: 120px;
+  font-size: 1em;
+}
+
+.post-list-title {
+  display: inline-block;
+  max-width: calc(100% - 125px);
+  color: darken($brand-color, 10%);
+  font-size: 1em;
+}
+
+.post-list-subtitle {
+  display: inline-block;
+  max-width: calc(100% - 125px);
+  font-size: 1em;
+}
+
+.post-list-category,
+.page-heading {
+  font-size: 1.5em;
+}
+
+
 /**
  * Page content
  */
 .page-content {
   padding: $spacing-unit 0;
-}
-
-.page-heading {
-  font-size: 20px;
 }
 
 .post-list {
@@ -78,12 +103,7 @@
   }
 
   > li {
-    margin-bottom: $spacing-unit * 2;
-
-    &:not(:first-child) {
-      border-top: 4px solid $grey-color-light;
-      padding-top: $spacing-unit * 2;
-    }
+    margin-bottom: $spacing-unit / 2;
   }
 }
 
@@ -142,20 +162,27 @@ p.post-list {
   }
 }
 
+.toc {
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: $background-gray;
+}
+
+
 /**
  * Posts
  */
-.post-header {
-  margin-bottom: $spacing-unit;
+.post-title {
+  font-size: 2.2em;
+  @include media-query($on-laptop) {
+    font-size: 2em;
+  }
 }
 
-.post-title {
-  font-size: 42px;
-  letter-spacing: -1px;
-  line-height: 1;
-
+.post-subtitle {
+  font-size: 1.4em;
   @include media-query($on-laptop) {
-    font-size: 36px;
+    font-size: 1.2em;
   }
 }
 
@@ -167,33 +194,34 @@ p.post-list {
   padding-bottom: $spacing-unit * 0.5;
 
   h1 {
-    font-size: 38px;
+    font-size: 2.0rem;
     @include media-query($on-laptop) {
-      font-size: 34px;
+      font-size: 1.6rem;
     }
   }
 
   h2 {
-    font-size: 32px;
+    font-size: 1.6rem;
     @include media-query($on-laptop) {
-      font-size: 28px;
+      font-size: 1.5rem;
     }
   }
 
   h3 {
-    font-size: 26px;
+    font-size: 1.5rem;
     @include media-query($on-laptop) {
-      font-size: 22px;
+      font-size: 1.4rem;
     }
   }
 
   h4 {
-    font-size: 20px;
+    font-size: 1.4rem;
     @include media-query($on-laptop) {
-      font-size: 18px;
+      font-size: 1.3rem;
     }
   }
 }
+
 
 /**
  * Pagination
@@ -206,14 +234,7 @@ p.post-list {
   @extend %clearfix;
 
   a {
-    &,
-    &:visited {
-      color: $grey-color;
-    }
-
-    &:hover {
-      color: $brand-color;
-    }
+    color: $text-color;
   }
 
   .previous {

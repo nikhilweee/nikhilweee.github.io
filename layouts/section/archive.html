@@ -2,8 +2,8 @@
 {{"<!-- begin: layouts/section/archive.html -->" | safeHTML }}
 <div class="home">
 
-    <h1 class="page-heading"></h1>
-    {{ .Content }}
+    <h1 class="page-heading">{{ .Title }}</h1>
+    <p>{{ .Content }}</p>
 
     {{- if gt (len .Site.Taxonomies.categories) 0 -}}
     <p class="post-list">
@@ -16,7 +16,7 @@
     <ul class="post-list">
         {{- range $name, $pages := .Site.Taxonomies.categories -}}
         <h2 id="{{ $name | urlize }}-ref" class="post-list-category">
-            <a href="/categories/{{ $name | urlize }}">
+            <a href="{{- .Page.RelPermalink -}}">
                 {{ .Page.Title }}
             </a>
         </h2>
@@ -31,7 +31,7 @@
                         </span>
                     </div>
                     <div class="post-list-title">
-                        <a href="{{ .Permalink }}">
+                        <a href="{{- .Permalink -}}">
                             {{ .Title }}
                         </a>
                     </div>

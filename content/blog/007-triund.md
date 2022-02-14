@@ -1,22 +1,19 @@
 +++
-categories = ['Travel']
-date = '2016-12-18T00:00:00Z'
-published = true
-subtitle = 'The end-sem adventure'
-tags = ['travelogue', 'triund', 'trek', 'himalayas']
-title = 'Triund'
-[[bigimg]]
-'https://i.imgur.com/j5GcL6G.jpg' = 'Dawn from Triund Hill'
-[[bigimg]]
-'https://i.imgur.com/KRRbzAk.jpg' = 'Sunset at the Triund Hill'
-
+categories = ["Travel"]
+date = "2016-12-18T00:00:00Z"
+draft = false
+subtitle = "The end-sem adventure"
+title = "Triund"
 
 +++
+
 ## Prologue
 
 It was early December and for most BITSians this was the compre[^compre] season. For me though, it is usually at this time of the year when weird ideas surface off. They did, this time too. Me and my friend Sameer were long planning to visit McLeodGanj in search of snow, and this was it. This was the long awaited break.
 
 [^compre]: comprehensive examinations, the final exams of the semester
+
+{{<figure src="https://i.imgur.com/j5GcL6G.jpg" caption="Dawn from Triund Hill">}}
 
 My previous experiences warned me from planning a trip long before its schedule. No planning until two weeks to liftoff, the bro code said, and I respected the bro. Well, sort of. I couldn't control the excitement either, so I started planning exactly two weeks before. Later I realised, there actually wasn't much to plan. Just a brief timeline, a budget and a backpack. That's it! I was all set!
 
@@ -25,6 +22,8 @@ During the countdown period we gathered two other friends, Mohit and Rajat, and 
 [^tnc]: provided you don't spend the night in the room. or still want to spend the night together - you get it, right?
 
 ## The Adventure
+
+{{<figure src="https://i.imgur.com/KRRbzAk.jpg" caption="Sunset at the Triund Hill">}}
 
 ### Day 0
 
@@ -48,16 +47,13 @@ As the day progressed, we set out for our adventure. A modest _aloo paratha_ was
 
 The trek starts with a mandatory entry at one of the log registers held with the forest department. From there, it's just a rocky trail for the next 6 kilometers. I may have made it sound monotonous, but trust me, it is not. The trek is full of adventures, which I insist one should discover on his own. Nearly halfway through the trek, there's Magic View, claimed to be one of the oldest shops out there.
 
-
-{{ include image.html url="https://i.imgur.com/ZmUtv47.jpg" 
-   desc="The view from Magic View. You could even see the trek on the upper right." }}
+{{<figure src="https://i.imgur.com/ZmUtv47.jpg" caption="The view from Magic View. You could even see the trek on the upper right.">}}
 
 Interestingly, here you can shop for almost anything you could possibly desire for the trek. There's food, water, drinks, accessories and what not - but for a price significantly above the MRP. You could refill your empty bottles for &#8377;20, buy new ones for &#8377;40, Maggi for &#8377;70 and so on. The next half of the trek gets a bit difficult thanks to the rise in inclination, but one could find a lot of fellow hikers throughout the journey to keep them determined.
 
 After three and half hours of a wonderful trek, we finally reached the top.
 
-{{ include image.html url="https://i.imgur.com/85DjXkb.jpg" 
-   desc="Triund Hill Top. Behind: The mighty Dhauladhar Ranges" }}
+{{<figure src="https://i.imgur.com/85DjXkb.jpg" caption="Triund Hill Top. Behind: The mighty Dhauladhar Ranges" >}}
 
 Wow! That view! That feeling! This was definitely worth all the hard work. It is this feeling of accomplishment that I came after. This is what drives me through. I took some time to contemplate upon, to admire the beauty of the Himalayas.
 
@@ -65,9 +61,9 @@ A while after, we arranged for camp and food. Camping can be arranged for &#8377
 
 The magic began with the inception of dusk. See for yourself!
 
-{{ include image.html url="https://i.imgur.com/dkqD19I.jpg" desc="Angel Lights" }}
-{{ include image.html url="https://i.imgur.com/YqOzl3k.jpg" desc="Sunset Clouds" }}
-{{ include image.html url="https://i.imgur.com/dKDOJhw.jpg" desc="Twilight" }}
+{{<figure src="https://i.imgur.com/dkqD19I.jpg" caption="Angel Lights" >}}
+{{<figure src="https://i.imgur.com/YqOzl3k.jpg" caption="Sunset Clouds" >}}
+{{<figure src="https://i.imgur.com/dKDOJhw.jpg" caption="Twilight" >}}
 
 As the sun receded, the cold surfaced. We desperately needed a campfire. We found a log of wood lying around but it was too dense to burn. A swiss knife would have been handy. _Lesson: Always carry a swiss knife outdoors. And a lighter. And a torch._ Somehow we found our own ways around the fire. It was time to enjoy the moment. The next thing I remember was pure bliss.
 
@@ -79,8 +75,7 @@ There are a lot of restaurants around the main square but I particularly recomme
 
 [^ob]: the BITSian slang for _obviously_
 
-{{ include image.html url="https://i.imgur.com/mw9ncwR.jpg" 
-   desc="The chicken rice at Tibet Kitchen was absolutely awesome!" }}
+{{<figure src="https://i.imgur.com/mw9ncwR.jpg" caption="The chicken rice at Tibet Kitchen was absolutely awesome!" >}}
 
 After a bit of shopping around, we bought the return tickets. We still had a handful of time before the bus left at 5, and I was in the mood for a coffee. Mohit spotted a local cafe. It was worth a try. We had some coffee and owing to the earlier experience of momos, we wanted to have more of them. We were used to a standard size of 6 momos a plate, so we ordered two plates of tofu momos. Three each would be fine for a snack. The momos showed up, but two plates full. They were thirty of them. full size. Whoa! _Lesson: Always ensure what you're ordering beforehand._
 

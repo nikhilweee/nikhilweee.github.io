@@ -1,12 +1,11 @@
 +++
-categories = ['Explanations']
-date = '2018-05-24T00:00:00Z'
+categories = ["Explanations"]
+date = "2018-05-24T00:00:00Z"
 mathjax = true
-published = true
-redirect_from = ['/posts/2018/first-rnn-pytorch-1/', '/posts/2018/first-rnn-pytorch-2/', '/posts/2018/first-rnn-pytorch-3/']
-subtitle = 'with PyTorch 0.4!'
-tags = ['rnn', 'pytorch']
-title = 'Building your first RNN'
+redirect_from = ["/posts/2018/first-rnn-pytorch-1/", "/posts/2018/first-rnn-pytorch-2/", "/posts/2018/first-rnn-pytorch-3/"]
+subtitle = "with PyTorch 0.4!"
+title = "Building your first RNN"
+slug = "first-rnn-pytorch"
 
 +++
 If you have some understanding of recurrent networks, want to get your hands dirty, but haven't really tried to do that on your own, then you are certainly at the right place. This tutorial is a practical guide about getting started with recurrent networks using PyTorch. We'll solve a simple cipher using PyTorch 0.4.0, which is the latest version at the time of this writing.  

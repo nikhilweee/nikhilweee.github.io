@@ -2,9 +2,8 @@
 categories = ['Explanations']
 date = '2016-11-09T00:00:00Z'
 mathjax = true
-published = true
+draft = true
 subtitle = 'the name says it all!'
-tags = ['neural networks', 'rnn', 'lstm']
 title = 'LSTMs'
 
 +++

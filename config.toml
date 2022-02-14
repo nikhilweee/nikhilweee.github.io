@@ -1,6 +1,6 @@
 baseURL = "https://nikhilweee.github.io"
 languageCode = "en-us"
-title = "weeeblog"
+title = "Nikhil Verma"
 theme = "whiteglass"
 
 # Used under RSS
@@ -11,7 +11,8 @@ paginate = 20
 
 # Change permalink format
 [permalinks]
-  posts = 'posts/:slug/'
+  blog = 'blog/:year/:slug/'
+  categories = 'blog/categories/:title'
 
 # Set feed to feed.xml
 [outputFormats]
@@ -26,5 +27,10 @@ paginate = 20
 
 [markup]
   [markup.highlight]
-    noClasses = false
+    # noClasses = false
+    lineNos = true
     style = "monokailight"
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 3
+    ordered = false

@@ -2,7 +2,7 @@
 categories = ['Explanations']
 date = '2017-06-14T00:00:00Z'
 mathjax = true
-published = false
+draft = true
 subtitle = 'Automatic evaluation metrics explained'
 tags = ['cube', 'algorithms']
 title = 'Evaluating Machine Evaluation Metrics'

@@ -4,6 +4,7 @@ date = '2016-01-08T00:00:00Z'
 subtitle = 'from scratch, in under 30 minutes!'
 tags = ['supervisor', 'nginx', 'node', 'digitalocean', 'linux']
 title = 'Set up a Ghost blog'
+slug = 'setup-ghost-blog'
 
 +++
 #### Before you read

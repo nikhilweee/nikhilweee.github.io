@@ -1,7 +1,7 @@
 +++
 categories = ['Explanations']
 date = '2017-04-12T00:00:00Z'
-published = true
+draft = true
 subtitle = "A visual explanation of popular algorithms for the rubik's cube"
 tags = ['cube', 'algorithms']
 title = 'Visual Cube'

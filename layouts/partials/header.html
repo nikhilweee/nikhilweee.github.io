@@ -5,13 +5,18 @@
     <a class="site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 
     <nav class="site-nav">
+
       {{/*
       {{ range .Site.Sections }}
       <a class="page-link" href="{{ .Permalink }}">{{ .Title }}</a>
       {{ end }}
       */}}
-      <a class="page-link" href="/archives/">Archives</a>
-      <a class="page-link" href="/about/">About</a>
+      {{/*  <a class="page-link" href="/archives/">Archives</a>  */}}
+      {{/*  <a class="page-link" href="/blog">Blog</a>  */}}
+
+      <a class="page-link" href="/blog/archives/">Archives</a>
+      <a class="page-link" href="/blog">Blog</a>
+
     </nav>
 
   </div>
