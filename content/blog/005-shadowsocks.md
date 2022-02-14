@@ -24,7 +24,7 @@ Okay, but before moving further, it's important to know how this stuff works.
 Shadowsocks is some software that has to be set up individually on two systems. One is your device, or the _client_, which wants to bypass firewalls, and the other is a _server_ - quite simply a device which has unrestricted access to the internet.  
 The client then connects to the server (which isn't blocked by the firewall), and tunnels all its traffic through the server via shadowsocks. The firewall thinks this is legitimate traffic, and so doesn't block you.
 
-{{< figure src="/static/shadowsocks/arch.svg" caption="The Big Picture." >}}
+{{<figure src="/static/shadowsocks/arch.svg" caption="The Big Picture.">}}
 
 ### Why Shadowsocks
 Now you might think that if the client is already allowed to connect to the server, then why do we need shadowsocks in the first place?
