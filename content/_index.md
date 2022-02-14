@@ -7,10 +7,10 @@ layout = 'home'
 <div class="profile-div">
 <img class="profile-image" src="https://i.imgur.com/rbNi4kX.png" alt="Cheese!">
 <p class="profile-links">
-  <a href="https://github.com/nikhilweee"><i class="fa-brands fa-github"></i></a> • 
-  <a href="https://twitter.com/nikhilweee"><i class="fa-brands fa-twitter"></i></a> • 
-  <a href="https://linkedin.com/in/nikhilweee"><i class="fa-brands fa-linkedin"></i></a> • 
-  <a href="mailto:nikhilweee@gmail.com"><i class="fa-solid fa-at"></i></a>
+  <a href="https://github.com/nikhilweee"><i class="fa-brands fa-github fa-xl"></i></a> • 
+  <a href="https://twitter.com/nikhilweee"><i class="fa-brands fa-twitter fa-xl"></i></a> • 
+  <a href="https://linkedin.com/in/nikhilweee"><i class="fa-brands fa-linkedin fa-xl"></i></a> • 
+  <a href="mailto:nikhilweee@gmail.com"><i class="fa-solid fa-at fa-xl"></i></a>
   <br/><br/><a href="/resume/">Resume</a>
 </p>
 </div>
