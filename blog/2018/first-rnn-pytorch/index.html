@@ -2,17 +2,18 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1"><title>Building your first RNN - Nikhil Verma</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Building your first RNN - weeeblog</title>
 <meta name=description content="If you have some understanding of recurrent networks, want to get your hands dirty, but haven’t really tried to do that on your own, then you are certainly at the right place. This tutorial is a practical guide about getting started with recurrent networks using PyTorch. We’ll solve a simple cipher using PyTorch 0.4.0, which is the latest version at the time of this writing.
 You are only expected to have some understanding of recurrent networks."><link rel=icon type=image/svg href=/static/favicon.png>
 <link rel=stylesheet href=/main.css>
-<link rel=canonical href=https://nikhilweee.github.io/blog/2018/first-rnn-pytorch/>
+<link rel=canonical href=https://nikhilweee.me/blog/2018/first-rnn-pytorch/>
 <script type=text/x-mathjax-config>
-      MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-        CommonHTML: { linebreaks: { automatic: true } },
-      });
-    </script>
+            MathJax.Hub.Config({
+                tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+                CommonHTML: { linebreaks: { automatic: true } },
+            });
+        </script>
 <script type=text/javascript async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link href=https://cdn.jsdelivr.net/npm/charter-webfont/charter.min.css rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css>
@@ -20,14 +21,14 @@ You are only expected to have some understanding of recurrent networks."><link r
 <body>
 <header class=site-header>
 <div class=wrapper>
-<a class=site-title href=https://nikhilweee.github.io>Nikhil Verma</a>
+<a class=site-title href=/blog>weeeblog</a>
 <nav class=site-nav>
 <a class=page-link href=/blog/archives/>Archives</a>
-<a class=page-link href=/blog>Blog</a>
+<a class=page-link href=/>About</a>
 </nav>
 </div>
 </header>
-<main class=page-content aria-label=Content>
+<main class=page-content>
 <div class=wrapper>
 <article class=post itemscope itemtype=http://schema.org/BlogPosting>
 <header class=post-header>
@@ -35,8 +36,10 @@ You are only expected to have some understanding of recurrent networks."><link r
 <h2 class=post-subtitle itemprop="abstract description">with PyTorch 0.4!</h2>
 <p class=post-meta>
 <time datetime="2018-05-24 00:00:00 +0000 UTC" itemprop=datePublished>May 24, 2018</time>
-• <span itemprop=author itemscope itemtype=http://schema.org/Person><span itemprop=name>Nikhil Verma</span></span>
-• <a href=/categories/explanations>Explanations</a>
+• <span itemprop=author itemscope itemtype=http://schema.org/Person>
+<a href=/><span itemprop=name>Nikhil Verma</span></a></span>
+•
+<a href=/blog/categories/explanations/>Explanations</a>
 </p>
 </header>
 <div class=post-content itemprop=articleBody>
@@ -267,6 +270,10 @@ N O P Q R S T U V W X Y Z - A B C D E F G H I J K L M
 </ol>
 </section>
 </div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//nikhilweee.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
 </article>
 </div>
 </main>
