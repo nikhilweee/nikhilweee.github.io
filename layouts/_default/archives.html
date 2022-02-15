@@ -1,15 +1,15 @@
 {{ define "main" }}
-{{"<!-- begin: layouts/section/archive.html -->" | safeHTML }}
+{{"<!-- begin: layouts/_default/archives.html -->" | safeHTML }}
 <div class="home">
 
-    <h1 class="page-heading">{{ .Title }}</h1>
+    <h1 class="page-heading">{{ .Title }}</h1><hr>
     <p>{{ .Content }}</p>
 
     {{- if gt (len .Site.Taxonomies.categories) 0 -}}
     <p class="post-list">
         {{ range .Site.Taxonomies.categories }}
         <a href="#{{ .Page.Title | urlize }}-ref">
-            {{ .Page.Title }}
+            {{- .Page.Title -}}
         </a> &nbsp;
         {{- end -}}
     </p>
@@ -17,10 +17,10 @@
         {{- range $name, $pages := .Site.Taxonomies.categories -}}
         <h2 id="{{ $name | urlize }}-ref" class="post-list-category">
             <a href="{{- .Page.RelPermalink -}}">
-                {{ .Page.Title }}
+                {{- .Page.Title -}}
             </a>
         </h2>
-
+        <hr>
         <ul class="post-list">
             {{- range $pages -}}
             <li>
@@ -31,7 +31,7 @@
                         </span>
                     </div>
                     <div class="post-list-title">
-                        <a href="{{- .Permalink -}}">
+                        <a href="{{- .RelPermalink -}}">
                             {{ .Title }}
                         </a>
                     </div>
@@ -51,5 +51,5 @@
     </ul>
     {{ end }}
 </div>
-{{"<!-- end: layouts/section/archive.html -->" | safeHTML }}
+{{"<!-- end: layouts/_default/archives.html -->" | safeHTML }}
 {{ end }}

@@ -1,10 +1,10 @@
 {{ define "main" }}
-{{"<!-- begin: layouts/taxonomy/list.html -->" | safeHTML }}
+{{"<!-- begin: layouts/_baseof/taxonomy.html -->" | safeHTML }}
 <div class="home">
 
   <p>{{ .Content }}</p>
 
-  <h1 class="page-heading">{{ .Title }}</h1>
+  <h1 class="page-heading">{{ .Title }}</h1><hr>
 
   <ul class="post-list">
     {{ range .Paginator.Pages }}
@@ -38,5 +38,5 @@
 
   
 </div>
-{{"<!-- end: layouts/taxonomy/list.html -->" | safeHTML }}
+{{"<!-- end: layouts/_baseof/taxonomy.html -->" | safeHTML }}
 {{ end }}

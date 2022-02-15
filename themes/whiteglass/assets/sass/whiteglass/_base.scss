@@ -16,7 +16,7 @@ html {
   // Define font sizes here for `rem` to work
   font-size: $base-font-size;
   @include media-query($on-laptop) {
-    font-size: 0.85em;
+    font-size: 0.9em;
   }
 }
 
@@ -143,7 +143,7 @@ blockquote {
  * Rules
  */
 hr {
-  height: 4px;
+  height: 1px;
   margin: $spacing-unit / 2 0;
   border: 0;
   background-color: $grey-color-light;
@@ -157,7 +157,10 @@ hr {
 pre,
 code {
   font-family: $monospace-font-family;
-  font-size: 13px;
+  font-size: $base-font-size * 0.75;
+  @include media-query($on-laptop) {
+    font-size: 0.8rem;
+  }  
   border: 1px solid $grey-color-light;
   border-radius: 0;
   background-color: #f8f8f8;

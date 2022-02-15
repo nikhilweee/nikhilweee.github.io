@@ -1,90 +1,47 @@
+{{ "<!-- begin: layouts/partials/head.html -->" | safeHTML }}
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {{- $title := .Site.Title -}}
-  {{- if .Title -}}
-  {{- $title = (print .Title " - " .Site.Title) -}}
-  {{- end -}}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {{- $description := (.Description | default .Summary) | markdownify -}}
-  <title>{{- $title -}}</title>
-  <meta name="description" content="{{- $description -}}">
-  {{- if .Keywords -}}
-  {{- $keywords := delimit .Keywords ", " -}}
-  <meta name="keywords" content="{{- $keywords -}}">
-  {{- end -}}
+    {{- $title := .Site.Title -}}
+    {{- if .Title -}}
+    {{- $title = (print .Title " - " .Site.Title) -}}
+    {{- end -}}
 
+    {{ $description := (.Description | default .Summary) | markdownify }}
 
-  {{- $options := (dict "TargetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true) -}}
-  {{- $style := resources.Get "sass/main.scss" | resources.ToCSS $options -}}
-  <link rel="icon" type="image/svg" href="/static/favicon.png">
-  <link rel="stylesheet" href="{{- $style.RelPermalink -}}">
-  <link rel="canonical" href="{{- .Permalink -}}">
+    <title>{{- $title -}}</title>
+    <meta name="description" content="{{ $description }}">
 
-<!-- Alternative Formats -->
-{{ range .AlternativeOutputFormats -}}
-  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-{{ end -}}
+    {{- $options := (dict "TargetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true) -}}
+    {{- $style := resources.Get "sass/main.scss" | resources.ToCSS $options -}}
+    <link rel="icon" type="image/svg" href="/static/favicon.png">
+    <link rel="stylesheet" href="{{- $style.RelPermalink -}}">
+    <link rel="canonical" href="{{- .Permalink -}}">
 
-  <!-- MathJax -->
-  {{- if .Params.MathJax -}}
-  <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-        CommonHTML: { linebreaks: { automatic: true } },
-      });
-    </script>
-  <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML"></script>
-  {{- end -}}
+    <!-- Alternative Formats -->
+    {{- range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` 
+        .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{- end -}}
 
+    <!-- MathJax -->
+    {{- if .Params.MathJax -}}
+    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+                CommonHTML: { linebreaks: { automatic: true } },
+            });
+        </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML"></script>
+    {{- end -}}
 
-  {{/*
-  {{- if site.facebook_app_id -}}
-  <meta property="fb:admins" content="{{- site.facebook_app_id -}}">{{- end -}}
-  <meta property="og:title" content="{{- title -}}">
-  <meta property="og:site_name" content="{{- .Site.Title -}}">
-  <meta property="og:url" content="{{- $canonical -}}">
-  <meta property="og:description" content="{{- $description -}}">
-  {{- if site.facebook_page -}}
-  <meta property="article:author" content="{{- site.facebook_page -}}">{{- end -}}
-  {{- if .Params.facebook.image -}}
-  <meta property="og:image" content="{{- .Params.facebook.image -}}">
-  {{- else if site.facebook_image -}}
-  <meta property="og:image" content="{{- site.facebook_image -}}">
-  {{- end -}}
-  <meta name="twitter:card" content="{{- .Params.twitter_card.type | default " summary" -}}">
-  {{- if site.twitter_username -}}
-  <meta name="twitter:site" content="{{- site.twitter_username -}}">{{- end -}}
-  <meta name="twitter:title" content="{{- title | truncate 70 -}}">
-  <meta name="twitter:description" content="{{- $description | truncate 200 -}}">
-  {{- if .Params.twitter_card.creator -}}
-  <meta name="twitter:creator" content="{{- .Params.twitter_card.creator -}}">
-  {{- else if site.twitter_username -}}
-  <meta name="twitter:creator" content="{{- site.twitter_username -}}">
-  {{- end -}}
-  {{- if .Params.twitter_card.image -}}
-  {{- if eq .Params.twitter_card.type "gallery" -}}
-  <meta name="twitter:image0" content="{{- .Params.twitter_card.image -}}">
-  <meta name="twitter:image1" content="{{- .Params.twitter_card.image1 -}}">
-  <meta name="twitter:image2" content="{{- .Params.twitter_card.image2 -}}">
-  <meta name="twitter:image3" content="{{- .Params.twitter_card.image3 -}}">
-  {{- else -}}
-  <meta name="twitter:image:src" content="{{- .Params.twitter_card.image -}}">
-  {{- if eq .Params.twitter_card.type "photo" -}}
-  {{- if .Params.twitter_card.width -}}
-  <meta name="twitter:image:width" content="{{- .Params.twitter_card.width -}}">{{- end -}}
-  {{- if .Params.twitter_card.height -}}
-  <meta name="twitter:image:height" content="{{- .Params.twitter_card.height -}}">{{- end -}}
-  {{- end -}}
-  {{- end -}}
-  {{- else if site.twitter_image -}}
-  <meta name="twitter:image:src" content="{{- site.twitter_image -}}">
-  {{- end -}}
-  */}}
+    <!-- Fonts  -->
+    <link href="https://cdn.jsdelivr.net/npm/charter-webfont/charter.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-  {{ partial "fonts" . }}
-  {{/* include google_analytics.html */}}
 </head>
+{{ "<!-- end: layouts/partials/head.html -->" | safeHTML }}

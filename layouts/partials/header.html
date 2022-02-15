@@ -1,24 +1,18 @@
+{{ "<!-- begin: layouts/partials/header.html -->" | safeHTML }}
 <header class="site-header">
-
-  <div class="wrapper">
-
-    <a class="site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-
-    <nav class="site-nav">
-
-      {{/*
-      {{ range .Site.Sections }}
-      <a class="page-link" href="{{ .Permalink }}">{{ .Title }}</a>
-      {{ end }}
-      */}}
-      {{/*  <a class="page-link" href="/archives/">Archives</a>  */}}
-      {{/*  <a class="page-link" href="/blog">Blog</a>  */}}
-
-      <a class="page-link" href="/blog/archives/">Archives</a>
-      <a class="page-link" href="/blog">Blog</a>
-
-    </nav>
-
-  </div>
-
+    <div class="wrapper">
+        {{ if or (.IsHome) (eq .Section "resume") }}
+            <a class="site-title" href="/">{{ .Site.Author.name }}</a>
+            <nav class="site-nav">
+                <a class="page-link" href="/blog/">Blog</a>
+            </nav>
+        {{ else }}
+            <a class="site-title" href="/blog">{{ .Site.Title }}</a>
+            <nav class="site-nav">
+                <a class="page-link" href="/blog/archives/">Archives</a>
+                <a class="page-link" href="/">About</a>
+            </nav>
+        {{ end }}        
+    </div>
 </header>
+{{ "<!-- end: layouts/partials/header.html -->" | safeHTML }}

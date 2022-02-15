@@ -1,7 +1,10 @@
-baseURL = "https://nikhilweee.github.io"
+baseURL = "https://nikhilweee.me"
 languageCode = "en-us"
-title = "Nikhil Verma"
+title = "weeeblog"
 theme = "whiteglass"
+
+# Add disqus comments
+disqusShortname = "nikhilweee"
 
 # Used under RSS
 copyright = "&copy; Nikhil Verma"
@@ -11,8 +14,8 @@ paginate = 20
 
 # Change permalink format
 [permalinks]
-  blog = 'blog/:year/:slug/'
-  categories = 'blog/categories/:title'
+  blog = "blog/:year/:slug/"
+  categories = "blog/categories/:title"
 
 # Set feed to feed.xml
 [outputFormats]

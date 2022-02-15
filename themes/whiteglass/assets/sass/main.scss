@@ -6,16 +6,20 @@
  * Home Page
  */
 
-// @media (prefers-color-scheme: dark) {
-//   html {
-//     background-color: invert($background-white);
-//     filter: invert(95%) hue-rotate(180deg);
-//   }
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: invert($background-white);
+    filter: invert(95%) hue-rotate(180deg);
+  }
 
-//   iframe, img, video {
-//     filter: invert(95%) hue-rotate(180deg);
-//   }
-// }
+  .post-content {
+    border-color: invert($grey-color-light);
+  }
+
+  iframe, img, video, hr {
+    filter: invert(95%) hue-rotate(180deg);
+  }
+}
 
 
 /**
