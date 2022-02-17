@@ -28,6 +28,7 @@ body {
   background-color: $background-white;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.02em;
+  overflow: overlay;
 }
 
 table {
@@ -61,12 +62,15 @@ img {
 /**
  * Figures
  */
-figure > img {
+figure > img, video {
   display: block;
+  max-width: 100%;
+  margin: auto;
 }
 
 figure > figcaption {
-  font-size: $small-font-size;
+  // font-size: $small-font-size;
+  font-size: 0.9rem;
   padding-top: 10px;
 }
 
@@ -163,11 +167,11 @@ code {
   }  
   border: 1px solid $grey-color-light;
   border-radius: 0;
-  background-color: #f8f8f8;
 }
 
 code {
   padding: 1px 5px;
+  background-color: $grey-color-light;
 }
 
 pre {
@@ -179,6 +183,7 @@ pre {
     border: 0;
     padding-right: 0;
     padding-left: 0;
+    background-color: transparent;
   }
 }
 
@@ -213,4 +218,13 @@ pre {
   content: "";
   display: table;
   clear: both;
+}
+
+
+
+/**
+ * Toggles
+ */
+summary {
+  padding-bottom: $spacing-unit / 2;
 }

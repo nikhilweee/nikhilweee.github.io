@@ -1,7 +1,7 @@
 +++
 categories = ['Papers']
 date = '2020-09-11T00:00:00Z'
-draft = false
+draft = true
 mathjax = true
 subtitle = 'Image Style Transfer Using Convolutional Neural Networks'
 title = 'Intro to Style Transfer'

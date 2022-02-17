@@ -6,21 +6,47 @@
  * Home Page
  */
 
-@media (prefers-color-scheme: dark) {
-  html {
-    background-color: invert($background-white);
-    filter: invert(95%) hue-rotate(180deg);
-  }
+/**
+ * Debug
+ */
+
+// *:hover {
+//   outline:1px $grey-color solid;
+// }
+
+/**
+ * Dark Mode
+ */
+
+.dark {
+  background-color: darken($background-white, 90%);
+  filter: invert(95%) hue-rotate(180deg);
 
   .post-content {
     border-color: invert($grey-color-light);
   }
 
+  pre, code, blockquote, .footnotes {
+    filter: brightness(0.85);
+  }
+
   iframe, img, video, hr {
-    filter: invert(95%) hue-rotate(180deg);
+    filter: invert(95%) hue-rotate(-180deg);
   }
 }
 
+#theme-toggle {
+  background-color: inherit;
+  border: none;
+}
+
+body.dark #moon {
+  display: none;
+}
+
+body:not(.dark) #sun {
+  display: none;
+}
 
 /**
  * Posts
@@ -38,7 +64,8 @@ figcaption {
 }
 
 // Subscripts and Superscripts should not affect line height
-sup, sub {
+sup,
+sub {
   vertical-align: baseline;
   position: relative;
   top: -0.4em;
@@ -47,11 +74,9 @@ sub {
   top: 0.4em;
 }
 
-
 /**
  * Display
  */
-
 .site-header {
   height: 60px;
 }
@@ -71,7 +96,6 @@ sub {
 /**
  * About
  */
-
 .profile-image {
   border-radius: 50%;
   max-width: 90%;
@@ -80,12 +104,12 @@ sub {
   }
 }
 
-.profile-links{
+.profile-links {
   padding: 2em 2em;
   // font-size: 0.875em;
 }
 
-.profile-div{
+.profile-div {
   float: right;
   max-width: 35%;
   text-align: center;
@@ -94,7 +118,9 @@ sub {
   }
 }
 
-// Correct position of pagination markers
+/**
+ * Pagination
+ */
 .pagination {
   .previous {
     float: left;

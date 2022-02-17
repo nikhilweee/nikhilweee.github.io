@@ -1,7 +1,6 @@
 +++
 categories = ["Travel"]
 date = "2022-01-10"
-draft = false
 subtitle = "Roadtrippin across the Yucatan in 9 days"
 title = "A Yucatecan Foodtrip"
 slug = "mexico-yucatecan-foodtrip"

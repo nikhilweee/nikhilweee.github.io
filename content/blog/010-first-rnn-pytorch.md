@@ -1,5 +1,5 @@
 +++
-categories = ["Explanations"]
+categories = ["Tutorials"]
 date = "2018-05-24T00:00:00Z"
 mathjax = true
 redirect_from = ["/posts/2018/first-rnn-pytorch-1/", "/posts/2018/first-rnn-pytorch-2/", "/posts/2018/first-rnn-pytorch-3/"]
