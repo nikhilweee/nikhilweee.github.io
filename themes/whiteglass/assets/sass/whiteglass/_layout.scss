@@ -30,14 +30,11 @@
     vertical-align: middle;
     height: 1.4em;
     width: 1.4em;
+    cursor: pointer;
   }
 
   a {
     vertical-align: middle;
-    #theme-toggle {
-      text-decoration: none;
-      cursor: pointer;
-    }
   }
 
   // Common
