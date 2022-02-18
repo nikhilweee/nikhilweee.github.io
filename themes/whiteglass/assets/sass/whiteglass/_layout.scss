@@ -25,8 +25,13 @@
   float: right;
   line-height: 3rem;
 
-  a, svg {
-    vertical-align: middle;
+  #theme-toggle {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  a {
+    vertical-align: text-top;
   }
 
   .page-link {
