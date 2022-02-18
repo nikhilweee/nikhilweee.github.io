@@ -134,7 +134,7 @@ a {
  */
 blockquote {
   color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  border-left: 4px solid $grey-color;
   padding-left: $spacing-unit / 2;
 
   > :last-child {
@@ -155,7 +155,7 @@ hr {
   height: 1px;
   margin: $spacing-unit / 2 0;
   border: 0;
-  background-color: $grey-color-light;
+  background-color: $grey-color;
 }
 
 

@@ -140,7 +140,7 @@ p.post-list {
 
 .post-meta {
   font-size: $small-font-size;
-  color: $grey-color-dark;
+  color: $grey-color;
 }
 
 .post-link {
@@ -198,8 +198,8 @@ p.post-list {
 
 .post-content {
   margin-bottom: $spacing-unit;
-  border-top: 1px solid $grey-color-light;
-  border-bottom: 1px solid $grey-color-light;
+  border-top: 1px solid $grey-color;
+  border-bottom: 1px solid $grey-color;
   padding-top: $spacing-unit * 0.5;
   padding-bottom: $spacing-unit * 0.5;
 
@@ -241,8 +241,8 @@ p.post-list {
  */
 .pagination {
   padding: $spacing-unit / 2 0;
-  border-top: 1px solid $grey-color-light;
-  border-bottom: 1px solid $grey-color-light;
+  border-top: 1px solid $grey-color;
+  border-bottom: 1px solid $grey-color;
   text-align: center;
   @extend %clearfix;
 

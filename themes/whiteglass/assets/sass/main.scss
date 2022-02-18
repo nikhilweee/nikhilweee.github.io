@@ -23,10 +23,10 @@
   filter: invert(95%) hue-rotate(180deg);
 
   .post-content {
-    border-color: invert($grey-color-light);
+    border-color: invert($grey-color);
   }
 
-  pre, code, blockquote, .footnotes {
+  pre, code, blockquote, .footnotes .post-meta {
     filter: brightness(0.85);
   }
 
