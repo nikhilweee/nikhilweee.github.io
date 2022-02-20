@@ -16,7 +16,7 @@ title = 'Nikhil Verma'
 </div>
 {{< /rawhtml >}}
 
-Hi there! I'm a Computer Science Master's student at NYU's Courant Institute of Mathematical Sciences.
+Hi there! I'm a Computer Science Master's student at NYU's Courant Institute of Mathematical Sciences. I'm a part of the [CILVR](https://wp.nyu.edu/cilvr/) group, where I'm advised by [Prof. Lerrel Pinto](https://www.lerrelpinto.com/).
 
 Before NYU, I was a Deep Learning Engineer at [Flixstock](https://www.flixstock.com/), where I worked on GANs for photorealistic image editing.
 Previously, I was a Research Engineer at [IBM Research India](https://research.ibm.com/labs/india/) where I developed novel techniques for conversational question answering with [Danish Contractor](https://sites.google.com/site/danishcontractor1/home) and his team.
