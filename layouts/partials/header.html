@@ -1,7 +1,7 @@
 {{ "<!-- begin: layouts/partials/header.html -->" | safeHTML }}
 <header class="site-header">
     <div class="wrapper">
-        {{ if or (.IsHome) (eq .Section "resume") }}
+        {{ if not (hasPrefix .RelPermalink "/blog") }}
             <a class="site-title" href="/">{{ .Site.Author.name }}</a>
         {{ else }}
             <a class="site-title" href="/blog">{{ .Site.Title }}</a>

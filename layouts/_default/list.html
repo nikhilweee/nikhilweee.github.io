@@ -2,7 +2,9 @@
 {{"<!-- begin: layouts/_default/list.html -->" | safeHTML }}
 <div class="home">
 
-  <h1 class="page-heading">{{ .Title }}</h1><hr>
+  {{ with .Title }}
+    <h1 class="page-heading">{{ . }}</h1><hr>
+  {{ end }}
   <p>{{ .Content }}</p>
 
   <ul class="post-list">

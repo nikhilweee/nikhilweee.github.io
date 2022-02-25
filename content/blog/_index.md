@@ -1,4 +1,3 @@
 +++
-title = 'Recent Posts'
 
 +++

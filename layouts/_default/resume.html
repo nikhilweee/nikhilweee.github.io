@@ -2,11 +2,9 @@
 {{"<!-- begin: layouts/_default/resume.html -->" | safeHTML }}
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ .Title }}</h1>
-    <h2 class="post-subtitle" itemprop="abstract description">{{ .Params.subtitle }}</h2>
-    <p class="post-meta"></p>
-  </header>
+  {{ with .Title }}
+    <h1 class="page-heading">{{ . }}</h1>
+  {{ end }}
 
   <div class="post-content" itemprop="articleBody">
     {{ .Content }}

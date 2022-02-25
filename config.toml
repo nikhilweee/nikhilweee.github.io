@@ -27,6 +27,7 @@ paginate = 20
 [author]
   name = "Nikhil Verma"
   email = "nikhilweee@gmail.com"
+  url = "/"
 
 [markup]
   [markup.highlight]

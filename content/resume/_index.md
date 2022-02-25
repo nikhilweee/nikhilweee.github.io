@@ -1,7 +1,7 @@
 +++
 layout = 'resume'
 redirect_from = ['/files/', '/resume/view/', '/resume/download/', '/resume.pdf/', '/files/resume/', '/files/resume.pdf/']
-title = 'Résumé'
+title = 'Resume'
 
 +++
 
