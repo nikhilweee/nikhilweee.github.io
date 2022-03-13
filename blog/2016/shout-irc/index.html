@@ -1,73 +1,18 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Shout IRC! - weeeblog</title>
-<meta name=description content="If you’re reading this, there are high chances that you are under internet surveillance and your IT admin has blocked access to IRC. God! Why do they do this? IRC isn’t bad at all, you may argue. But unfortunately there’s no one to listen. Hush. You’ll have to find a way out, and here’s exactly how you can do it!
-I’ll be using one of the many benefits of having your own server in the cloud."><link rel=icon type=image/svg href=/static/favicon.png>
-<link rel=stylesheet href=/main.css>
-<link rel=canonical href=https://nikhilweee.me/blog/2016/shout-irc/>
-<link href=https://cdn.jsdelivr.net/npm/charter-webfont/charter.min.css rel=stylesheet>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css>
-</head>
-<body>
-<header class=site-header>
-<div class=wrapper>
-<a class=site-title href=/blog>weeeblog</a>
-<nav class=site-nav>
-<a id=theme-toggle class=page-link><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</a>
-<a class=page-link href=/blog/archives/>Archives</a>
-<a class=page-link href=/>About</a>
-</nav>
-</div>
-</header>
-<main class=page-content>
-<div class=wrapper>
-<article class=post itemscope itemtype=http://schema.org/BlogPosting>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">Shout IRC!</h1>
-<h2 class=post-subtitle itemprop="abstract description">Set up IRC on a blocked connection</h2>
-<p class=post-meta>
-<time datetime="2016-01-28 00:00:00 +0000 UTC" itemprop=datePublished>Jan 28, 2016</time>
-• <span itemprop=author itemscope itemtype=http://schema.org/Person>
-<a href=/><span itemprop=name>Nikhil Verma</span></a></span>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Shout IRC! - weeeblog</title><meta name=description content="If you’re reading this, there are high chances that you are under internet surveillance and your IT admin has blocked access to IRC. God! Why do they do this? IRC isn’t bad at all, you may argue. But unfortunately there’s no one to listen. Hush. You’ll have to find a way out, and here’s exactly how you can do it!
+I’ll be using one of the many benefits of having your own server in the cloud."><link rel=icon type=image/svg href=/static/favicon.png><link rel=stylesheet href=/main.css><link rel=canonical href=https://nikhilweee.me/blog/2016/shout-irc/><link href=https://cdn.jsdelivr.net/npm/charter-webfont/charter.min.css rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css></head><body><header class=site-header><div class=wrapper><a class=site-title href=/blog>weeeblog</a><nav class=site-nav><a id=theme-toggle class=page-link><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></a><a class=page-link href=/blog/archives/>Archives</a>
+<a class=page-link href=/>About</a></nav></div></header><main class=page-content><div class=wrapper><article class=post itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Shout IRC!</h1><h2 class=post-subtitle itemprop="abstract description">Set up IRC on a blocked connection</h2><p class=post-meta><time datetime="2016-01-28 00:00:00 +0000 UTC" itemprop=datePublished>Jan 28, 2016</time>
+• <span itemprop=author itemscope itemtype=http://schema.org/Person><a href=/><span itemprop=name>Nikhil Verma</span></a></span>
 •
-<a href=/blog/categories/tutorials/>Tutorials</a>
-</p>
-</header>
-<div class=post-content itemprop=articleBody>
-<p>If you&rsquo;re reading this, there are high chances that you are under internet surveillance and your IT admin has blocked access to IRC. God! Why do they do this? IRC isn&rsquo;t bad at all, you may argue. But unfortunately there&rsquo;s no one to listen. Hush. You&rsquo;ll have to find a way out, and here&rsquo;s exactly how you can do it!</p>
-<p>I&rsquo;ll be using one of the many benefits of <a href="https://www.digitalocean.com/?refcode=ad1b7e083b2e">having your own server</a> in the cloud. Sure it costs you, but $5 a month won&rsquo;t hurt your pockets! Added to this, the open source community is just awesome! It has tools for almost all your needs. Yes, it can help you get over IRC, and this blog is one of their many freebies. Thank you Open Source!</p>
-<p>So let&rsquo;s talk business. There&rsquo;s this tool called <a href=http://shout-irc.com/><strong>Shout IRC</strong></a> which has all what you need to get over your IRC block. And using it is as simple as logging in to your account! Exactly what you needed? Perfect!</p>
-<p>Although you can find instructions on how to use on their <a href=http://shout-irc.com/>website</a>, I&rsquo;ll cut it short. All you have to do is install a <code>node</code> module, and edit some configuration files. Simple.</p>
-<h3 id=1-installing>1. Installing</h3>
-<p>After you&rsquo;ve logged in to your server,</p>
-<pre tabindex=0><code>$ npm install -g shout
+<a href=/blog/categories/tutorials/>Tutorials</a></p></header><div class=post-content itemprop=articleBody><p>If you&rsquo;re reading this, there are high chances that you are under internet surveillance and your IT admin has blocked access to IRC. God! Why do they do this? IRC isn&rsquo;t bad at all, you may argue. But unfortunately there&rsquo;s no one to listen. Hush. You&rsquo;ll have to find a way out, and here&rsquo;s exactly how you can do it!</p><p>I&rsquo;ll be using one of the many benefits of <a href="https://www.digitalocean.com/?refcode=ad1b7e083b2e">having your own server</a> in the cloud. Sure it costs you, but $5 a month won&rsquo;t hurt your pockets! Added to this, the open source community is just awesome! It has tools for almost all your needs. Yes, it can help you get over IRC, and this blog is one of their many freebies. Thank you Open Source!</p><p>So let&rsquo;s talk business. There&rsquo;s this tool called <a href=http://shout-irc.com/><strong>Shout IRC</strong></a> which has all what you need to get over your IRC block. And using it is as simple as logging in to your account! Exactly what you needed? Perfect!</p><p>Although you can find instructions on how to use on their <a href=http://shout-irc.com/>website</a>, I&rsquo;ll cut it short. All you have to do is install a <code>node</code> module, and edit some configuration files. Simple.</p><h3 id=1-installing>1. Installing</h3><p>After you&rsquo;ve logged in to your server,</p><pre tabindex=0><code>$ npm install -g shout
 </code></pre><p>is what you do to install shout. That&rsquo;s it.
-However, if you don&rsquo;t have <code>node</code> or <code>npm</code> installed on your Ubuntu based server, just run this</p>
-<pre tabindex=0><code>$ sudo apt-get install nodejs npm
+However, if you don&rsquo;t have <code>node</code> or <code>npm</code> installed on your Ubuntu based server, just run this</p><pre tabindex=0><code>$ sudo apt-get install nodejs npm
 $ sudo npm install -g npm
-$ sudo ln -s &quot;$(which nodejs)&quot; /usr/bin/node
-</code></pre><h3 id=2-configuring-shout>2. Configuring Shout</h3>
-<p>Doing it the easy way, just open up the configuration file. All you have to do is</p>
-<pre tabindex=0><code>$ shout config
-</code></pre><ul>
-<li>The <code>public</code> setting gives you the option of allowing public access or restricted access using a username and password. Set it to <code>false</code> if you want user based access.</li>
-<li>Next, the <code>host</code> and <code>port</code> settings are pretty much self explanatory. I&rsquo;ll be using shout behind an nginx proxy, so set the host to <code>127.0.0.1</code> and the port to whatever you like, say <code>7468</code>.</li>
-</ul>
-<p>You may change additional settings, but that is not required for now.</p>
-<h4 id=adding-users>Adding users</h4>
-<p>If you&rsquo;ve set <code>public</code> to <code>false</code>, you are required to add users to shout. To create a user named &lsquo;Nikhil&rsquo;, just run</p>
-<pre tabindex=0><code>$ shout add nikhil password
-</code></pre><p>With of course, your desired password, and the user with username <code>nikhil</code> is created.</p>
-<h3 id=3-configuring-nginx>3. Configuring Nginx</h3>
-<p>It&rsquo;s pretty likely that you also have other sites hosted on your server and so I&rsquo;ll be using nginx which is pretty robust for this task. If you&rsquo;re familiar with this, you know what to do.
-Create a new configuration for your site.</p>
-<pre tabindex=0><code>$ sudo nano /etc/nginx/sites-available/irc
-</code></pre><p>And run Shout IRC behind a proxy</p>
-<pre tabindex=0><code>server {
+$ sudo ln -s &#34;$(which nodejs)&#34; /usr/bin/node
+</code></pre><h3 id=2-configuring-shout>2. Configuring Shout</h3><p>Doing it the easy way, just open up the configuration file. All you have to do is</p><pre tabindex=0><code>$ shout config
+</code></pre><ul><li>The <code>public</code> setting gives you the option of allowing public access or restricted access using a username and password. Set it to <code>false</code> if you want user based access.</li><li>Next, the <code>host</code> and <code>port</code> settings are pretty much self explanatory. I&rsquo;ll be using shout behind an nginx proxy, so set the host to <code>127.0.0.1</code> and the port to whatever you like, say <code>7468</code>.</li></ul><p>You may change additional settings, but that is not required for now.</p><h4 id=adding-users>Adding users</h4><p>If you&rsquo;ve set <code>public</code> to <code>false</code>, you are required to add users to shout. To create a user named &lsquo;Nikhil&rsquo;, just run</p><pre tabindex=0><code>$ shout add nikhil password
+</code></pre><p>With of course, your desired password, and the user with username <code>nikhil</code> is created.</p><h3 id=3-configuring-nginx>3. Configuring Nginx</h3><p>It&rsquo;s pretty likely that you also have other sites hosted on your server and so I&rsquo;ll be using nginx which is pretty robust for this task. If you&rsquo;re familiar with this, you know what to do.
+Create a new configuration for your site.</p><pre tabindex=0><code>$ sudo nano /etc/nginx/sites-available/irc
+</code></pre><p>And run Shout IRC behind a proxy</p><pre tabindex=0><code>server {
     listen 80;
     server_name &lt;YOUR SITE ADDRESS&gt;;
     location / {
@@ -77,47 +22,19 @@ Create a new configuration for your site.</p>
     }
 }
 </code></pre><p>Replace <code>YOUR SITE ADDRESS</code> with the url you intend to use.
-Then, enable the site by creating a symlink</p>
-<pre tabindex=0><code>$ sudo ln -s /etc/nginx/sites-available/irc /etc/nginx/sites-enabled/irc
-</code></pre><p>Now, just restart your server</p>
-<pre tabindex=0><code>$ sudo service nginx restart
-</code></pre><p>No. Shout isn&rsquo;t live yet, in case you were exited.</p>
-<h3 id=4-withstanding-restarts>4. Withstanding restarts</h3>
-<p>It may happen that for some reason your shout service gets stopped, such as in a server restart. That&rsquo;s bad. So, I&rsquo;ll use <code>supervisor</code> to manage Shout on my server. It&rsquo;ll start shout automatically in case it gets shut down on the server. That way it&rsquo;ll even withstand server restarts. If you have more than one service set up on your server, such as another blog or website, supervisor makes managing all of them pretty easy.</p>
-<p>First, install supervisor in case you haven&rsquo;t.</p>
-<pre tabindex=0><code>$ sudo apt-get install supervisor
-</code></pre><p>Next, create a config file for shout, just as you did for nginx</p>
-<pre tabindex=0><code>$ sudo nano /etc/supervisor/conf.d/ghost.conf
+Then, enable the site by creating a symlink</p><pre tabindex=0><code>$ sudo ln -s /etc/nginx/sites-available/irc /etc/nginx/sites-enabled/irc
+</code></pre><p>Now, just restart your server</p><pre tabindex=0><code>$ sudo service nginx restart
+</code></pre><p>No. Shout isn&rsquo;t live yet, in case you were exited.</p><h3 id=4-withstanding-restarts>4. Withstanding restarts</h3><p>It may happen that for some reason your shout service gets stopped, such as in a server restart. That&rsquo;s bad. So, I&rsquo;ll use <code>supervisor</code> to manage Shout on my server. It&rsquo;ll start shout automatically in case it gets shut down on the server. That way it&rsquo;ll even withstand server restarts. If you have more than one service set up on your server, such as another blog or website, supervisor makes managing all of them pretty easy.</p><p>First, install supervisor in case you haven&rsquo;t.</p><pre tabindex=0><code>$ sudo apt-get install supervisor
+</code></pre><p>Next, create a config file for shout, just as you did for nginx</p><pre tabindex=0><code>$ sudo nano /etc/supervisor/conf.d/ghost.conf
 </code></pre><p>Now edit the file to create an autostart process so that your blog remains stable.
-<code>user</code> should be an existing user on the system. Better to use a dedicated user with restricted access as a safety measure</p>
-<pre tabindex=0><code>[program:shout]
+<code>user</code> should be an existing user on the system. Better to use a dedicated user with restricted access as a safety measure</p><pre tabindex=0><code>[program:shout]
 command = shout start
 user = server
 autostart = true
 autorestart = true
 stdout_logfile = /var/log/supervisor/shout.log
 stderr_logfile = /var/log/supervisor/shout_err.log
-</code></pre><p>Save it, and you&rsquo;re just a restart away!</p>
-<pre tabindex=0><code>$ sudo supervisorctl reread
+</code></pre><p>Save it, and you&rsquo;re just a restart away!</p><pre tabindex=0><code>$ sudo supervisorctl reread
 $ sudo supervisorctl update
 $ sudo supervisorctl restart shout
-</code></pre><p>And you should have your own personal web IRC client ready! No more restrictions! Yay!</p>
-<p>Queries? Suggestions? Feedback? Feel free to comment below!</p>
-</div>
-<div id=disqus_thread></div>
-<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//nikhilweee.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
-<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
-<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
-</article>
-</div>
-</main>
-<footer class=site-footer>
-<div class=wrapper>
-<p>
-&copy; 2022 <a href=/>Nikhil Verma</a> • Subscribe via <a href=/feed.xml>RSS</a>
-</p>
-</div>
-</footer>
-</body>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark'),document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</html>
+</code></pre><p>And you should have your own personal web IRC client ready! No more restrictions! Yay!</p><p>Queries? Suggestions? Feedback? Feel free to comment below!</p></div><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//nikhilweee.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article></div></main><footer class=site-footer><div class=wrapper><p>&copy; 2022 <a href=/>Nikhil Verma</a> • Subscribe via <a href=/feed.xml>RSS</a></p></div></footer></body><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark"),document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></html>
