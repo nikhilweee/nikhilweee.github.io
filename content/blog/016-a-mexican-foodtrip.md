@@ -9,9 +9,9 @@ slug = "mexico-yucatecan-foodtrip"
 
 > Disclaimer: All recommendations made in the blog are solely based on personal experiences. There are no affiliate links, and I earn absolutely nothing should you choose to click on any of the links mentioned in this blog. 🧭 are Google Maps locations, and 🌎 are external websites.
 
-[Shavak](https://www.linkedin.com/in/shavaka/) and I had been planning to meet all winter. It was turning out to be difficult because he was working out of Vancouver and I was studying in New York, and neither of us had visas to the other country. A week before the New Year, he calls me up. "Bro, let's go to Mexico!?" he said. 
+[Shavak](https://www.linkedin.com/in/shavaka/) and I had been planning to meet all winter. It was turning out to be difficult because he was working out of Vancouver and I was studying in New York. Neither of us had visas to the other country. A week before the New Year, he calls me up. "Bro, let's go to Mexico!?" he said. 
 
-You see, that wasn't an issue because Mexico doesn't require any additional visa if you already have a valid US or Canadian visa. Me being me, without thinking too much, I answered "Sure, let's go!". And that's where the fun ended. Neither of us had never been to an international vacation before. So in the two weeks before our departure, we had to plan *everything*. 
+You see, Mexico doesn't require any additional visa if you already have a valid US or Canadian visa, so that wasn't going to be an issue. Me being me, without thinking too much, I answered "Sure, let's go!". And that's where the fun ended. Neither of us had never been to an international vacation before. So in the two weeks before our departure, we had to plan *everything*. 
 
 Now that we're back from our trip, in hindsight, it feels like we managed to accomplish a lot despite our constraints. So to save you from all the trouble that we had to go through, this blog is a documentation of the logistics of our trip. Our trip was centred around two primary objectives: a *roadtrip*, because I love them; and *food*, because that's Shavak's forte.
 

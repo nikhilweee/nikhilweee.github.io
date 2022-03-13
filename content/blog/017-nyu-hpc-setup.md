@@ -161,7 +161,7 @@ $ shist
 ```
 
 ## 3. View output from your job
-These functions let you conveniently see the outputs for a given JOBID.
+These functions let you conveniently see the outputs for a given JOBID. For some reason they only work if the job is still running, so unfortunately you can't use them for completed jobs.
 ```bash
 # ~/.bash_aliases
 
@@ -184,6 +184,21 @@ $ tailslog 14879278
 # contents of /home/abc1234/projects/sbatch/slurm-14879246.out
 archive  boot  etc   home  lib64  misc  net  proc  run   scratch  srv    sys  usr  vast
 bin      dev   gpfs  lib   media  mnt   opt  root  sbin  share    state  tmp  var
+```
+
+# Troubleshooting
+## 1. Singularity can't open ext3 overlay for writing
+
+If you were actively using a Singularity with an ext3 overlay, and for some reason you didn't exit cleanly (maybe slurm preempted your job), you may run into issues. The next time you try using Singularity, you might get this error complaining that your overlay file is still in use: 
+```
+FATAL:
+while loading overlay images: failed to open overlay image /path/to/overlay.ext3: 
+    while locking ext3 partition from /path/to/overlay.ext3: 
+        can't open //path/to/overlay.ext3 for writing, currently in use by another process
+```
+If you're sure that your overlay file is clean to use, you can run `fsck` and clean the dirty bit. For more info see [this github issue](https://github.com/apptainer/singularity/issues/6196) on the singularity repo.
+```
+$ fsck.ext3 /path/to/overlay.ext3
 ```
 
 Hope this helps!

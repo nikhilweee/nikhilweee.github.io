@@ -25,19 +25,6 @@ I got the opportunity to pursue my bachelor's thesis as a Research Intern at [Mi
 
 I graduated from [BITS Pilani](https://www.bits-pilani.ac.in/) with a B.E. (Hons) in Electrical and Electronics Engineering. For more information, feel free to reach out to me using any of the social platforms. _Links are right below that beautiful smile :)_
 
-## Affiliations
----
-{{<centerwrap>}}
-{{<affiliation img="https://i.imgur.com/mcSg2hB.png" href="https://www.bits-pilani.ac.in/" 
-               name="BITS Pilani" desc="2014-2018">}}
-{{<affiliation img="https://i.imgur.com/lkzx6nW.jpg" href="https://www.microsoft.com/en-us/research/" 
-               name="Microsoft Research" desc="Spring 2018">}}
-{{<affiliation img="https://i.imgur.com/RmexH3t.png" href="https://research.ibm.com/" 
-               name="IBM Research" desc="2018-2020">}}
-{{<affiliation img="https://i.imgur.com/ufM9VhW.png" href="https://www.nyu.edu/" 
-               name="New York University" desc="2021-Present">}}
-{{</centerwrap>}}
-
 
 ## Publications
 ---
@@ -51,9 +38,21 @@ I graduated from [BITS Pilani](https://www.bits-pilani.ac.in/) with a B.E. (Hons
            desc="Patent filed with the US Patent and Trademark Office"
            right="[[US 16/892805]](https://patents.google.com/patent/US20210383077A1/en)">}}
 
-
 ## Open Source
 ---
 {{<cventry title="SHIS: Simple HTTP Image Server"
            desc="A drop-in replacement for `python -m http.server`, albeit for images."
            right="[[GitHub]](https://github.com/nikhilweee/shis)">}}
+
+## Affiliations
+---
+{{<centerwrap>}}
+{{<affiliation img="https://i.imgur.com/mcSg2hB.png" href="https://www.bits-pilani.ac.in/" 
+               name="BITS Pilani" desc="2014-2018">}}
+{{<affiliation img="https://i.imgur.com/lkzx6nW.jpg" href="https://www.microsoft.com/en-us/research/" 
+               name="Microsoft Research" desc="Spring 2018">}}
+{{<affiliation img="https://i.imgur.com/RmexH3t.png" href="https://research.ibm.com/" 
+               name="IBM Research" desc="2018-2020">}}
+{{<affiliation img="https://i.imgur.com/ufM9VhW.png" href="https://www.nyu.edu/" 
+               name="New York University" desc="2021-Present">}}
+{{</centerwrap>}}
