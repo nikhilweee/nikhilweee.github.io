@@ -4,11 +4,16 @@
     {{ partial "head" . }}
     <body>
         {{ partial "header" . }}
-        <main class="page-content">
+        <main class="page-content flex-parent">
+            <div class="sidebar">
+            </div>
             <div class="wrapper">
                 {{- block "main" . -}}
                     {{- .Content -}}
                 {{- end -}}
+            </div>
+            <div class="sidebar">
+                {{ partial "sidebar" . }}
             </div>
         </main>
         {{ partial "footer" . }}

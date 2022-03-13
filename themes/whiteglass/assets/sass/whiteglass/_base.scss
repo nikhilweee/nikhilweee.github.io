@@ -11,6 +11,8 @@ dl, dd, ol, ul, figure {
 * { 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  // This is needed so that pre doesn't overflow past flex.
+  min-width: 0;
 }
 
 
@@ -19,6 +21,7 @@ dl, dd, ol, ul, figure {
  */
 html {
   // Define font sizes here for `rem` to work
+  scroll-behavior: smooth;
   font-size: $base-font-size;
   @include media-query($on-laptop) {
     font-size: 0.9em;
@@ -42,6 +45,7 @@ table {
   text-align: left;
 }
 
+
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -53,7 +57,6 @@ ul, ol, dl, figure,
 }
 
 
-
 /**
  * Images
  */
@@ -61,7 +64,6 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-
 
 
 /**
@@ -80,7 +82,6 @@ figure > figcaption {
 }
 
 
-
 /**
  * Lists
  */
@@ -96,7 +97,6 @@ li {
 }
 
 
-
 /**
  * Headings
  */
@@ -107,7 +107,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
   }
 }
-
 
 
 /**
@@ -128,7 +127,6 @@ a {
 }
 
 
-
 /**
  * Blockquotes
  */
@@ -147,7 +145,6 @@ blockquote {
 }
 
 
-
 /**
  * Rules
  */
@@ -157,7 +154,6 @@ hr {
   border: 0;
   background-color: $grey-color;
 }
-
 
 
 /**
@@ -181,8 +177,7 @@ code {
 
 pre {
   padding: 8px 12px;
-  overflow-x: auto;
-  word-wrap: normal;
+  overflow: scroll;
 
   > code {
     border: 0;
@@ -191,7 +186,6 @@ pre {
     background-color: transparent;
   }
 }
-
 
 
 /**
@@ -205,15 +199,7 @@ pre {
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
   @extend %clearfix;
-
-  @include media-query($on-laptop) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-  }
 }
-
 
 
 /**
@@ -224,7 +210,6 @@ pre {
   display: table;
   clear: both;
 }
-
 
 
 /**

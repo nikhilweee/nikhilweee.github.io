@@ -1,0 +1,5 @@
+<aside class="sidebar-toc">
+    {{ if and (eq .Section "blog" ) (.IsPage) (not (eq .Params.toc false)) }}
+        {{.TableOfContents}}
+    {{ end }}
+</aside>

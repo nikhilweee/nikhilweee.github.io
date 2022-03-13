@@ -1,13 +1,6 @@
 /**
  * Site header
  */
-.site-header {
-  min-height: 56px;
-
-  // Positioning context for the mobile navigation icon
-  position: relative;
-}
-
 .site-title {
   font-size: 1.5em;
   font-weight: 300;
@@ -61,6 +54,7 @@
   }
 }
 
+
 /**
  * Site footer
  */
@@ -70,6 +64,7 @@
   color: $grey-color;
   text-align: center;
 }
+
 
 /**
  * Index
@@ -98,6 +93,27 @@
 .page-heading {
   font-size: 1.5em;
 }
+
+
+/**
+ * Sidebar
+ */
+.sidebar {
+  flex: 1 0 0;
+  @include media-query($on-laptop) {
+    display: none;
+  }
+}
+
+.wrapper {
+  width: 80%;
+  flex: 3 0 0;
+}
+
+.flex-parent{
+  display: flex;
+ }
+
 
 /**
  * Page content
@@ -172,11 +188,32 @@ p.post-list {
   }
 }
 
-.toc {
-  padding: 1em;
-  margin-bottom: 1em;
-  background-color: $background-gray;
+
+/**
+ * Table of Contents
+ */
+.post-toc {
+  padding: 1em 0;
+  display: none;
+  @include media-query($on-laptop) {
+    display: block;
+  }
 }
+
+.sidebar-toc {
+  position: sticky;
+  align-self: start;
+  top: 1em;
+  font-size: 0.8em;
+  margin-top: 10em;
+  ul, li {
+    margin-left: 0.5em;
+  }
+  @include media-query($on-laptop) {
+    display: none;
+  }
+}
+
 
 /**
  * Posts
@@ -227,14 +264,8 @@ p.post-list {
   h4 {
     font-weight: bold;
   }
-
-  // h4 {
-  //   font-size: 1.2rem;
-  //   @include media-query($on-laptop) {
-  //     font-size: 1.1rem;
-  //   }
-  // }
 }
+
 
 /**
  * Pagination

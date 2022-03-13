@@ -6,6 +6,7 @@
  * Home Page
  */
 
+
 /**
  * Debug
  */
@@ -14,10 +15,10 @@
 //   outline:1px $grey-color dashed;
 // }
 
+
 /**
  * Dark Mode
  */
-
 .dark {
   background-color: darken($background-white, 90%);
   filter: invert(95%) hue-rotate(180deg);
@@ -43,10 +44,10 @@ body:not(.dark) #sun {
   display: none;
 }
 
+
 /**
  * Posts
  */
-
 .footnotes {
   font-size: 0.8em;
   color: $grey-color;
@@ -69,6 +70,7 @@ sub {
   top: 0.4em;
 }
 
+
 /**
  * Display
  */
@@ -88,20 +90,25 @@ sub {
   min-height: calc(100vh - 180px);
 }
 
+
 /**
  * About
  */
 .profile-image {
   border-radius: 50%;
   max-width: 90%;
+  min-width: 200px;
+  margin-bottom: 1em;
   @include media-query($on-palm) {
-    max-width: 70%;
+    max-width: 80%;
   }
 }
 
 .profile-links {
-  padding: 2em 2em;
-  // font-size: 0.875em;
+  padding-top: 0.5em;
+  a {
+    padding: 0.2em;
+  }
 }
 
 .profile-div {
@@ -112,6 +119,7 @@ sub {
     max-width: 100%;
   }
 }
+
 
 /**
  * Pagination

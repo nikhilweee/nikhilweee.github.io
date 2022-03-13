@@ -1,5 +1,6 @@
 {{ "<!-- begin: layouts/partials/header.html -->" | safeHTML }}
-<header class="site-header">
+<header class="site-header flex-parent">
+    <div class="sidebar"></div>
     <div class="wrapper">
         {{ if not (hasPrefix .RelPermalink "/blog") }}
             <a class="site-title" href="/">{{ .Site.Author.name }}</a>
@@ -33,8 +34,7 @@
             <a class="page-link" href="/">About</a>
         {{ end }}
         </nav>
-
-
     </div>
+    <div class="sidebar"></div>
 </header>
 {{ "<!-- end: layouts/partials/header.html -->" | safeHTML }}

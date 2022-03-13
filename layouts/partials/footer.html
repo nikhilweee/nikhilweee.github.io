@@ -1,9 +1,11 @@
 {{ "<!-- begin: layouts/partials/footer.html -->" | safeHTML }}
-<footer class="site-footer">
+<footer class="site-footer flex-parent">
+    <div class="sidebar"></div>
     <div class="wrapper">
         <p>
             &copy; {{ now.Year }} <a href="{{ .Site.Author.url }}">{{ .Site.Author.name }}</a> • Subscribe via <a href="/feed.xml">RSS</a>
         </p>
     </div>
+    <div class="sidebar"></div>
 </footer>
 {{ "<!-- end: layouts/partials/footer.html -->" | safeHTML }}
