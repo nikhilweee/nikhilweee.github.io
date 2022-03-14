@@ -62,7 +62,7 @@ Host cims
     User abc1234
 ```
 
-Lines 8-11 describe the `login` node, and lines 3-6 describe the `compute` nodes. So now whenever you type `ssh linserv1`, you will first login to `cims` (`access.cims.nyu.edu`), and upon successful authentication, you will automatically SSH into `linserv1`. You can setup Greene in the same way.
+Lines 7-9 describe the `login` node, and lines 3-5 describe the `compute` nodes. So now whenever you type `ssh linserv1`, you will first login to `cims` (`access.cims.nyu.edu`), and upon successful authentication, you will automatically SSH into `linserv1`. You can setup Greene in the same way.
 
 ```bash {hl_lines=[5]}
 # ~/.ssh/config
