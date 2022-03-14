@@ -3,179 +3,179 @@ Outline  First things first  1. Passwordless SSH 2. Set up SSH aliases   A few s
 <a class=page-link href=/>About</a></nav></div><div class=sidebar></div></header><main class="page-content flex-parent"><div class=sidebar></div><div class=wrapper><article class=post itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Speed up your remote workflow</h1><h2 class=post-subtitle itemprop="abstract description">using SLURM on NYU's HPC cluster</h2><p class=post-meta><time datetime="2022-02-13 00:00:00 +0000 UTC" itemprop=datePublished>Feb 13, 2022</time>
 • <span itemprop=author itemscope itemtype=http://schema.org/Person><a href=/><span itemprop=name>Nikhil Verma</span></a></span>
 •
-<a href=/blog/categories/tutorials/>Tutorials</a></p></header><div class=post-content itemprop=articleBody><p>Although NYU already a dedicated <a href=https://sites.google.com/nyu.edu/nyu-hpc>website</a> with all the documentation to get started with the HPC cluster, here&rsquo;s a set of tricks that I use to ease up the workflow by a significant amount.</p><div class=post-toc><h3>Outline</h3><nav id=TableOfContents><ul><li><a href=#first-things-first>First things first</a><ul><li><a href=#1-passwordless-ssh>1. Passwordless SSH</a></li><li><a href=#2-set-up-ssh-aliases>2. Set up SSH aliases</a></li></ul></li><li><a href=#a-few-simple-tricks>A few simple tricks</a><ul><li><a href=#1-login-directly-into-compute-nodes>1. Login directly into compute nodes</a></li><li><a href=#2-use-local-ssh-keys>2. Use local SSH keys</a></li></ul></li><li><a href=#some-slurm-aliases>Some SLURM aliases</a><ul><li><a href=#1-common-aliases>1. Common aliases</a></li><li><a href=#2-view-your-job-queue>2. View your job queue</a></li><li><a href=#3-view-output-from-your-job>3. View output from your job</a></li></ul></li><li><a href=#troubleshooting>Troubleshooting</a><ul><li><a href=#1-singularity-cant-open-ext3-overlay-for-writing>1. Singularity can&rsquo;t open ext3 overlay for writing</a></li></ul></li></ul></nav></div><h1 id=first-things-first>First things first</h1><p>Here&rsquo;s something that I recommend doing for any remote server that you&rsquo;ll access frequently.</p><h2 id=1-passwordless-ssh>1. Passwordless SSH</h2><p>If you haven&rsquo;t done so yet, you should definitely add your ssh keys to the cluster to avoid typing in your password whenever you want to login. Replace <code>abc1234</code> with your NetID.</p><div class=highlight><div style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ssh-copy-id abc1234@greene.hpc.nyu.edu
-</span></span><span style=display:flex><span>...
-</span></span><span style=display:flex><span>$ ssh-copy-id abc1234@access.cims.nyu.edu
-</span></span><span style=display:flex><span>...
-</span></span></code></pre></td></tr></table></div></div><h2 id=2-set-up-ssh-aliases>2. Set up SSH aliases</h2><p>Keying in <code>ssh abc1234@greene.hpc.nyu.edu</code> or <code>ssh abc1234@access.cims.nyu.edu</code> is so long and so old school when you can just get away with something like <code>ssh greene</code> or <code>ssh cims</code>. You should definitely set up an alias instead. Edit <code>~/.ssh/config</code> in your favourite text editor:</p><div class=highlight><div style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># ~/.ssh/config</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># NYU Greene</span>
-</span></span><span style=display:flex><span>Host greene
-</span></span><span style=display:flex><span>    Hostname greene.hpc.nyu.edu
-</span></span><span style=display:flex><span>    User abc1234
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># NYU CIMS</span>
-</span></span><span style=display:flex><span>Host cims
-</span></span><span style=display:flex><span>    Hostname access.cims.nyu.edu
-</span></span><span style=display:flex><span>    User abc1234
+<a href=/blog/categories/tutorials/>Tutorials</a></p></header><div class=post-content itemprop=articleBody><p>Although NYU already a dedicated <a href=https://sites.google.com/nyu.edu/nyu-hpc>website</a> with all the documentation to get started with the HPC cluster, here&rsquo;s a set of tricks that I use to ease up the workflow by a significant amount.</p><div class=post-toc><h3>Outline</h3><nav id=TableOfContents><ul><li><a href=#first-things-first>First things first</a><ul><li><a href=#1-passwordless-ssh>1. Passwordless SSH</a></li><li><a href=#2-set-up-ssh-aliases>2. Set up SSH aliases</a></li></ul></li><li><a href=#a-few-simple-tricks>A few simple tricks</a><ul><li><a href=#1-login-directly-into-compute-nodes>1. Login directly into compute nodes</a></li><li><a href=#2-use-local-ssh-keys>2. Use local SSH keys</a></li></ul></li><li><a href=#some-slurm-aliases>Some SLURM aliases</a><ul><li><a href=#1-common-aliases>1. Common aliases</a></li><li><a href=#2-view-your-job-queue>2. View your job queue</a></li><li><a href=#3-view-output-from-your-job>3. View output from your job</a></li></ul></li><li><a href=#troubleshooting>Troubleshooting</a><ul><li><a href=#1-singularity-cant-open-ext3-overlay-for-writing>1. Singularity can&rsquo;t open ext3 overlay for writing</a></li></ul></li></ul></nav></div><h1 id=first-things-first>First things first</h1><p>Here&rsquo;s something that I recommend doing for any remote server that you&rsquo;ll access frequently.</p><h2 id=1-passwordless-ssh>1. Passwordless SSH</h2><p>If you haven&rsquo;t done so yet, you should definitely add your ssh keys to the cluster to avoid typing in your password whenever you want to login. Replace <code>abc1234</code> with your NetID.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ ssh-copy-id abc1234@greene.hpc.nyu.edu
+</span></span><span class=line><span class=cl>...
+</span></span><span class=line><span class=cl>$ ssh-copy-id abc1234@access.cims.nyu.edu
+</span></span><span class=line><span class=cl>...
+</span></span></code></pre></td></tr></table></div></div><h2 id=2-set-up-ssh-aliases>2. Set up SSH aliases</h2><p>Keying in <code>ssh abc1234@greene.hpc.nyu.edu</code> or <code>ssh abc1234@access.cims.nyu.edu</code> is so long and so old school when you can just get away with something like <code>ssh greene</code> or <code>ssh cims</code>. You should definitely set up an alias instead. Edit <code>~/.ssh/config</code> in your favourite text editor:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
+</span></span><span class=line><span class=cl><span class=c1># NYU Greene</span>
+</span></span><span class=line><span class=cl>Host greene
+</span></span><span class=line><span class=cl>    Hostname greene.hpc.nyu.edu
+</span></span><span class=line><span class=cl>    User abc1234
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># NYU CIMS</span>
+</span></span><span class=line><span class=cl>Host cims
+</span></span><span class=line><span class=cl>    Hostname access.cims.nyu.edu
+</span></span><span class=line><span class=cl>    User abc1234
 </span></span></code></pre></td></tr></table></div></div><h1 id=a-few-simple-tricks>A few simple tricks</h1><p>These are a few hacks which should greatly simplify the overhead of using the cluster.</p><h2 id=1-login-directly-into-compute-nodes>1. Login directly into compute nodes</h2><p>Often times, you wish you could directly access the compute nodes (such as <code>linserv1</code>) without having to first SSH into <code>access.cims.nyu.edu</code>.
-Here&rsquo;s how you can use the <code>ProxyJump</code> directive.</p><div class=highlight><div style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style=background-color:#e1e1e1><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span></span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># ~/.ssh/config</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># NYU CIMS</span>
-</span></span><span style=display:flex><span>Host access1 access2 linserv1
-</span></span><span style=display:flex><span>    User abc1234
-</span></span><span style=display:flex;background-color:#e1e1e1><span>    ProxyJump cims
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Host cims
-</span></span><span style=display:flex><span>    Hostname access.cims.nyu.edu
-</span></span><span style=display:flex><span>    User abc1234
-</span></span></code></pre></td></tr></table></div></div><p>Lines 7-9 describe the <code>login</code> node, and lines 3-5 describe the <code>compute</code> nodes. So now whenever you type <code>ssh linserv1</code>, you will first login to <code>cims</code> (<code>access.cims.nyu.edu</code>), and upon successful authentication, you will automatically SSH into <code>linserv1</code>. You can setup Greene in the same way.</p><div class=highlight><div style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style=background-color:#e1e1e1><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span></span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># ~/.ssh/config</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># NYU Greene</span>
-</span></span><span style=display:flex><span>Host log-1 log-2 log-3 log-4 log-5
-</span></span><span style=display:flex><span>    User abc1234
-</span></span><span style=display:flex;background-color:#e1e1e1><span>    ProxyJump greene
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Host greene
-</span></span><span style=display:flex><span>    Hostname greene.hpc.nyu.edu
-</span></span><span style=display:flex><span>    User abc1234
-</span></span></code></pre></td></tr></table></div></div><p>This setup is particularly helpful because whenever you SSH into <code>greene.hpc.nyu.edu</code>, you are randomly taken to one of the login nodes. Now let&rsquo;s say if you had <code>tmux</code> running on <code>log-3</code> and you lose connectivity. The next time you login, you might be taken into <code>log-4</code>. You type <code>tmux ls</code> and it complains about no open sessions. You&rsquo;re flabbergasted because you clearly remember running <code>tmux</code> a moment ago. Sadly, you didn&rsquo;t remember the hostname.</p><p>With this setup, you can try making a habit of always logging in to one particular node, say <code>ssh log-3</code>, and now you don&rsquo;t have to worry about remembering hostnames anymore.</p><h2 id=2-use-local-ssh-keys>2. Use local SSH keys</h2><p>Did you ever get annoyed when you tried to use <code>git clone</code> on one of the private repositories and you suddenly notice GitHub throwing an error? You may have added your local SSH keys to GitHub to for secure authentication but as you can imagine, GitHub does not recognise the keys from the cluster. The way around it is to use the <code>ForwardAgent</code> directive.</p><div class=highlight><div style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style=background-color:#e1e1e1><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span></span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style=background-color:#e1e1e1><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span></span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># ~/.ssh/config</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># NYU CIMS</span>
-</span></span><span style=display:flex><span>Host access1 access2 linserv1
-</span></span><span style=display:flex><span>    User abc1234
-</span></span><span style=display:flex;background-color:#e1e1e1><span>    ForwardAgent yes
-</span></span><span style=display:flex><span>    ProxyJump cims
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Host cims
-</span></span><span style=display:flex><span>    Hostname access.cims.nyu.edu
-</span></span><span style=display:flex><span>    User abc1234
-</span></span><span style=display:flex;background-color:#e1e1e1><span>    ForwardAgent yes
-</span></span></code></pre></td></tr></table></div></div><p>This way, you can <em>forward</em> your local SSH keys to the cluster, and GitHub (or any other service) will receive your local keys so they&rsquo;ll stop complaining anymore. Just one more step before this works: make sure that your local keys are added to <code>ssh-agent</code>. Use the following commands:</p><div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ssh-add -l
-</span></span><span style=display:flex><span>The agent has no identities.
-</span></span><span style=display:flex><span><span style=color:#75715e># ssh-agent has no keys</span>
-</span></span><span style=display:flex><span>$ ssh-add
-</span></span><span style=display:flex><span>Identity added: /Users/nikhil/.ssh/id_rsa <span style=color:#f92672>(</span>nikhil-macbook<span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># add local keys to ssh-agent</span>
-</span></span><span style=display:flex><span>$ ssh-add -l
-</span></span><span style=display:flex><span><span style=color:#ae81ff>3072</span> SHA256:abcdefghijklmnopqrstuvwxyz nikhil-macbook <span style=color:#f92672>(</span>RSA<span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># verify that keys have been successfully added</span>
-</span></span></code></pre></div><h1 id=some-slurm-aliases>Some SLURM aliases</h1><p>If you&rsquo;re using Greene on a regular basis, chances are that you will need to use a few of the SLURM commands to check and manage your jobs. Here&rsquo;s a few aliases that I created, they should be handy for you too. Once logged into the cluster, add the following lines to <code>~/.bash_aliases</code>. Make sure to <code>source ~/.bashrc</code> every time you make a change for the aliases to take effect.</p><h2 id=1-common-aliases>1. Common aliases</h2><p>I often run an interactive job while debugging code. Here are some shortcuts that I use.</p><div class=highlight><div style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># ~/.bash_aliases</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Slurm Job Aliases</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># cpu job for 6 hours</span>
-</span></span><span style=display:flex><span><span style=color:#111>alias</span> <span style=color:#111>srunc6h</span><span style=color:#f92672>=</span><span style=color:#d88200>&#39;srun --mem=64GB --time=6:00:00 --pty /bin/bash&#39;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># gpu job for 1 hour</span>
-</span></span><span style=display:flex><span><span style=color:#111>alias</span> <span style=color:#111>srung1h</span><span style=color:#f92672>=</span><span style=color:#d88200>&#39;srun --gres=gpu:1 --mem=16GB --time=1:00:00 --pty /bin/bash&#39;</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=2-view-your-job-queue>2. View your job queue</h2><p>These aliases help you view your job queue, albeit in a slightly improved format.</p><div class=highlight><div style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># ~/.bash_aliases</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Slurm Control Aliases</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># shows status of active jobs</span>
-</span></span><span style=display:flex><span><span style=color:#111>alias</span> <span style=color:#111>sq</span><span style=color:#f92672>=</span><span style=color:#d88200>&#39;squeue -u abc1234 -o &#34;%.15i %.9N %.9T %.9M %.12L %.20V %j&#34; -S &#34;V&#34;&#39;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># run the previous command in a loop, every 1 sec</span>
-</span></span><span style=display:flex><span><span style=color:#111>alias</span> <span style=color:#111>watchsq</span><span style=color:#f92672>=</span><span style=color:#d88200>&#39;watch -n 1 \
-</span></span></span><span style=display:flex><span><span style=color:#d88200>    squeue -u abc1234 -o \&#34;%.15i %.9N %.9T %.9M %.12L %.20V %j\&#34; -S &#34;V&#34;&#39;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># also shows completed jobs in the last 24 hours</span>
-</span></span><span style=display:flex><span><span style=color:#111>alias</span> <span style=color:#111>shist</span><span style=color:#f92672>=</span><span style=color:#d88200>&#39;sacct -X -o &#34;JobID%15,ExitCode,State,Reason,\
-</span></span></span><span style=display:flex><span><span style=color:#d88200>    Submit,Elapsed,MaxVMSize,NodeList,Priority,JobName%20&#34;&#39;</span>
-</span></span></code></pre></td></tr></table></div></div><p>Here&rsquo;s an example. The best part about <code>sq</code> is that it shows the submit time, time elapsed, and time remaining so you can clearly identify your jobs. When you want to see completed jobs as well, use <code>shist</code>. Additional options can follow. For example, to filter jobs active between 1-10 February 2022, use <code>shist --starttime=2022-02-01 --endtime=2022-02-10</code>.</p><div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ sq
-</span></span><span style=display:flex><span>          JOBID  NODELIST     STATE      TIME    TIME_LEFT          SUBMIT_TIME NAME
-</span></span><span style=display:flex><span>       <span style=color:#ae81ff>14878566</span>     gv002   RUNNING     22:13        37:47  2022-02-13T03:34:31 bash
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>$ shist
-</span></span><span style=display:flex><span>          JobID ExitCode      State                 Reason              Submit    Elapsed  MaxVMSize        NodeList   Priority              JobName 
-</span></span><span style=display:flex><span>--------------- -------- ---------- ---------------------- ------------------- ---------- ---------- --------------- ---------- -------------------- 
-</span></span><span style=display:flex><span>       <span style=color:#ae81ff>14878566</span>      0:0    RUNNING                   None 2022-02-13T03:34:31   00:21:25                      gv002      <span style=color:#ae81ff>18632</span>                 bash 
-</span></span><span style=display:flex><span>       <span style=color:#ae81ff>14879278</span>      0:0  COMPLETED                   None 2022-02-13T03:50:16   00:00:00                      cs008      <span style=color:#ae81ff>17618</span>              test.sh
-</span></span></code></pre></div><h2 id=3-view-output-from-your-job>3. View output from your job</h2><p>These functions let you conveniently see the outputs for a given JOBID. For some reason they only work if the job is still running, so unfortunately you can&rsquo;t use them for completed jobs.</p><div class=highlight><div style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
-</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># ~/.bash_aliases</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Slurm Log Aliases</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># slog &lt;JOBID&gt; shows location of the log file for a given job</span>
-</span></span><span style=display:flex><span><span style=color:#00a8c8>function</span> slog<span style=color:#f92672>()</span> <span style=color:#f92672>{</span> scontrol show job <span style=color:#d88200>&#34;</span><span style=color:#d88200>${</span><span style=color:#111>1</span><span style=color:#d88200>}</span><span style=color:#d88200>&#34;</span> <span style=color:#111>|</span> grep StdOut <span style=color:#111>|</span> cut -d <span style=color:#d88200>&#34;=&#34;</span> -f <span style=color:#ae81ff>2</span> <span style=color:#111>;</span> <span style=color:#f92672>}</span> 
-</span></span><span style=display:flex><span><span style=color:#75715e># catslog &lt;JOBID&gt; is just `cat` on the file location returned by slog</span>
-</span></span><span style=display:flex><span><span style=color:#00a8c8>function</span> catslog<span style=color:#f92672>()</span> <span style=color:#f92672>{</span> cat <span style=color:#00a8c8>$(</span>slog <span style=color:#d88200>&#34;</span><span style=color:#d88200>${</span><span style=color:#111>1</span><span style=color:#d88200>}</span><span style=color:#d88200>&#34;</span><span style=color:#00a8c8>)</span> <span style=color:#111>;</span> <span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># catslog &lt;JOBID&gt; is just `tail -f` on the file location returned by slog</span>
-</span></span><span style=display:flex><span><span style=color:#00a8c8>function</span> tailslog<span style=color:#f92672>()</span> <span style=color:#f92672>{</span> tail -f -n +1 <span style=color:#00a8c8>$(</span>slog <span style=color:#d88200>&#34;</span><span style=color:#d88200>${</span><span style=color:#111>1</span><span style=color:#d88200>}</span><span style=color:#d88200>&#34;</span><span style=color:#00a8c8>)</span> <span style=color:#111>;</span> <span style=color:#f92672>}</span>
-</span></span></code></pre></td></tr></table></div></div><p>Here are some examples. My general workflow is to use <code>sq</code> followed by <code>tailslog</code>.</p><div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ slog <span style=color:#ae81ff>14879246</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># path to the log file for 14879246</span>
-</span></span><span style=display:flex><span>/home/abc1234/projects/sbatch/slurm-14879246.out
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>$ tailslog <span style=color:#ae81ff>14879278</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># contents of /home/abc1234/projects/sbatch/slurm-14879246.out</span>
-</span></span><span style=display:flex><span>archive  boot  etc   home  lib64  misc  net  proc  run   scratch  srv    sys  usr  vast
-</span></span><span style=display:flex><span>bin      dev   gpfs  lib   media  mnt   opt  root  sbin  share    state  tmp  var
+Here&rsquo;s how you can use the <code>ProxyJump</code> directive.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=hl><span class=lnt>5
+</span></span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
+</span></span><span class=line><span class=cl><span class=c1># NYU CIMS</span>
+</span></span><span class=line><span class=cl>Host access1 access2 linserv1
+</span></span><span class=line><span class=cl>    User abc1234
+</span></span><span class="line hl"><span class=cl>    ProxyJump cims
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Host cims
+</span></span><span class=line><span class=cl>    Hostname access.cims.nyu.edu
+</span></span><span class=line><span class=cl>    User abc1234
+</span></span></code></pre></td></tr></table></div></div><p>Lines 7-9 describe the <code>login</code> node, and lines 3-5 describe the <code>compute</code> nodes. So now whenever you type <code>ssh linserv1</code>, you will first login to <code>cims</code> (<code>access.cims.nyu.edu</code>), and upon successful authentication, you will automatically SSH into <code>linserv1</code>. You can setup Greene in the same way.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=hl><span class=lnt>5
+</span></span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
+</span></span><span class=line><span class=cl><span class=c1># NYU Greene</span>
+</span></span><span class=line><span class=cl>Host log-1 log-2 log-3 log-4 log-5
+</span></span><span class=line><span class=cl>    User abc1234
+</span></span><span class="line hl"><span class=cl>    ProxyJump greene
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Host greene
+</span></span><span class=line><span class=cl>    Hostname greene.hpc.nyu.edu
+</span></span><span class=line><span class=cl>    User abc1234
+</span></span></code></pre></td></tr></table></div></div><p>This setup is particularly helpful because whenever you SSH into <code>greene.hpc.nyu.edu</code>, you are randomly taken to one of the login nodes. Now let&rsquo;s say if you had <code>tmux</code> running on <code>log-3</code> and you lose connectivity. The next time you login, you might be taken into <code>log-4</code>. You type <code>tmux ls</code> and it complains about no open sessions. You&rsquo;re flabbergasted because you clearly remember running <code>tmux</code> a moment ago. Sadly, you didn&rsquo;t remember the hostname.</p><p>With this setup, you can try making a habit of always logging in to one particular node, say <code>ssh log-3</code>, and now you don&rsquo;t have to worry about remembering hostnames anymore.</p><h2 id=2-use-local-ssh-keys>2. Use local SSH keys</h2><p>Did you ever get annoyed when you tried to use <code>git clone</code> on one of the private repositories and you suddenly notice GitHub throwing an error? You may have added your local SSH keys to GitHub to for secure authentication but as you can imagine, GitHub does not recognise the keys from the cluster. The way around it is to use the <code>ForwardAgent</code> directive.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=hl><span class=lnt> 5
+</span></span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=hl><span class=lnt>11
+</span></span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
+</span></span><span class=line><span class=cl><span class=c1># NYU CIMS</span>
+</span></span><span class=line><span class=cl>Host access1 access2 linserv1
+</span></span><span class=line><span class=cl>    User abc1234
+</span></span><span class="line hl"><span class=cl>    ForwardAgent yes
+</span></span><span class=line><span class=cl>    ProxyJump cims
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Host cims
+</span></span><span class=line><span class=cl>    Hostname access.cims.nyu.edu
+</span></span><span class=line><span class=cl>    User abc1234
+</span></span><span class="line hl"><span class=cl>    ForwardAgent yes
+</span></span></code></pre></td></tr></table></div></div><p>This way, you can <em>forward</em> your local SSH keys to the cluster, and GitHub (or any other service) will receive your local keys so they&rsquo;ll stop complaining anymore. Just one more step before this works: make sure that your local keys are added to <code>ssh-agent</code>. Use the following commands:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ ssh-add -l
+</span></span><span class=line><span class=cl>The agent has no identities.
+</span></span><span class=line><span class=cl><span class=c1># ssh-agent has no keys</span>
+</span></span><span class=line><span class=cl>$ ssh-add
+</span></span><span class=line><span class=cl>Identity added: /Users/nikhil/.ssh/id_rsa <span class=o>(</span>nikhil-macbook<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=c1># add local keys to ssh-agent</span>
+</span></span><span class=line><span class=cl>$ ssh-add -l
+</span></span><span class=line><span class=cl><span class=m>3072</span> SHA256:abcdefghijklmnopqrstuvwxyz nikhil-macbook <span class=o>(</span>RSA<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=c1># verify that keys have been successfully added</span>
+</span></span></code></pre></div><h1 id=some-slurm-aliases>Some SLURM aliases</h1><p>If you&rsquo;re using Greene on a regular basis, chances are that you will need to use a few of the SLURM commands to check and manage your jobs. Here&rsquo;s a few aliases that I created, they should be handy for you too. Once logged into the cluster, add the following lines to <code>~/.bash_aliases</code>. Make sure to <code>source ~/.bashrc</code> every time you make a change for the aliases to take effect.</p><h2 id=1-common-aliases>1. Common aliases</h2><p>I often run an interactive job while debugging code. Here are some shortcuts that I use.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.bash_aliases</span>
+</span></span><span class=line><span class=cl><span class=c1># Slurm Job Aliases</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># cpu job for 6 hours</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>srunc6h</span><span class=o>=</span><span class=s1>&#39;srun --mem=64GB --time=6:00:00 --pty /bin/bash&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># gpu job for 1 hour</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>srung1h</span><span class=o>=</span><span class=s1>&#39;srun --gres=gpu:1 --mem=16GB --time=1:00:00 --pty /bin/bash&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=2-view-your-job-queue>2. View your job queue</h2><p>These aliases help you view your job queue, albeit in a slightly improved format.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.bash_aliases</span>
+</span></span><span class=line><span class=cl><span class=c1># Slurm Control Aliases</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># shows status of active jobs</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>sq</span><span class=o>=</span><span class=s1>&#39;squeue -u abc1234 -o &#34;%.15i %.9N %.9T %.9M %.12L %.20V %j&#34; -S &#34;V&#34;&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># run the previous command in a loop, every 1 sec</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>watchsq</span><span class=o>=</span><span class=s1>&#39;watch -n 1 \
+</span></span></span><span class=line><span class=cl><span class=s1>    squeue -u abc1234 -o \&#34;%.15i %.9N %.9T %.9M %.12L %.20V %j\&#34; -S &#34;V&#34;&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># also shows completed jobs in the last 24 hours</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>shist</span><span class=o>=</span><span class=s1>&#39;sacct -X -o &#34;JobID%15,ExitCode,State,Reason,\
+</span></span></span><span class=line><span class=cl><span class=s1>    Submit,Elapsed,MaxVMSize,NodeList,Priority,JobName%20&#34;&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Here&rsquo;s an example. The best part about <code>sq</code> is that it shows the submit time, time elapsed, and time remaining so you can clearly identify your jobs. When you want to see completed jobs as well, use <code>shist</code>. Additional options can follow. For example, to filter jobs active between 1-10 February 2022, use <code>shist --starttime=2022-02-01 --endtime=2022-02-10</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ sq
+</span></span><span class=line><span class=cl>          JOBID  NODELIST     STATE      TIME    TIME_LEFT          SUBMIT_TIME NAME
+</span></span><span class=line><span class=cl>       <span class=m>14878566</span>     gv002   RUNNING     22:13        37:47  2022-02-13T03:34:31 bash
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ shist
+</span></span><span class=line><span class=cl>          JobID ExitCode      State                 Reason              Submit    Elapsed  MaxVMSize        NodeList   Priority              JobName 
+</span></span><span class=line><span class=cl>--------------- -------- ---------- ---------------------- ------------------- ---------- ---------- --------------- ---------- -------------------- 
+</span></span><span class=line><span class=cl>       <span class=m>14878566</span>      0:0    RUNNING                   None 2022-02-13T03:34:31   00:21:25                      gv002      <span class=m>18632</span>                 bash 
+</span></span><span class=line><span class=cl>       <span class=m>14879278</span>      0:0  COMPLETED                   None 2022-02-13T03:50:16   00:00:00                      cs008      <span class=m>17618</span>              test.sh
+</span></span></code></pre></div><h2 id=3-view-output-from-your-job>3. View output from your job</h2><p>These functions let you conveniently see the outputs for a given JOBID. For some reason they only work if the job is still running, so unfortunately you can&rsquo;t use them for completed jobs.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.bash_aliases</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Slurm Log Aliases</span>
+</span></span><span class=line><span class=cl><span class=c1># slog &lt;JOBID&gt; shows location of the log file for a given job</span>
+</span></span><span class=line><span class=cl><span class=k>function</span> slog<span class=o>()</span> <span class=o>{</span> scontrol show job <span class=s2>&#34;</span><span class=si>${</span><span class=nv>1</span><span class=si>}</span><span class=s2>&#34;</span> <span class=p>|</span> grep StdOut <span class=p>|</span> cut -d <span class=s2>&#34;=&#34;</span> -f <span class=m>2</span> <span class=p>;</span> <span class=o>}</span> 
+</span></span><span class=line><span class=cl><span class=c1># catslog &lt;JOBID&gt; is just `cat` on the file location returned by slog</span>
+</span></span><span class=line><span class=cl><span class=k>function</span> catslog<span class=o>()</span> <span class=o>{</span> cat <span class=k>$(</span>slog <span class=s2>&#34;</span><span class=si>${</span><span class=nv>1</span><span class=si>}</span><span class=s2>&#34;</span><span class=k>)</span> <span class=p>;</span> <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=c1># catslog &lt;JOBID&gt; is just `tail -f` on the file location returned by slog</span>
+</span></span><span class=line><span class=cl><span class=k>function</span> tailslog<span class=o>()</span> <span class=o>{</span> tail -f -n +1 <span class=k>$(</span>slog <span class=s2>&#34;</span><span class=si>${</span><span class=nv>1</span><span class=si>}</span><span class=s2>&#34;</span><span class=k>)</span> <span class=p>;</span> <span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Here are some examples. My general workflow is to use <code>sq</code> followed by <code>tailslog</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ slog <span class=m>14879246</span>
+</span></span><span class=line><span class=cl><span class=c1># path to the log file for 14879246</span>
+</span></span><span class=line><span class=cl>/home/abc1234/projects/sbatch/slurm-14879246.out
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ tailslog <span class=m>14879278</span>
+</span></span><span class=line><span class=cl><span class=c1># contents of /home/abc1234/projects/sbatch/slurm-14879246.out</span>
+</span></span><span class=line><span class=cl>archive  boot  etc   home  lib64  misc  net  proc  run   scratch  srv    sys  usr  vast
+</span></span><span class=line><span class=cl>bin      dev   gpfs  lib   media  mnt   opt  root  sbin  share    state  tmp  var
 </span></span></code></pre></div><h1 id=troubleshooting>Troubleshooting</h1><h2 id=1-singularity-cant-open-ext3-overlay-for-writing>1. Singularity can&rsquo;t open ext3 overlay for writing</h2><p>If you were actively using a Singularity with an ext3 overlay, and for some reason you didn&rsquo;t exit cleanly (maybe slurm preempted your job), you may run into issues. The next time you try using Singularity, you might get this error complaining that your overlay file is still in use:</p><pre tabindex=0><code>FATAL:
 while loading overlay images: failed to open overlay image /path/to/overlay.ext3: 
     while locking ext3 partition from /path/to/overlay.ext3: 
