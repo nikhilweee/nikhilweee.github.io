@@ -1,7 +1,7 @@
 baseURL = "https://nikhilweee.me"
 languageCode = "en-us"
 title = "weeeblog"
-theme = "whiteglass"
+theme = "hugo-whiteglass"
 
 # Add disqus comments
 disqusShortname = "nikhilweee"
