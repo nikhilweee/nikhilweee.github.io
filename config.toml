@@ -1,7 +1,7 @@
 baseURL = "https://nikhilweee.me"
 languageCode = "en-us"
 title = "weeeblog"
-theme = "hugo-whiteglass"
+theme = ["hugo-whiteglass", "hugo-cite"]
 
 # Add disqus comments
 disqusShortname = "nikhilweee"
@@ -11,6 +11,10 @@ copyright = "&copy; Nikhil Verma"
 
 # Number of items to show every page
 paginate = 20
+
+# Citation style
+[params]
+  citationStyle = "custom"
 
 # Change permalink format
 [permalinks]
