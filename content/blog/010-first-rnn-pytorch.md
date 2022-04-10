@@ -1,18 +1,20 @@
 +++
 categories = ["Tutorials"]
 date = "2018-05-24T00:00:00Z"
-mathjax = true
+tex = true
 redirect_from = ["/posts/2018/first-rnn-pytorch-1/", "/posts/2018/first-rnn-pytorch-2/", "/posts/2018/first-rnn-pytorch-3/"]
 subtitle = "with PyTorch 0.4!"
 title = "Building your first RNN"
 slug = "first-rnn-pytorch"
 
 +++
-If you have some understanding of recurrent networks, want to get your hands dirty, but haven't really tried to do that on your own, then you are certainly at the right place. This tutorial is a practical guide about getting started with recurrent networks using PyTorch. We'll solve a simple cipher using PyTorch 0.4.0, which is the latest version at the time of this writing.  
+If you have some understanding of recurrent networks, want to get your hands dirty, but haven't really tried to do that on your own, then you are certainly at the right place. This tutorial is a practical guide about getting started with recurrent networks using PyTorch. We'll solve a simple cipher using PyTorch 0.4.0, which is the latest version at the time of this writing.
+
+{{<toc>}}
 
 You are only expected to have some understanding of recurrent networks. If you don't, here's the link to the [golden resource](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) - Chris Olah's post on Understanding LSTMs. We'll use a single layer LSTM for the task of learning ciphers, which should be a fairly easy exercise.
 
-## The Problem
+# The Problem
 
 Before starting off, let's first define the problem in a concrete manner. We wish to decrypt secret messages using an LSTM. For the sake of simplicity, let's assume that our messages are encrypted using the [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher), which is a really simple substitution cipher.  
 
@@ -31,7 +33,7 @@ The first row shows all the letters of the alphabet in order. To encrypt a messa
 
 [^why-nn]: **But why Neural Networks?** You might be wondering why do we use neural networks in the first place. In our use case, it sure makes more sense to decrypt the messages by conventional programming because we _know_ the encryption function beforehand. _This might not be the case everytime_. You might have a situation where you have enough data but still have no idea about the encryption function. Neural networks fit quite well in such a situation. Anyways, keep in mind that this is still a toy problem. One motivation to choose this problem is the ease of generating loads of training examples on the fly. So we don't really need to procure any dataset. Yay!
 
-## The Dataset
+# The Dataset
 
 Like any other neural network, we'll need data. Loads of it. We'll use a parallel dataset of the following form where each tuple represents a pair of (encrypted, decrypted) messages. 
 ```
@@ -43,7 +45,7 @@ Having defined our problem, we'll feed the `encrypted` message as the input to o
 
 It does, except that we have a little problem. Neural networks are essentially number crunching machines, and have no idea how to hande our encrypted messages. We'll somehow have to convert our strings into numbers for the network to make sense of them.
 
-## Word Embeddings
+# Word Embeddings
 
 The way this is usually done is to use something called as word embeddings. The idea is to represent every character in the alphabet with its own $ D $ dimensional **embedding vector**, where $ D $ is usually called the embedding dimension. So let's say if we decide to use an `embedding_dim` of 5. This basically means that each of the 27 characters of the alphabet, `ABCDEFGHIJKLMNOPQRSTUVWXYZ-`, will have their own embedding vector of length 5.
 
@@ -64,7 +66,7 @@ $ E[0] $ then represents the word vector for `A`, which is `[-1.4107, -0.8142,  
 
 P.S. I'll be using alphabet and vocabulary interchangably throughout this tutorial. Similarly, word embeddings, word vectors, character embeddings, or simply embeddings will mean the same thing.
 
-## The Cipher
+# The Cipher
 
 Now that we have enough background, let's get our hands dirty and finally jump in to writing some code. The first thing we have to do is to create a dataset. And to do that, we first need to implement the cipher. Although we implement it as a simple function, it might be a good idea to implement the cipher as a class in the future.
 
@@ -74,7 +76,7 @@ We create the `encode` function which uses the parameters `vocab` and `key` to e
 
 To check the implementation, you can check for some random inputs. For example, ensure that `encrypt('ABCDEFGHIJKLMNOPQRSTUVWXYZ-')` returns `NOPQRSTUVWXYZ-ABCDEFGHIJKLM`.
 
-## The Dataset (Finally!)
+# The Dataset (Finally!)
 
 Okay, let's finally build the dataset. For the sake of simplicity, we'll use a random sequence of characters as a message and encrypt it to create the input to the LSTM. To implement this, we create a simple function called `dataset` which takes in the parameter `num_examples` and returns a list of those many (input, output) pairs.
 
@@ -82,7 +84,7 @@ Okay, let's finally build the dataset. For the sake of simplicity, we'll use a r
 
 There's something strange about this function though. Have a look at line 24. We're not returning a pair of strings. We're first converting strings into a list of indices which represent their position in the alphabet. If you recall the section on [word embeddings](#word-embeddings), these indices will later be used to extract the corresponding embedding vectors from the embedding matrix $ E $. We're then converting these lists into a pair of tensors, which is what the function returns.
 
-## Tensors?
+# Tensors?
 
 This brings us to the most fundamental data type in PyTorch - the Tensor. For users familiar with NumPy, a tensor is the PyTorch analogue of `ndarray`. If you're not, a tensor is essentially a multidimensional matrix which supports optimized implementations of common operations. Have a look at the [Tensor Tutorial](http://pytorch.org/tutorials/beginner/blitz/tensor_tutorial.html) on the PyTorch website for more information. The takeaway here is that we'll use tensors from now on as our go to data structure to handle numbers. Creating a tensor is really easy. Though there are a lot of ways to do so, we'll just wrap our list of integers with `torch.tensor()` - which turns out the easiest amongst all.
 
@@ -105,7 +107,7 @@ Hmm, that sounds easy, right? But how do you actually make it work? Let's dissec
 
 <div class="note" markdown="1">
 
-### The PyTorch paradigm
+## The PyTorch paradigm
 
 ... before diving in, it's important to know a couple of things. PyTorch provides implementations for most of the commonly used entities from layers such as LSTMs, CNNs and GRUs to optimizers like SGD, Adam, and what not (Isn't that the whole point of using PyTorch in the first place?!). The general paradigm to use any of these entities is to first create an instance of `torch.nn.entity` with some required parameters. As an example, here's how we instantiate an `lstm`. 
 
@@ -129,7 +131,7 @@ This two-stepped process will be seen all through this tutorial and elsewhere. B
 
 Getting back to code now, let's dissect our 'high level' understanding again.
 
-## 1. Prepare inputs
+# 1. Prepare inputs
 
 >... **feed in inputs** to an LSTM to get the predictions ...
 
@@ -160,7 +162,7 @@ tensor([[ 0.2666,  2.1146,  1.3225,  1.3261, -2.6993],
 ```
 
 
-## 2. Build an LSTM
+# 2. Build an LSTM
 
 >... feed in inputs **to an LSTM** to get the predictions ...
 
@@ -175,7 +177,7 @@ lstm = torch.nn.LSTM(embedding_dim, hidden_dim)
 
 <div class="note" markdown="1">
 
-### A note on dimensionality
+## A note on dimensionality
 
 During step 2 of the [general paradigm](#the-pytorch-paradigm), `torch.nn.LSTM` expects the input to be a 3D input tensor of size `(seq_len, batch, embedding_dim)`, and returns an output tensor of the size `(seq_len, batch, hidden_dim)`. We'll only feed in one input at a time, so `batch` is always `1`. 
 
@@ -189,7 +191,7 @@ If you have a look at the output of the LSTM on the example pair `('ERPDRF', 'SE
 
 So how do we solve this?
 
-## 3. Transform the outputs
+# 3. Transform the outputs
 
 >... feed in inputs to an LSTM to **get the predictions** ...
 
@@ -208,7 +210,7 @@ linear = torch.nn.Linear(hidden_dim, vocab_size)
 
 With this we're preddy much done with the essentials. Time for some learning!
 
-## 4. Calculate the loss
+# 4. Calculate the loss
 
 > Next, we pass on the predictions along with the targets to the loss function to calculate the loss.
 
@@ -220,7 +222,7 @@ loss_fn = torch.nn.CrossEntropyLoss()
 
 You can read more about cross entropy loss in the excellent [blog post by Rob DiPietro.](https://rdipietro.github.io/friendly-intro-to-cross-entropy-loss/)
 
-## 5. Optimize
+# 5. Optimize
 
 > Finally, we backpropagate through the loss to update our model’s parameters.
 

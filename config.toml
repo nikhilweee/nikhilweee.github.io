@@ -35,7 +35,6 @@ paginate = 20
 
 [markup]
   [markup.highlight]
-    lineNos = true
     noClasses = false
     style = "monokailight"
   [markup.tableOfContents]

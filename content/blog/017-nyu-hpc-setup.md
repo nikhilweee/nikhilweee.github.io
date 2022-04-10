@@ -50,7 +50,7 @@ These are a few hacks which should greatly simplify the overhead of using the cl
 Often times, you wish you could directly access the compute nodes (such as `linserv1`) without having to first SSH into `access.cims.nyu.edu`.
 Here's how you can use the `ProxyJump` directive.
 
-```bash {hl_lines=[5]}
+```bash {linenos=true, hl_lines=[5]}
 # ~/.ssh/config
 # NYU CIMS
 Host access1 access2 linserv1
@@ -100,7 +100,7 @@ Host cims
 
 This way, you can _forward_ your local SSH keys to the cluster, and GitHub (or any other service) will receive your local keys so they'll stop complaining anymore. Just one more step before this works: make sure that your local keys are added to `ssh-agent`. Use the following commands:
 
-```bash {linenos=false}
+```bash
 $ ssh-add -l
 The agent has no identities.
 # ssh-agent has no keys
@@ -148,7 +148,7 @@ alias shist='sacct -X -o "JobID%15,ExitCode,State,Reason,\
     Submit,Elapsed,MaxVMSize,NodeList,Priority,JobName%20"'
 ```
 Here's an example. The best part about `sq` is that it shows the submit time, time elapsed, and time remaining so you can clearly identify your jobs. When you want to see completed jobs as well, use `shist`. Additional options can follow. For example, to filter jobs active between 1-10 February 2022, use `shist --starttime=2022-02-01 --endtime=2022-02-10`.
-```bash {linenos=false}
+```bash
 $ sq
           JOBID  NODELIST     STATE      TIME    TIME_LEFT          SUBMIT_TIME NAME
        14878566     gv002   RUNNING     22:13        37:47  2022-02-13T03:34:31 bash
@@ -175,7 +175,7 @@ function tailslog() { tail -f -n +1 $(slog "${1}") ; }
 ```
 Here are some examples. My general workflow is to use `sq` followed by `tailslog`.
 
-```bash {linenos=false}
+```bash
 $ slog 14879246
 # path to the log file for 14879246
 /home/abc1234/projects/sbatch/slurm-14879246.out

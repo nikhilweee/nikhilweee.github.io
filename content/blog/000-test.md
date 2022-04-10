@@ -4,7 +4,7 @@ draft = true
 subtitle = 'So everything works fine'
 title = 'Test Post'
 categories = ["Test"]
-mathjax = true
+tex = true
 citations = true
 slug = "test"
 layout = "index"
@@ -19,9 +19,20 @@ This is a level 1 header.
 ## Subheadings
 This is a level 2 header.
 
+# KaTeX
+Here's how to find $x$ using the standard quadratic equation.
+
+$$ x = -b \pm \frac{\sqrt{b^2 - 4ac}}{2a} $$
+
+Make sure that the following equation does not overflow.
+
+$$p(s_1, a_1, \dots, s_T, a_T) = p(s_1) \ p(a_1|s_1) \ p(s_2|s_1,a_1) \ p(a_2|s_1,a_1,s_2) \dots p(s_T|s_1, a_1, \dots, a_{T-1}) \ p(a_T|s_1, a_1, \dots, s_T)$$
+
 # Citations
 
-Prior work {{<cite "huang2017adversarial;kos2017delving" "1-2;4-5">}},  has shown that deep RL policies are vulnerable to small adversarial perturbations to their observations, similar to adversarial examples {{<cite "szegedy2013intriguing">}} in image classifiers. Such adversarial models assume that the attacker can directly modify the victim’s observation. However, such attacks are not practical in the real world. In contrast, we look at attacks via adversarial policy designed specifically for the two-agent zero-sum environments. The goal of the attacker is to fail a well-trained agent in the game by manipulating the opponent’s behavior. Specifically, we explore the attacks using an adversarial policy in low-dimensional environments.
+Prior work {{<cite "huang2017adversarial;kos2017delving" "paren" ";1-2">}},  has shown that deep RL policies are vulnerable to small adversarial perturbations to their observations, similar to adversarial examples {{<cite key="szegedy2013intriguing" type="paren">}} in image classifiers. Such adversarial models assume that the attacker can directly modify the victim’s observation. However, such attacks are not practical in the real world. 
+
+{{<cite "bojarski2016end" "text">}} show that mounting side cameras collect extra observations.
 
 # Bibliography
 

@@ -1,7 +1,7 @@
 +++
 categories = ["Projects"]
 date = "2021-12-18"
-mathjax = true
+tex = true
 citations = true
 title = "Adversarial Attacks on RL Agents"
 subtitle = "using natural observations"
@@ -23,7 +23,7 @@ Prior work {{<cite "huang2017adversarial;kos2017delving">}} has shown that deep 
 
 ## What are Adversarial Attacks?
 
-An adversarial attack is a method to generate adversarial examples. In a classification system, an adversarial example is an input to a machine learning model that is designed to cause the model to make a mistake in its predictions. The adversarial example is created by adding specific perturbations to an input such that the perturbation is imperceptible to the human eye. Without the perturbation, the input would have been correctly classified. The following image from {{<cite "goodfellow2014explaining">}} shows a representative example.
+An adversarial attack is a method to generate adversarial examples. In a classification system, an adversarial example is an input to a machine learning model that is designed to cause the model to make a mistake in its predictions. The adversarial example is created by adding specific perturbations to an input such that the perturbation is imperceptible to the human eye. Without the perturbation, the input would have been correctly classified. The following image from {{<cite "goodfellow2014explaining" "text">}} shows a representative example.
 
 {{<figure src="https://i.imgur.com/aLXQUgY.png" caption="Fig. 1: The input image $x$, when fed to a classifier, is classified as a *panda* with 57.7% confidence. However, when a small amount of noise is added, the resultant image is classified as a *gibbon* with 99.3% confidence.">}}
 
@@ -58,11 +58,11 @@ Here, the adversary has limited or no access to the victim model and can only ob
 # Motivation
 ---
 
-{{<cite "gleave2019adversarial">}} demonstrated the existence of adversarial policies in two-agent zero-sum games between simulated humanoid robots against state-of-the-art victims trained via self-play. The adversary wins against the victims by generating seemingly random and uncoordinated behavior, not by becoming a stronger opponent. For instance, in Kick and Defend and You Shall Not Pass, the adversary never stands up but instead learns to lie down in contorted positions on the ground. This confuses the victim and forces it to take wrong actions.
+{{<cite "gleave2019adversarial" "text">}} demonstrated the existence of adversarial policies in two-agent zero-sum games between simulated humanoid robots against state-of-the-art victims trained via self-play. The adversary wins against the victims by generating seemingly random and uncoordinated behavior, not by becoming a stronger opponent. For instance, in Kick and Defend and You Shall Not Pass, the adversary never stands up but instead learns to lie down in contorted positions on the ground. This confuses the victim and forces it to take wrong actions.
 
 ## How do the adversarial policies exploit the victim?
 
-To better understand how the adversarial policies exploit their victims, the authors created “masked” versions of victim policies. A masked victim observes a static value for the opponent position, corresponding to a typical initial starting state. The authors found that masked victims lost frequently against normal opponents. However, they were robust to adversarial attacks, which shows that the adversary succeeds by naturally manipulating a victim’s observations through its actions. This method is unlike previous works {{<cite "huang2017adversarial;kos2017delving">}} in adversarial RL literature where the image observations are manipulated directly. The following videos from {{<cite "gleave2019adversarial">}} help demonstrate these attacks:
+To better understand how the adversarial policies exploit their victims, the authors created “masked” versions of victim policies. A masked victim observes a static value for the opponent position, corresponding to a typical initial starting state. The authors found that masked victims lost frequently against normal opponents. However, they were robust to adversarial attacks, which shows that the adversary succeeds by naturally manipulating a victim’s observations through its actions. This method is unlike previous works {{<cite "huang2017adversarial;kos2017delving">}} in adversarial RL literature where the image observations are manipulated directly. The following videos from {{<cite "gleave2019adversarial" "text">}} help demonstrate these attacks:
 
 {{<rawhtml>}}
 <figure>
@@ -140,7 +140,7 @@ For image based observations, however, we had to train the model for more than 3
 # Adversarial Training
 ---
 
-Once we have victim policies trained through self-play, we train adversarial policies using the approach mentioned in {{<cite "gleave2019adversarial">}}. For both types of observations, we train agents using PPO from [stable-baselines3](https://github.com/DLR-RM/stable-baselines3). The opponent is a victim whose policy is stationary.
+Once we have victim policies trained through self-play, we train adversarial policies using the approach mentioned in {{<cite "gleave2019adversarial" "text">}}. For both types of observations, we train agents using PPO from [stable-baselines3](https://github.com/DLR-RM/stable-baselines3). The opponent is a victim whose policy is stationary.
 
 # Experiments
 
@@ -423,11 +423,11 @@ We aim to answer the following questions for low-dimensional environments:
     
     In our experiments, the adversary was not able to defeat the victim for state-based observations even though it was trained for a considerable amount of time. This may be because the victim is trained so well that it is really difficult to find flaws in its judgement.
 
-    This result is in accordance with the results of the paper by {{<cite "gleave2019adversarial">}}. The authors also observe that attacks via adversarial policies are more successful on high-dimensional environments (e.g., Sumo Humans) than on low-dimensional environments (e.g., Sumo Ants).
+    This result is in accordance with the results of the paper by {{<cite "gleave2019adversarial" "text">}}. The authors also observe that attacks via adversarial policies are more successful on high-dimensional environments (e.g., Sumo Humans) than on low-dimensional environments (e.g., Sumo Ants).
     
 2. **Why are the attacks possible in the first place?**
     
-    Although we weren’t able to find adversarial policies in our experiments, {{<cite "gleave2019adversarial">}} show that the situation is different in high dimensional environments. If the victim were to play a [Nash equilibria](https://en.wikipedia.org/wiki/Nash_equilibrium), it wouldn’t be exploitable by an adversary. However, the authors focus on attacking victim policies trained through self-play {{<cite "heinrich2015fictitious">}}, a popular method that approximates local Nash equilibria. Self-play assumes transitivity, and perhaps that is the reason behind its vulnerability to these attacks.
+    Although we weren’t able to find adversarial policies in our experiments, {{<cite "gleave2019adversarial" "text">}} show that the situation is different in high dimensional environments. If the victim were to play a [Nash equilibria](https://en.wikipedia.org/wiki/Nash_equilibrium), it wouldn’t be exploitable by an adversary. However, the authors focus on attacking victim policies trained through self-play {{<cite "heinrich2015fictitious">}}, a popular method that approximates local Nash equilibria. Self-play assumes transitivity, and perhaps that is the reason behind its vulnerability to these attacks.
 
     [^heinrich]: Heinrich, Johannes, Marc Lanctot, and David Silver. "_Fictitious self-play in extensive-form games._" In International conference on machine learning, pp. 805-813. PMLR, 2015.
     

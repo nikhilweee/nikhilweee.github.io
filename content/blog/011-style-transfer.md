@@ -2,7 +2,7 @@
 categories = ['Papers']
 date = '2020-09-11T00:00:00Z'
 draft = true
-mathjax = true
+tex = true
 subtitle = 'Image Style Transfer Using Convolutional Neural Networks'
 title = 'Intro to Style Transfer'
 
@@ -33,7 +33,8 @@ If $\vec{a}$ and $\vec{x}$ are the style image and the hybrid image respectively
 
 $$
 L_{style} (\vec{a}, \vec{x}) = \sum_{l=0}^{L} w_l E_l
-\hspace{2cm}
+$$
+$$
 E_l = \frac{1}{4 N_l^2 M_l^2} \sum_{i,j} (G_{ij}^l - A_{ij}^l)^2
 $$
 
