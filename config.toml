@@ -12,6 +12,19 @@ copyright = "&copy; Nikhil Verma"
 # Number of items to show every page
 paginate = 20
 
+# Use last updated date from git
+enableGitInfo = true
+
+# Enable support for emojis
+enableEmoji = true
+
+# Google Analytics
+googleAnalytics = "G-0JVB0SEFDJ"
+
+# Minify Output
+[minify]
+  minifyOutput = true
+
 # Citation style
 [params]
   citationStyle = "custom"

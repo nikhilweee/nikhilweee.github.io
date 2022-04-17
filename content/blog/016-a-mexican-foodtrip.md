@@ -1,5 +1,5 @@
 +++
-categories = ["Travel"]
+categories = ["Travel", "Long Posts"]
 date = "2022-01-10"
 subtitle = "Roadtrippin across the Yucatan in 9 days"
 title = "A Yucatecan Foodtrip"

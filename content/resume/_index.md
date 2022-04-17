@@ -5,7 +5,7 @@ title = 'Resume'
 
 +++
 
-Here's a summary of what I've done so far in a format that you're more accustomed to. You can [expand](https://drive.google.com/file/d/1zblqFeTflK1ksWdyUZv665Joi95hLQdB/view) it for better readability, or even [download](https://drive.google.com/uc?id=1zblqFeTflK1ksWdyUZv665Joi95hLQdB&export=download) it if you please.
+Here's my resume. You can [expand](https://drive.google.com/file/d/1zblqFeTflK1ksWdyUZv665Joi95hLQdB/view) it for better readability, or [download as PDF](https://drive.google.com/uc?id=1zblqFeTflK1ksWdyUZv665Joi95hLQdB&export=download) it if you please.
 
 {{<rawhtml>}}
 <div style="aspect-ratio: 1/1.414">
