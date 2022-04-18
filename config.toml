@@ -3,9 +3,6 @@ languageCode = "en-us"
 title = "weeeblog"
 theme = ["hugo-whiteglass", "hugo-cite"]
 
-# Add disqus comments
-disqusShortname = "nikhilweee"
-
 # Used under RSS
 copyright = "&copy; Nikhil Verma"
 
