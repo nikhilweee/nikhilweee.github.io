@@ -4,12 +4,13 @@ date = '2021-12-31'
 draft = true
 subtitle = 'It takes more than you think.'
 title = 'Surviving a long-distance in 2021'
+toc = false
 
 +++
 
 Anushree and I have been in a long-distance relationship for about two years now. We first met in the beginning of January, 2020. Three months later, the nation went into a lockdown -- and so did we. At that time, the virus was still very new to the world and we would only get to know more about it as time progressed. Until then, it was best for everyone, including us, to adhere to the lockdown norms and stay in our homes.
 
-## Love during the pandemic
+# Love during the pandemic
 
 Though I would agree that the pandemic has been the worst time to pursue love, I feel that in a lot of ways, it has also helped people gauge the depth of their relationships. The pandemic has been a test of time. It has helped separate a partner who lasts for a night from one who might last forever. Something similar happened to me and Anushree. 
 
@@ -22,7 +23,7 @@ Despite these hurdles, our relationship progressed pretty quickly. We were alrea
 
 Fast forward to July, and I decided to defer my admit to 2021. That was arguably the happiest phase of our lives. She had a harrowing yet rewarding experience during her medical internship, but we would meet each other every few days. But that didn't last long. As a result of my deferral, I had to switch jobs, and possibly move to a different city. By August, I had a new job and in October, I went to visit my parents for over a month. 
 
-## A taste of long-distance
+# A taste of long-distance
 
 October 2020 was the first time we had ever experienced a long-distance relationship -- just 10 months after we first met. Having previously enjoyed the freedom to talk to my girlfriend freely in my room, I now had to be mindful of my parents. I couldn't talk to her as often, and this was one of the first issues that we faced because of the distance. I wasn't able to get back to her for hours at a stretch. We often talked about how much we missed each other, but that only made things worse. 
 

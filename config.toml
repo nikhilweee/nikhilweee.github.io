@@ -21,18 +21,28 @@ enableEmoji = true
 # Google Analytics
 googleAnalytics = "G-0JVB0SEFDJ"
 
-# Minify Output
-[minify]
-  minifyOutput = true
+# Disable root /categories
+ignoreErrors = ["error-disable-taxonomy"]
+disableKinds = ["taxonomy"]
 
-# Citation style
-[params]
-  citationStyle = "custom"
+# Disable tags
+[taxonomies]
+  category = 'categories'
 
 # Change permalink format
 [permalinks]
   blog = "blog/:year/:slug/"
-  categories = "blog/categories/:title"
+  categories = "blog/archives/:slug"
+
+# Minify Output
+[minify]
+  minifyOutput = true
+  [minify.tdewolff.html]
+    keepComments = true
+
+# Citation style
+[params]
+  citationStyle = "custom"
 
 # Set feed to feed.xml
 [outputFormats]
