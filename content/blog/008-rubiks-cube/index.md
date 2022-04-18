@@ -2,7 +2,7 @@
 categories = ['Explanations']
 date = '2017-04-12T00:00:00Z'
 draft = true
-subtitle = "Visualizing algorithms for the rubik's cube"
+subtitle = "Visualizing algorithms for the Rubik's Cube"
 tags = ['cube', 'algorithms']
 title = 'Visual Cube'
 
