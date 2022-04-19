@@ -7,14 +7,16 @@ layout = 'home'
 <div class="profile-div">
 <img class="profile-image" src="https://i.imgur.com/rbNi4kX.png" alt="Cheese!">
 <p class="profile-links">
+  <a href="mailto:nikhilweee@gmail.com"><i class="fa-solid fa-at fa-xl"></i></a> • 
   <a href="https://github.com/nikhilweee"><i class="fa-brands fa-github fa-xl"></i></a> • 
   <a href="https://twitter.com/nikhilweee"><i class="fa-brands fa-twitter fa-xl"></i></a> • 
-  <a href="https://linkedin.com/in/nikhilweee"><i class="fa-brands fa-linkedin fa-xl"></i></a> • 
-  <a href="mailto:nikhilweee@gmail.com"><i class="fa-solid fa-at fa-xl"></i></a>
+  <a href="https://linkedin.com/in/nikhilweee"><i class="fa-brands fa-linkedin fa-xl"></i></a>
 </p>
+<!-- 
 <p class="profile-links">
   <a href="/resume/">Resume</a>
-</p>
+</p> 
+-->
 </div>
 {{< /rawhtml >}}
 
@@ -25,7 +27,7 @@ Previously, I was a Research Engineer at [IBM Research India](https://research.i
 
 I got the opportunity to pursue my bachelor's thesis as a Research Intern at [Microsoft Research India](https://www.microsoft.com/en-us/research/lab/microsoft-research-india/) where I worked with [Navin Goyal](https://www.microsoft.com/en-us/research/people/navingo/) on translating code to natural language.
 
-I graduated from [BITS Pilani](https://www.bits-pilani.ac.in/) with a B.E. (Hons) in Electrical and Electronics Engineering. For more information, feel free to reach out to me using any of the social platforms. _Links are right below that beautiful smile :)_
+I graduated from [BITS Pilani](https://www.bits-pilani.ac.in/) with a B.E. (Hons) in Electrical and Electronics Engineering. For more information, feel free to reach out to me using any of the social platforms. _Links are right below that beautiful smile_ :)
 
 
 ## Publications
