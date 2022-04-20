@@ -1,5 +1,5 @@
 +++
-categories = ["Projects", "Long Posts"]
+categories = ["Long Posts"]
 date = "2021-12-18"
 tex = true
 citations = true

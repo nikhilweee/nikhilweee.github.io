@@ -1,10 +1,12 @@
 +++
-layout = 'resume'
+layout = 'index'
 title = 'Calendar'
 
 +++
 
-Here's my calendar in case you want to find a time to chat. Feel free to [email](mailto:nikhilweee@gmail.com) me with your suggested time and I'll get back to you as soon as I can.
+# Calendar
+---
+In case you want to talk, feel free to [email](mailto:nikhilweee@gmail.com) me with your preferred time and I'll get back to you.
 
 {{<rawhtml>}}
 <div style="aspect-ratio: 1/1.414">

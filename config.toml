@@ -30,6 +30,7 @@ disableKinds = ["taxonomy"]
 [permalinks]
   blog = "blog/:year/:slug/"
   categories = "blog/archives/:slug"
+  about = "/:slug"
 
 # Minify Output
 [minify]

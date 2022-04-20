@@ -1,11 +1,13 @@
 +++
-layout = 'resume'
-redirect_from = ['/files/', '/resume/view/', '/resume/download/', '/resume.pdf/', '/files/resume/', '/files/resume.pdf/']
+layout = 'index'
+aliases = ['/files/', '/resume/view/', '/resume/download/', '/resume.pdf/', '/files/resume/', '/files/resume.pdf/']
 title = 'Resume'
 
 +++
 
-Here's my resume. You can [expand](https://drive.google.com/file/d/1zblqFeTflK1ksWdyUZv665Joi95hLQdB/view) it for better readability, or [download as PDF](https://drive.google.com/uc?id=1zblqFeTflK1ksWdyUZv665Joi95hLQdB&export=download) it if you please.
+# Resume
+---
+Here's my resume. You can [expand](https://drive.google.com/file/d/1zblqFeTflK1ksWdyUZv665Joi95hLQdB/view) it for better readability, or [download it as a PDF](https://drive.google.com/uc?id=1zblqFeTflK1ksWdyUZv665Joi95hLQdB&export=download) if you please.
 
 {{<rawhtml>}}
 <div style="aspect-ratio: 1/1.414">

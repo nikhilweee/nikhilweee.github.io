@@ -1,5 +1,6 @@
 +++
-layout = 'home'
+layout = 'index'
+url = '/'
 
 +++
 
@@ -7,10 +8,11 @@ layout = 'home'
 <div class="profile-div">
 <img class="profile-image" src="https://i.imgur.com/rbNi4kX.png" alt="Cheese!">
 <p class="profile-links">
-  <a href="mailto:nikhilweee@gmail.com"><i class="fa-solid fa-at fa-xl"></i></a> • 
-  <a href="https://github.com/nikhilweee"><i class="fa-brands fa-github fa-xl"></i></a> • 
-  <a href="https://twitter.com/nikhilweee"><i class="fa-brands fa-twitter fa-xl"></i></a> • 
-  <a href="https://linkedin.com/in/nikhilweee"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+  <a href="mailto:nikhilweee@gmail.com" title="Email"><i class="fa-solid fa-at fa-xl"></i></a> • 
+  <a href="/calendar" title="Calendar"><i class="fa-solid fa-calendar-day fa-lg"></i></a> • 
+  <a href="https://github.com/nikhilweee" title="GitHub"><i class="fa-brands fa-github fa-xl"></i></a> • 
+  <a href="https://twitter.com/nikhilweee" title="Twitter"><i class="fa-brands fa-twitter fa-xl"></i></a> • 
+  <a href="https://linkedin.com/in/nikhilweee" title="LinkedIn"><i class="fa-brands fa-linkedin fa-xl"></i></a>
 </p>
 <!-- 
 <p class="profile-links">
@@ -32,21 +34,21 @@ I graduated from [BITS Pilani](https://www.bits-pilani.ac.in/) with a B.E. (Hons
 
 ## Publications
 ---
-{{<cventry title="Neural Conversational QA: Learning to Reason vs Exploiting Patterns"
-           subtitle="**Nikhil Verma**, Abhishek Sharma, Dhiraj Madan, Danish Contractor, Harshit Kumar, Sachindra Joshi"
-           desc="Paper published at EMNLP 2020"
-           right="[[Abstract]](https://aclanthology.org/2020.emnlp-main.589/)">}}
+{{<spanright>}}[[Abstract]](https://aclanthology.org/2020.emnlp-main.589/){{</spanright>}}
+**Neural Conversational QA: Learning to Reason vs Exploiting Patterns**  
+_**Nikhil Verma**, Abhishek Sharma, Dhiraj Madan, Danish Contractor, Harshit Kumar, Sachindra Joshi_  
+Paper published at EMNLP 2020
 
-{{<cventry title="Generating Dialog System Workspaces"
-           subtitle="Danish Contractor, **Nikhil Verma**, Harshit Kumar and Sachindra Joshi"
-           desc="Patent filed with the US Patent and Trademark Office"
-           right="[[US 16/892805]](https://patents.google.com/patent/US20210383077A1/en)">}}
+{{<spanright>}}[[US 16/892805]](https://patents.google.com/patent/US20210383077A1/en){{</spanright>}}
+**Generating Dialog System Workspaces**  
+_Danish Contractor, **Nikhil Verma**, Harshit Kumar and Sachindra Joshi_  
+Patent filed with the US Patent and Trademark Office
 
 ## Open Source
 ---
-{{<cventry title="SHIS: Simple HTTP Image Server"
-           desc="A drop-in replacement for `python -m http.server`, albeit for images."
-           right="[[GitHub]](https://github.com/nikhilweee/shis)">}}
+{{<spanright>}}[[GitHub]](https://github.com/nikhilweee/shis){{</spanright>}}
+**SHIS: Simple HTTP Image Server**  
+A drop-in replacement for `python -m http.server`, albeit for images.
 
 ## Affiliations
 ---
