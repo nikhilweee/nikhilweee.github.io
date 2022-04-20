@@ -29,7 +29,7 @@ Previously, I was a Research Engineer at [IBM Research India](https://research.i
 
 I got the opportunity to pursue my bachelor's thesis as a Research Intern at [Microsoft Research India](https://www.microsoft.com/en-us/research/lab/microsoft-research-india/) where I worked with [Navin Goyal](https://www.microsoft.com/en-us/research/people/navingo/) on translating code to natural language.
 
-I graduated from [BITS Pilani](https://www.bits-pilani.ac.in/) with a B.E. (Hons) in Electrical and Electronics Engineering. For more information, feel free to reach out to me using any of the social platforms. _Links are right below that beautiful smile_ :)
+I graduated from [BITS Pilani](https://www.bits-pilani.ac.in/) with a B.E. (Hons) in Electrical and Electronics Engineering. For more information, you can go through a list of my [projects](/projects), or have a look at my [resume](/resume). Feel free to reach out to me using your preferred platform. _Links are right below that beautiful smile_ :)
 
 
 ## Publications
