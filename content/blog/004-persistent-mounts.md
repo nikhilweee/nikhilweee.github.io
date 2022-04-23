@@ -1,7 +1,7 @@
 +++
 categories = ['Tutorials']
 date = '2016-08-11T00:00:00Z'
-subtitle = 'Automatically mount partitions in linux via the terminal'
+subtitle = 'Automatically mount linux partitions'
 tags = ['linux']
 title = 'Persistent Mounts'
 
