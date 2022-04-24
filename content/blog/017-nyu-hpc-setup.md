@@ -201,4 +201,8 @@ If you're sure that your overlay file is clean to use, you can run `fsck` and cl
 $ fsck.ext3 /path/to/overlay.ext3
 ```
 
+## 2. Job gets killed because of Low GPU Usage
+
+You should only request a GPU when you need it. However, if you need a dummy script to keep the GPU busy (which I highly recommend against), have a look at this [gist](https://gist.github.com/nikhilweee/b5a2a201f97c386f4701d48cbf7f5a04).
+
 Hope this helps!
