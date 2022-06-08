@@ -1,21 +1,61 @@
-<!doctype html><!-- begin: layouts/_default/baseof.html --><html lang=en><!-- begin: layouts/partials/head.html --><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.100.1"><title>Set up a Ghost blog - weeeblog</title><link rel=icon type=image/svg href=/static/favicon.png><link rel=stylesheet type=text/css href=/main.css><link rel=canonical href=https://nikhilweee.me/blog/2016/setup-ghost-blog/><link href=https://cdn.jsdelivr.net/npm/charter-webfont/charter.min.css rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css></head><!-- end: layouts/partials/head.html --><body class=flex-parent><div class="sidebar sidebar-left"></div><main class=flex-content><!-- begin: layouts/partials/header.html --><div class=wrapper><header class=site-header><nav class=site-title><a href=/blog><strong>weeeblog</strong></a></nav><nav class=site-nav><a href=/>About</a>
+<!doctype html><!-- begin: layouts/_default/baseof.html --><html lang=en><!-- begin: layouts/partials/head.html -->
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=generator content="Hugo 0.100.1">
+<title>Set up a Ghost blog - weeeblog</title><link rel=icon type=image/svg href=/static/favicon.png>
+<link rel=stylesheet type=text/css href=/main.css>
+<link rel=canonical href=https://nikhilweee.me/blog/2016/setup-ghost-blog/>
+<link href=https://cdn.jsdelivr.net/npm/charter-webfont/charter.min.css rel=stylesheet>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css>
+</head><!-- end: layouts/partials/head.html --><body class=flex-parent>
+<div class="sidebar sidebar-left"></div><main class=flex-content><!-- begin: layouts/partials/header.html -->
+<div class=wrapper>
+<header class=site-header>
+<nav class=site-title>
+<a href=/blog><strong>weeeblog</strong></a>
+</nav><nav class=site-nav>
+<a href=/>About</a>
 <a href=/blog/>Blog</a>
-<a href=/blog/archives>Archives</a></nav><nav class=site-toggle><a id=theme-toggle><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></a></nav></header></div><!-- end: layouts/partials/header.html --><div class="page-content wrapper"><!-- begin: layouts/_default/single.html --><article class=post itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Set up a Ghost blog</h1><p class=post-subtitle itemprop="abstract description">from scratch, in under 30 minutes!</p><p class=post-meta><time datetime="2016-01-08 00:00:00 +0000 UTC" itemprop=datePublished>Published Jan 08, 2016</time>
-• <time datetime="2016-01-08 00:00:00 +0000 UTC" itemprop=datePublished>Updated Apr 18, 2022</time><br><a href=/blog/archives/tutorials/>Tutorials</a></p></header><div class=post-content itemprop=articleBody><blockquote><p>This is <em>not</em> an in-depth tutorial for a total newbie. That would call for a really long post. Though I&rsquo;ve given one-liners explaining each command,
-It would be better if you had some experience working with the linux terminal and a basic understanding of how web content is served.</p></blockquote><h1 id=things-youll-need>Things you&rsquo;ll need</h1><p>Just the two of them will do.</p><ul><li><p>A <strong>Server</strong>
-: This is where your site contents will be stored. It&rsquo;s just an internet connected computer that&rsquo;ll stay awake 24x7 for your blog and will serve users with your blog as and when asked to so.</p></li><li><p>A <strong>Domain</strong>
+<a href=/blog/archives>Archives</a>
+</nav><nav class=site-toggle>
+<a id=theme-toggle><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</a>
+</nav></header></div><!-- end: layouts/partials/header.html --><div class="page-content wrapper"><!-- begin: layouts/_default/single.html -->
+<article class=post itemscope itemtype=http://schema.org/BlogPosting>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">Set up a Ghost blog</h1><p class=post-subtitle itemprop="abstract description">from scratch, in under 30 minutes!</p><p class=post-meta>
+<time datetime="2016-01-08 00:00:00 +0000 UTC" itemprop=datePublished>Published Jan 08, 2016</time>
+• <time datetime="2016-01-08 00:00:00 +0000 UTC" itemprop=datePublished>Updated Apr 18, 2022</time>
+<br>
+<a href=/blog/archives/tutorials/>Tutorials</a>
+</p></header><div class=post-content itemprop=articleBody>
+<blockquote>
+<p>This is <em>not</em> an in-depth tutorial for a total newbie. That would call for a really long post. Though I&rsquo;ve given one-liners explaining each command,
+It would be better if you had some experience working with the linux terminal and a basic understanding of how web content is served.</p></blockquote><h1 id=things-youll-need>Things you&rsquo;ll need</h1><p>Just the two of them will do.</p><ul>
+<li>
+<p>A <strong>Server</strong>
+: This is where your site contents will be stored. It&rsquo;s just an internet connected computer that&rsquo;ll stay awake 24x7 for your blog and will serve users with your blog as and when asked to so.</p></li><li>
+<p>A <strong>Domain</strong>
 : No one likes remembering IP addresses. You&rsquo;ll need this to give your blog a name.</p></li></ul><h1 id=1-buy-a-server>1. Buy a server</h1><p>You can buy a server online from your favourite provider. I suggest using <a href="https://www.digitalocean.com/?refcode=ad1b7e083b2e">DigitalOcean</a>, where you can spin up a server for just $5 per month.
 To get $10 in free credits, use <a href="https://www.digitalocean.com/?refcode=ad1b7e083b2e">this link</a>:</p><pre><code>https://www.digitalocean.com/?refcode=ad1b7e083b2e
-</code></pre><ul><li><a href="https://www.digitalocean.com/?refcode=ad1b7e083b2e">Sign up</a> for an account and enter your credit card details or pay via PayPal.</li><li>A <code>$5</code> droplet with an <code>Ubuntu</code> image at your nearest datacenter would be enough for a blog. No need for any <code>additional options</code> or <code>SSH Keys</code> for now.</li></ul><h1 id=2-set-up-your-server>2. Set up your server</h1><p>Now that you&rsquo;ve bought your own server, its time to set it up. Use the following commands from your terminal.
-Consult these <a href=https://www.digitalocean.com/community/tutorial_series/new-ubuntu-14-04-server-checklist>community tutorials</a> for more details.</p><ul><li><a href=https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh><strong>Connect to your server via ssh</strong></a></li></ul><p>The server IP and root password can be found in your email when you set up your droplet.</p><pre><code>$ ssh root@&lt;server IP&gt;
+</code></pre><ul>
+<li><a href="https://www.digitalocean.com/?refcode=ad1b7e083b2e">Sign up</a> for an account and enter your credit card details or pay via PayPal.</li><li>A <code>$5</code> droplet with an <code>Ubuntu</code> image at your nearest datacenter would be enough for a blog. No need for any <code>additional options</code> or <code>SSH Keys</code> for now.</li></ul><h1 id=2-set-up-your-server>2. Set up your server</h1><p>Now that you&rsquo;ve bought your own server, its time to set it up. Use the following commands from your terminal.
+Consult these <a href=https://www.digitalocean.com/community/tutorial_series/new-ubuntu-14-04-server-checklist>community tutorials</a> for more details.</p><ul>
+<li><a href=https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh><strong>Connect to your server via ssh</strong></a></li></ul><p>The server IP and root password can be found in your email when you set up your droplet.</p><pre><code>$ ssh root@&lt;server IP&gt;
 </code></pre><h1 id=3-secure-your-server>3. Secure your server</h1><p>These steps are not necessary, but <em>strictly recommended</em>.
-I have skipped explaining them for brevity. Consult the DigitalOcean <a href=https://www.digitalocean.com/community/tutorial_series/new-ubuntu-14-04-server-checklist>community tutorials</a> which explains all these steps in detail.</p><ul><li><strong>Create a new user and restrict it</strong>. Why risk root access in case your server gets hacked?</li><li><strong>Configure passwordless ssh</strong>. So that only your computer can login to your server.</li><li><strong>Disable root login</strong>. You wouldn&rsquo;t want someone gaining root access to your server. Why not disable it in the first place?</li><li><strong>Set up firewall</strong> so that only specified ports remain open.</li></ul><h1 id=4-set-up-your-domain>4. Set up your domain</h1><p>I&rsquo;ll cover how to buy and point your domain to your server here.</p><ul><li><strong>Buy a domain</strong>. You can use the <a href=http://freenom.com/>free ones</a>, or spend money for the popular ones. GoDaddy and NameCheap are reliable providers.</li><li><strong>Use DigitalOcean nameservers</strong>. This is optional, but lets you manage your server and domain from the same place. Edit your domain details to configure the nameservers to the following</li></ul><pre tabindex=0><code>ns1.digitalocean.com
+I have skipped explaining them for brevity. Consult the DigitalOcean <a href=https://www.digitalocean.com/community/tutorial_series/new-ubuntu-14-04-server-checklist>community tutorials</a> which explains all these steps in detail.</p><ul>
+<li><strong>Create a new user and restrict it</strong>. Why risk root access in case your server gets hacked?</li><li><strong>Configure passwordless ssh</strong>. So that only your computer can login to your server.</li><li><strong>Disable root login</strong>. You wouldn&rsquo;t want someone gaining root access to your server. Why not disable it in the first place?</li><li><strong>Set up firewall</strong> so that only specified ports remain open.</li></ul><h1 id=4-set-up-your-domain>4. Set up your domain</h1><p>I&rsquo;ll cover how to buy and point your domain to your server here.</p><ul>
+<li><strong>Buy a domain</strong>. You can use the <a href=http://freenom.com/>free ones</a>, or spend money for the popular ones. GoDaddy and NameCheap are reliable providers.</li><li><strong>Use DigitalOcean nameservers</strong>. This is optional, but lets you manage your server and domain from the same place. Edit your domain details to configure the nameservers to the following</li></ul><pre tabindex=0><code>ns1.digitalocean.com
 ns2.digitalocean.com
 ns3.digitalocean.com
-</code></pre><ul><li><strong>Connect domain to droplet</strong>. Go to <code>Networking > Domains</code> tab in DigitalOcean settings. Connect your domain with the droplet by entering your domain, say <code>nikhilweee.me</code>, selecting your droplet from the dropdown and hitting <em>Create Record</em>. Your domain should now point to your droplet IP.</li></ul><h1 id=5-set-up-ghost>5. Set up Ghost</h1><p>Now that we&rsquo;ve connected the domain and the droplet, it&rsquo;s time to set up your Ghost blog.</p><ul><li><strong>Install and update <code>npm</code> and <code>node</code></strong>.</li></ul><p>Ghost is written in javascript and needs node and npm to build and run on the server.</p><p>The first command installs node and npm, the second one upgrades npm, and the third one is required for ubuntu, so that <code>node</code> is equivalent to <code>nodejs</code> in the terminal.</p><pre tabindex=0><code>$ apt-get install nodejs npm
+</code></pre><ul>
+<li><strong>Connect domain to droplet</strong>. Go to <code>Networking > Domains</code> tab in DigitalOcean settings. Connect your domain with the droplet by entering your domain, say <code>nikhilweee.me</code>, selecting your droplet from the dropdown and hitting <em>Create Record</em>. Your domain should now point to your droplet IP.</li></ul><h1 id=5-set-up-ghost>5. Set up Ghost</h1><p>Now that we&rsquo;ve connected the domain and the droplet, it&rsquo;s time to set up your Ghost blog.</p><ul>
+<li><strong>Install and update <code>npm</code> and <code>node</code></strong>.</li></ul><p>Ghost is written in javascript and needs node and npm to build and run on the server.</p><p>The first command installs node and npm, the second one upgrades npm, and the third one is required for ubuntu, so that <code>node</code> is equivalent to <code>nodejs</code> in the terminal.</p><pre tabindex=0><code>$ apt-get install nodejs npm
 $ npm install -g npm
 $ ln -s &#34;$(which nodejs)&#34; /usr/bin/node
-</code></pre><ul><li><strong>Install Ghost</strong>.</li></ul><p>We&rsquo;ll download the latest version, extract and then install it to the recommended install directory.</p><p>We&rsquo;ll first install the tools <code>zip</code> and <code>wget</code> needed to download and extract the archive, then create the recommended directory <code>/var/www/</code>, and then download and extract the latest version of ghost. The following commands do just that.</p><pre tabindex=0><code>$ sudo apt-get update
+</code></pre><ul>
+<li><strong>Install Ghost</strong>.</li></ul><p>We&rsquo;ll download the latest version, extract and then install it to the recommended install directory.</p><p>We&rsquo;ll first install the tools <code>zip</code> and <code>wget</code> needed to download and extract the archive, then create the recommended directory <code>/var/www/</code>, and then download and extract the latest version of ghost. The following commands do just that.</p><pre tabindex=0><code>$ sudo apt-get update
 $ sudo apt-get install zip wget
 $ sudo mkdir -p /var/www/
 $ cd /var/www
@@ -23,10 +63,13 @@ $ sudo wget https://ghost.org/zip/ghost-latest.zip
 $ sudo unzip -d ghost ghost-latest.zip
 $ cd ghost/
 $ sudo npm install --production
-</code></pre><ul><li><strong>Configure Ghost</strong></li></ul><p>Ghost stores your blog url in a <code>config.js</code> file. We&rsquo;ll first create the file using a default template and then set the appropriate url. Open the config file by using the following commands, and then under <code>config > production</code>, change the url to your new domain.</p><pre tabindex=0><code>$ sudo cp config.example.js config.js
+</code></pre><ul>
+<li><strong>Configure Ghost</strong></li></ul><p>Ghost stores your blog url in a <code>config.js</code> file. We&rsquo;ll first create the file using a default template and then set the appropriate url. Open the config file by using the following commands, and then under <code>config > production</code>, change the url to your new domain.</p><pre tabindex=0><code>$ sudo cp config.example.js config.js
 $ sudo nano config.js
-</code></pre><h1 id=6-set-up-nginx>6. Set up Nginx</h1><p>Nginx (read Engine-X) is the server software (that technically makes your droplet a server) that we&rsquo;ll use to serve our blog. We won&rsquo;t use the ghost development server as that isn&rsquo;t a good practice.</p><ul><li><strong>Install nginx</strong></li></ul><p>It&rsquo;s our favourite <code>apt-get</code> command again.</p><pre tabindex=0><code>$ sudo apt-get install nginx
-</code></pre><ul><li><strong>Configure nginx</strong></li></ul><p>We&rsquo;ll create a configuration file for your site in the <code>sites-available</code> directory.</p><pre tabindex=0><code>$ cd /etc/nginx/
+</code></pre><h1 id=6-set-up-nginx>6. Set up Nginx</h1><p>Nginx (read Engine-X) is the server software (that technically makes your droplet a server) that we&rsquo;ll use to serve our blog. We won&rsquo;t use the ghost development server as that isn&rsquo;t a good practice.</p><ul>
+<li><strong>Install nginx</strong></li></ul><p>It&rsquo;s our favourite <code>apt-get</code> command again.</p><pre tabindex=0><code>$ sudo apt-get install nginx
+</code></pre><ul>
+<li><strong>Configure nginx</strong></li></ul><p>We&rsquo;ll create a configuration file for your site in the <code>sites-available</code> directory.</p><pre tabindex=0><code>$ cd /etc/nginx/
 $ sudo touch /etc/nginx/sites-available/ghost
 $ sudo nano /etc/nginx/sites-available/ghost
 </code></pre><p>Now edit the config file. The following snippet is the simplest configuration for a working ghost blog. We are simply running your blog behind a proxy server. This way we get the robustness of nginx along with a simple config.
@@ -39,12 +82,16 @@ Paste this code into the editor. Replace <code>&lt;domain.tld></code> with your 
         proxy_pass         http://127.0.0.1:2368;
     }
 }
-</code></pre><ul><li><strong>Enable your site</strong></li></ul><p>Simply symlink the file you just created to the <code>sites-enabled</code> directory and restart nginx.</p><pre tabindex=0><code>$ sudo ln -s /etc/nginx/sites-available/ghost /etc/nginx/sites-enabled/ghost
+</code></pre><ul>
+<li><strong>Enable your site</strong></li></ul><p>Simply symlink the file you just created to the <code>sites-enabled</code> directory and restart nginx.</p><pre tabindex=0><code>$ sudo ln -s /etc/nginx/sites-available/ghost /etc/nginx/sites-enabled/ghost
 $ sudo service nginx restart
-</code></pre><ul><li>At this stage, test your config</li></ul><pre tabindex=0><code>$ cd /var/www/ghost
+</code></pre><ul>
+<li>At this stage, test your config</li></ul><pre tabindex=0><code>$ cd /var/www/ghost
 $ sudo npm start --production
-</code></pre><p>You should be able to access your new ghost blog on your new domain. If not, there&rsquo;s been a mistake. C&rsquo;mon. Get working. Fix that crap!</p><h1 id=7-set-up-autostart>7. Set up autostart</h1><p>Now that your blog is set up, we just finally need to ensure that the blog doesn&rsquo;t stop for any reason and even autostarts on droplet restart. I&rsquo;ll do this using supervisor.</p><ul><li><strong>Install supervisor</strong></li></ul><p>Again, <code>apt-get</code>.</p><pre tabindex=0><code>$ sudo apt-get install supervisor
-</code></pre><ul><li><strong>Configure your blog for supervisor</strong></li></ul><p>We&rsquo;ll again create a config file as we did for nginx.</p><pre tabindex=0><code>$ sudo nano /etc/supervisor/conf.d/ghost.conf
+</code></pre><p>You should be able to access your new ghost blog on your new domain. If not, there&rsquo;s been a mistake. C&rsquo;mon. Get working. Fix that crap!</p><h1 id=7-set-up-autostart>7. Set up autostart</h1><p>Now that your blog is set up, we just finally need to ensure that the blog doesn&rsquo;t stop for any reason and even autostarts on droplet restart. I&rsquo;ll do this using supervisor.</p><ul>
+<li><strong>Install supervisor</strong></li></ul><p>Again, <code>apt-get</code>.</p><pre tabindex=0><code>$ sudo apt-get install supervisor
+</code></pre><ul>
+<li><strong>Configure your blog for supervisor</strong></li></ul><p>We&rsquo;ll again create a config file as we did for nginx.</p><pre tabindex=0><code>$ sudo nano /etc/supervisor/conf.d/ghost.conf
 </code></pre><p>Now edit the file to create an autostart process so that your blog remains stable.
 <code>user</code> should be an existing user on the system. Better to use a dedicated user as a safety measure as described in <code>4. Secure your server</code> above.</p><pre tabindex=0><code>[program:ghost]
 command = node /var/www/ghost/index.js
@@ -55,8 +102,21 @@ autorestart = true
 stdout_logfile = /var/log/supervisor/ghost.log
 stderr_logfile = /var/log/supervisor/ghost_err.log
 environment = NODE_ENV=&#34;production&#34;
-</code></pre><ul><li><strong>Restart</strong></li></ul><pre tabindex=0><code>$ sudo supervisorctl reread
+</code></pre><ul>
+<li><strong>Restart</strong></li></ul><pre tabindex=0><code>$ sudo supervisorctl reread
 $ sudo supervisorctl update
 $ sudo supervisorctl restart ghost
-</code></pre><p>Now your blog is all set and would even withstand restarts. Cheers!</p></div></article><!-- end: layouts/_default/single.html --></div><!-- begin: layouts/partials/footer.html --><div class=wrapper><div class=giscus></div></div><footer class=site-footer><div class=wrapper><p>&copy; 2022 <a href=/>Nikhil Verma</a> • Subscribe via <a href=/feed.xml>RSS</a></p></div></footer><!-- end: layouts/partials/footer.html --></main><div class="sidebar sidebar-right"><aside class=sidebar-toc><h1>Outline</h1><nav id=TableOfContents><ul><li><a href=#things-youll-need>Things you&rsquo;ll need</a></li><li><a href=#1-buy-a-server>1. Buy a server</a></li><li><a href=#2-set-up-your-server>2. Set up your server</a></li><li><a href=#3-secure-your-server>3. Secure your server</a></li><li><a href=#4-set-up-your-domain>4. Set up your domain</a></li><li><a href=#5-set-up-ghost>5. Set up Ghost</a></li><li><a href=#6-set-up-nginx>6. Set up Nginx</a></li><li><a href=#7-set-up-autostart>7. Set up autostart</a></li></ul></nav></aside></div></body><script type=text/javascript>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark'),document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light'),changeGiscusTheme()):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'),changeGiscusTheme())});function changeGiscusTheme(){let t=localStorage.getItem("pref-theme"),n={setConfig:{theme:t}},e=document.querySelector('iframe.giscus-frame');e&&e.contentWindow.postMessage({giscus:n},'https://giscus.app')}function handleMessage(e){if(e.origin!=='https://giscus.app')return;if(typeof e.data!='object'||!e.data.giscus)return;const t=e.data.giscus;changeGiscusTheme()}window.addEventListener('message',handleMessage)</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-0JVB0SEFDJ"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-0JVB0SEFDJ',{anonymize_ip:!1})}</script><script src=https://giscus.app/client.js data-repo=nikhilweee/nikhilweee.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkzOTU5NjUwNTc=" data-category=Comments data-category-id=DIC_kwDOF5nygc4COpdc data-mapping=pathname data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=preferred_color_scheme data-lang=en crossorigin=anonymous async></script><!-- end: layouts/_default/baseof.html --></html>
+</code></pre><p>Now your blog is all set and would even withstand restarts. Cheers!</p></div></article><!-- end: layouts/_default/single.html --></div><!-- begin: layouts/partials/footer.html --><div class=wrapper>
+<div class=giscus></div></div><footer class=site-footer>
+<div class=wrapper>
+<p>
+&copy; 2022 <a href=/>Nikhil Verma</a> • Subscribe via <a href=/feed.xml>RSS</a>
+</p></div></footer><!-- end: layouts/partials/footer.html --></main><div class="sidebar sidebar-right">
+<aside class=sidebar-toc>
+<h1>Outline</h1><nav id=TableOfContents>
+<ul>
+<li><a href=#things-youll-need>Things you&rsquo;ll need</a></li><li><a href=#1-buy-a-server>1. Buy a server</a></li><li><a href=#2-set-up-your-server>2. Set up your server</a></li><li><a href=#3-secure-your-server>3. Secure your server</a></li><li><a href=#4-set-up-your-domain>4. Set up your domain</a></li><li><a href=#5-set-up-ghost>5. Set up Ghost</a></li><li><a href=#6-set-up-nginx>6. Set up Nginx</a></li><li><a href=#7-set-up-autostart>7. Set up autostart</a></li></ul></nav></aside></div></body><script type=text/javascript>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark'),document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light'),changeGiscusTheme()):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'),changeGiscusTheme())});function changeGiscusTheme(){let t=localStorage.getItem("pref-theme"),n={setConfig:{theme:t}},e=document.querySelector('iframe.giscus-frame');e&&e.contentWindow.postMessage({giscus:n},'https://giscus.app')}function handleMessage(e){if(e.origin!=='https://giscus.app')return;if(typeof e.data!='object'||!e.data.giscus)return;const t=e.data.giscus;changeGiscusTheme()}window.addEventListener('message',handleMessage)</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0JVB0SEFDJ"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-0JVB0SEFDJ',{anonymize_ip:!1})}</script>
+<script src=https://giscus.app/client.js data-repo=nikhilweee/nikhilweee.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkzOTU5NjUwNTc=" data-category=Comments data-category-id=DIC_kwDOF5nygc4COpdc data-mapping=pathname data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=preferred_color_scheme data-lang=en crossorigin=anonymous async></script><!-- end: layouts/_default/baseof.html -->
+</html>
