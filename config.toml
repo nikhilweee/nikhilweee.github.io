@@ -37,6 +37,7 @@ disableKinds = ["taxonomy"]
   minifyOutput = true
   [minify.tdewolff.html]
     keepComments = true
+    keepWhitespace = true
 
 # Citation style
 [params]
