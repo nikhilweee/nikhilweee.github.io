@@ -16,6 +16,19 @@ I'm working in the CILVR Lab with Prof. [Lerrel Pinto](https://www.lerrelpinto.c
 I'm working with Prof. [Michael Picheny](https://sites.google.com/nyu.edu/picheny-nyu) on DARPA's [CCU Program](https://www.darpa.mil/news-events/2021-05-03a) to improve speech recognition systems for conversational Mandarin, primarily on the AISHELL4 dataset {{<cite "fu2021aishell">}}.
 
 
+# Course Projects
+---
+{{<spanright>}}_New York University_{{</spanright>}}
+**Contrastive Training with Masked Autoencoders**  
+{{<spanright>}}_[[Report]](https://drive.google.com/file/d/16cQVWOIo4M-KlyXTL1Yi99HJ3CrmKAiV/view?usp=sharing)_{{</spanright>}}
+Implemented a contrastive loss on Masked Autoencoders {{<cite "he2021masked">}}
+
+<!--
+{{<spanright>}}_[[Report]](https://drive.google.com/file/d/1fzgs2AZKGcWX3n6mjbokSXaDe3VhpyPK/view?usp=sharing)_{{</spanright>}}
+**Survey of Approximation Methods in Deep Learning**  
+A survey of approximation methods in Deep Learning. 
+-->
+
 # Past Projects
 ---
 {{<spanright>}}_Flixstock India_{{</spanright>}}
@@ -30,10 +43,10 @@ I worked with [Danish Contractor](https://researcher.watson.ibm.com/researcher/v
 ---
 {{<spanright>}}_Microsoft Research_{{</spanright>}}
 **Code to Natural Language**  
-{{<spanright>}}[[Report]](https://drive.google.com/file/d/1OZ43mTciAH2_h_LyPRyE3yrlKZ66WQXx/view?usp=sharing){{</spanright>}}
+{{<spanright>}}_[[Report]](https://drive.google.com/file/d/1OZ43mTciAH2_h_LyPRyE3yrlKZ66WQXx/view?usp=sharing)_{{</spanright>}}
 I worked with [Navin Goyal](https://www.microsoft.com/en-us/research/people/navingo/) on techniques to describe code (SQL Queries and `bash` commands in particular) in natural language as part of my undergrad thesis.
 
 {{<spanright>}}_IBM Research_{{</spanright>}}
 **Question Generation**  
-{{<spanright>}}[[Report]](https://drive.google.com/file/d/0B_heRUcpMjoMVUFCZ3FrcmItRU0/view?usp=sharing&resourcekey=0-qT4FDUurCB62bv60-UvNKw){{</spanright>}}
+{{<spanright>}}_[[Report]](https://drive.google.com/file/d/0B_heRUcpMjoMVUFCZ3FrcmItRU0/view?usp=sharing&resourcekey=0-qT4FDUurCB62bv60-UvNKw)_{{</spanright>}}
 I worked on improving techniques to generate answerable questions from text.
