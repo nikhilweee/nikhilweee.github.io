@@ -2,7 +2,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=generator content="Hugo 0.100.1">
+<meta name=generator content="Hugo 0.100.2">
 <title>A Walkthrough of Isaac Gym - weeeblog</title><link rel=icon type=image/svg href=/static/favicon.png>
 <link rel=stylesheet type=text/css href=/main.css>
 <link rel=canonical href=https://nikhilweee.me/blog/2022/isaac-gym-walkthrough/>
@@ -26,11 +26,9 @@
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">A Walkthrough of Isaac Gym</h1><p class=post-subtitle itemprop="abstract description">NVIDIA's GPU based RL Framework</p><p class=post-meta>
 <time datetime="2022-06-06 00:00:00 +0000 UTC" itemprop=datePublished>Published Jun 06, 2022</time>
-• <time datetime="2022-06-06 00:00:00 +0000 UTC" itemprop=datePublished>Updated Jun 08, 2022</time>
+• <time datetime="2022-06-06 00:00:00 +0000 UTC" itemprop=datePublished>Updated Jun 15, 2022</time>
 <br>
-<a href=/blog/archives/long-posts/>Long Posts</a>
-•
-<a href=/blog/archives/reinforcement-learning/>Reinforcement Learning</a>
+<a href=/blog/archives/rl-series/>RL Series</a>
 </p></header><div class=post-content itemprop=articleBody>
 <h1 id=introduction>Introduction</h1><p>Training a policy using deep reinforcement learning consists of an agent interacting with the environment in a continuous loop. In practise, the agent is often modelled by deep networks that can take advantage of GPU parallelization, but the environment is still modelled by simulators that rely on the CPU. While the poor sample efficiency of RL algorithms remains a huge bottleneck, a significant amount of time is also spent on moving tensors from the CPU to the GPU, not to forget the additional delays caused by the lack of parallelism in CPU based simulation.</p><p>NVIDIA&rsquo;s Isaac Gym is a simulation framework designed to address these limitations. It runs entirely on the GPU, thus eliminating the CPU bottleneck. This post is a brief walkthrough of Isaac Gym. We shall install <code>isaacgym</code>, learn about its core principles, and train a policy for object manipulation using the <a href=http://wiki.ros.org/Robots/AllegroHand>AllegroHand</a>. To learn more about Isaac Gym, I highly recommend watching <a href="https://www.youtube.com/playlist?list=PL-tHNF2x8sTZcoEGru_evvkQs6JxE99pE">these videos</a> from RSS 2021 and reading the <a href=https://arxiv.org/abs/2108.10470>technical paper</a> available on arXiv.</p><h1 id=getting-started>Getting Started</h1><p>To download Isaac Gym, you need to head over to NVIDIA&rsquo;s <a href=https://developer.nvidia.com/isaac-gym>website</a> and join the developer programme. At the time of this writing, the latest release is Isaac Gym Preview 3, which is what we&rsquo;ll be working with throughout this post. For ease of development, I recommend using a linux based machine with NVIDIA GPUs. Once you download and extract the archive, documentation is available at <code>docs/index.html</code>. To install, head over to the instructions at <code>docs/install.html</code>.</p><p>The first thing to check after installing Isaac Gym is to make sure that it runs fine. Head over to <code>python/examples</code> and run one of the example scripts, say <code>joint_monkey.py</code>. You should see the simulation window pop up where all the joints of the humanoid are being animated.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> <span class=nb>cd</span> python/examples
 </span></span><span class=line><span class=cl><span class=gp>$</span> python joint_monkey.py
