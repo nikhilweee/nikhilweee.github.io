@@ -4,7 +4,7 @@ draft = true
 title = 'Test Post'
 subtitle = 'So everything works fine'
 categories = ["Test"]
-tex = true
+katex = true
 citations = true
 slug = "test"
 

@@ -1,7 +1,7 @@
 +++
 categories = ["Long Posts"]
 date = "2021-12-18"
-tex = true
+katex = true
 citations = true
 title = "Adversarial Attacks on RL Agents"
 subtitle = "using natural observations"

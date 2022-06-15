@@ -1,5 +1,5 @@
 +++
-categories = ["Long Posts", "Reinforcement Learning"]
+categories = ["RL Series"]
 date = "2022-06-06"
 title = "A Walkthrough of Isaac Gym"
 subtitle = "NVIDIA's GPU based RL Framework"

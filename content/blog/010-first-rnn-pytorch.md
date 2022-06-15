@@ -1,7 +1,7 @@
 +++
 categories = ["Tutorials", "Long Posts"]
 date = "2018-05-24T00:00:00Z"
-tex = true
+katex = true
 aliases = ["/blog/2018/first-rnn-pytorch-1/", "/blog/2018/first-rnn-pytorch-2/", "/blog/2018/first-rnn-pytorch-3/"]
 subtitle = "with PyTorch 0.4!"
 title = "Building your first RNN"

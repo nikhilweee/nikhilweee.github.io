@@ -1,5 +1,5 @@
 +++
-categories = ["Tutorials"]
+categories = ["References"]
 date = "2022-02-13"
 draft = false
 subtitle = "using SLURM on NYU's HPC cluster"

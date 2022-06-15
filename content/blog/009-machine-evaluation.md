@@ -1,7 +1,7 @@
 +++
 categories = ['Explanations']
 date = '2017-06-14T00:00:00Z'
-tex = true
+katex = true
 draft = true
 subtitle = 'Automatic evaluation metrics explained'
 tags = ['cube', 'algorithms']
