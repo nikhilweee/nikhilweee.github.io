@@ -1,55 +1,13 @@
-<!doctype html><!-- begin: layouts/_default/baseof.html --><html lang=en><!-- begin: layouts/partials/head.html -->
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=generator content="Hugo 0.100.2">
-<title>Speed up your remote workflow - weeeblog</title><link rel=icon type=image/svg href=/static/favicon.png>
-<link rel=stylesheet type=text/css href=/main.css>
-<link rel=canonical href=https://nikhilweee.me/blog/2022/speed-up-remote-workflow-slurm-nyu-hpc/>
-<link href=https://cdn.jsdelivr.net/npm/charter-webfont/charter.min.css rel=stylesheet>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css>
-</head><!-- end: layouts/partials/head.html --><body class=flex-parent>
-<div class="sidebar sidebar-left"></div><main class=flex-content><!-- begin: layouts/partials/header.html -->
-<div class=wrapper>
-<header class=site-header>
-<nav class=site-title>
-<a href=/blog><strong>weeeblog</strong></a>
-</nav><nav class=site-nav>
-<a href=/>About</a>
+<!doctype html><!-- begin: layouts/_default/baseof.html --><html lang=en><!-- begin: layouts/partials/head.html --><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.101.0"><title>Speed up your remote workflow - weeeblog</title><link rel=icon type=image/svg href=/static/favicon.png><link rel=stylesheet type=text/css href=/main.css><link rel=canonical href=https://nikhilweee.me/blog/2022/speed-up-remote-workflow-slurm-nyu-hpc/><link href=https://cdn.jsdelivr.net/npm/charter-webfont/charter.min.css rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css></head><!-- end: layouts/partials/head.html --><body class=flex-parent><div class="sidebar sidebar-left"></div><main class=flex-content><!-- begin: layouts/partials/header.html --><div class=wrapper><header class=site-header><nav class=site-title><a href=/blog><strong>weeeblog</strong></a></nav><nav class=site-nav><a href=/>About</a>
 <a href=/blog/>Blog</a>
-<a href=/blog/archives>Archives</a>
-</nav><nav class=site-toggle>
-<a id=theme-toggle><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</a>
-</nav></header></div><!-- end: layouts/partials/header.html --><div class="page-content wrapper"><!-- begin: layouts/_default/single.html -->
-<article class=post itemscope itemtype=http://schema.org/BlogPosting>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">Speed up your remote workflow</h1><p class=post-subtitle itemprop="abstract description">using SLURM on NYU's HPC cluster</p><p class=post-meta>
-<time datetime="2022-02-13 00:00:00 +0000 UTC" itemprop=datePublished>Published Feb 13, 2022</time>
-• <time datetime="2022-02-13 00:00:00 +0000 UTC" itemprop=datePublished>Updated Jun 15, 2022</time>
-<br>
-<a href=/blog/archives/references/>References</a>
-</p></header><div class=post-content itemprop=articleBody>
-<p>Although NYU already a dedicated <a href=https://sites.google.com/nyu.edu/nyu-hpc>website</a> with all the documentation to get started with the HPC cluster, here&rsquo;s a set of tricks that I use to ease up the workflow by a significant amount.</p><div class=post-toc>
-<h3>Outline</h3><nav id=TableOfContents>
-<ul>
-<li><a href=#first-things-first>First things first</a>
-<ul>
-<li><a href=#1-passwordless-ssh>1. Passwordless SSH</a></li><li><a href=#2-set-up-ssh-aliases>2. Set up SSH aliases</a></li></ul></li><li><a href=#a-few-simple-tricks>A few simple tricks</a>
-<ul>
-<li><a href=#1-login-directly-into-compute-nodes>1. Login directly into compute nodes</a></li><li><a href=#2-use-local-ssh-keys>2. Use local SSH keys</a></li></ul></li><li><a href=#some-slurm-aliases>Some SLURM aliases</a>
-<ul>
-<li><a href=#1-common-aliases>1. Common aliases</a></li><li><a href=#2-view-your-job-queue>2. View your job queue</a></li><li><a href=#3-view-output-from-your-job>3. View output from your job</a></li></ul></li><li><a href=#slurm-gems>Slurm Gems</a></li><li><a href=#burst-instructions>Burst Instructions</a>
-<ul>
-<li><a href=#1-housekeeping>1. Housekeeping</a></li><li><a href=#2-compute-nodes>2. Compute Nodes</a></li><li><a href=#3-data-transfer>3. Data Transfer</a></li><li><a href=#4-gpu-nodes>4. GPU Nodes</a></li><li><a href=#5-port-forwarding>5. Port Forwarding</a></li></ul></li><li><a href=#troubleshooting>Troubleshooting</a>
-<ul>
-<li><a href=#1-singularity-cant-open-overlay-for-writing>1. Singularity can&rsquo;t open overlay for writing</a></li><li><a href=#2-job-killed-because-of-low-gpu-usage>2. Job killed because of Low GPU Usage</a></li></ul></li></ul></nav></div><h1 id=first-things-first>First things first</h1><p>Here&rsquo;s something that I recommend doing for any remote server that you&rsquo;ll access frequently.</p><h2 id=1-passwordless-ssh>1. Passwordless SSH</h2><p>If you haven&rsquo;t done so yet, you should definitely add your ssh keys to the cluster to avoid typing in your password whenever you want to login. Replace <code>abc1234</code> with your NetID.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> ssh-copy-id abc1234@greene.hpc.nyu.edu
+<a href=/blog/archives>Archives</a></nav><nav class=site-toggle><a id=theme-toggle><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></a></nav></header></div><!-- end: layouts/partials/header.html --><div class="page-content wrapper"><!-- begin: layouts/_default/single.html --><article class=post itemscope itemtype=http://schema.org/BlogPosting><header class=post-header><h1 class=post-title itemprop="name headline">Speed up your remote workflow</h1><p class=post-subtitle itemprop="abstract description">using SLURM on NYU's HPC cluster</p><p class=post-meta><span itemprop=author itemscope itemtype=http://schema.org/Person><a href=/><span itemprop=name>Nikhil Verma</span></a></span> •
+<time datetime="2022-02-13 00:00:00 +0000 UTC" itemprop=datePublished>Published Feb 13, 2022</time> •
+<time datetime="2022-02-13 00:00:00 +0000 UTC" itemprop=datePublished>Updated Jun 15, 2022</time> •
+<a href=/blog/archives/references/>References</a></p></header><div class=post-content itemprop=articleBody><p>Although NYU already a dedicated <a href=https://sites.google.com/nyu.edu/nyu-hpc>website</a> with all the documentation to get started with the HPC cluster, here&rsquo;s a set of tricks that I use to ease up the workflow by a significant amount.</p><div class=post-toc><h3>Outline</h3><nav id=TableOfContents><ul><li><a href=#first-things-first>First things first</a><ul><li><a href=#1-passwordless-ssh>1. Passwordless SSH</a></li><li><a href=#2-set-up-ssh-aliases>2. Set up SSH aliases</a></li></ul></li><li><a href=#a-few-simple-tricks>A few simple tricks</a><ul><li><a href=#1-login-directly-into-compute-nodes>1. Login directly into compute nodes</a></li><li><a href=#2-use-local-ssh-keys>2. Use local SSH keys</a></li></ul></li><li><a href=#some-slurm-aliases>Some SLURM aliases</a><ul><li><a href=#1-common-aliases>1. Common aliases</a></li><li><a href=#2-view-your-job-queue>2. View your job queue</a></li><li><a href=#3-view-output-from-your-job>3. View output from your job</a></li></ul></li><li><a href=#slurm-gems>Slurm Gems</a></li><li><a href=#burst-instructions>Burst Instructions</a><ul><li><a href=#1-housekeeping>1. Housekeeping</a></li><li><a href=#2-compute-nodes>2. Compute Nodes</a></li><li><a href=#3-data-transfer>3. Data Transfer</a></li><li><a href=#4-gpu-nodes>4. GPU Nodes</a></li><li><a href=#5-port-forwarding>5. Port Forwarding</a></li></ul></li><li><a href=#troubleshooting>Troubleshooting</a><ul><li><a href=#1-singularity-cant-open-overlay-for-writing>1. Singularity can&rsquo;t open overlay for writing</a></li><li><a href=#2-job-killed-because-of-low-gpu-usage>2. Job killed because of Low GPU Usage</a></li></ul></li></ul></nav></div><h1 id=first-things-first>First things first</h1><p>Here&rsquo;s something that I recommend doing for any remote server that you&rsquo;ll access frequently.</p><h2 id=1-passwordless-ssh>1. Passwordless SSH</h2><p>If you haven&rsquo;t done so yet, you should definitely add your ssh keys to the cluster to avoid typing in your password whenever you want to login. Replace <code>abc1234</code> with your NetID.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> ssh-copy-id abc1234@greene.hpc.nyu.edu
 </span></span><span class=line><span class=cl><span class=go>...
 </span></span></span><span class=line><span class=cl><span class=go></span><span class=gp>$</span> ssh-copy-id abc1234@access.cims.nyu.edu
 </span></span><span class=line><span class=cl><span class=go>...
-</span></span></span></code></pre></div><h2 id=2-set-up-ssh-aliases>2. Set up SSH aliases</h2><p>Keying in <code>ssh abc1234@greene.hpc.nyu.edu</code> or <code>ssh abc1234@access.cims.nyu.edu</code> is so long and so old school when you can just get away with something like <code>ssh greene</code> or <code>ssh cims</code>. You should definitely set up an alias instead. Edit <code>~/.ssh/config</code> in your favourite text editor:</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></span></code></pre></div><h2 id=2-set-up-ssh-aliases>2. Set up SSH aliases</h2><p>Keying in <code>ssh abc1234@greene.hpc.nyu.edu</code> or <code>ssh abc1234@access.cims.nyu.edu</code> is so long and so old school when you can just get away with something like <code>ssh greene</code> or <code>ssh cims</code>. You should definitely set up an alias instead. Edit <code>~/.ssh/config</code> in your favourite text editor:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -59,8 +17,7 @@
 </span><span class=lnt> 8
 </span><span class=lnt> 9
 </span><span class=lnt>10
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
 </span></span><span class=line><span class=cl><span class=c1># NYU Greene</span>
 </span></span><span class=line><span class=cl>Host greene
 </span></span><span class=line><span class=cl>    Hostname greene.hpc.nyu.edu
@@ -71,9 +28,7 @@
 </span></span><span class=line><span class=cl>    Hostname access.cims.nyu.edu
 </span></span><span class=line><span class=cl>    User abc1234
 </span></span></code></pre></td></tr></table></div></div><h1 id=a-few-simple-tricks>A few simple tricks</h1><p>These are a few hacks which should greatly simplify the overhead of using the cluster.</p><h2 id=1-login-directly-into-compute-nodes>1. Login directly into compute nodes</h2><p>Often times, you wish you could directly access the compute nodes (such as <code>linserv1</code>) without having to first SSH into <code>access.cims.nyu.edu</code>.
-Here&rsquo;s how you can use the <code>ProxyJump</code> directive.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+Here&rsquo;s how you can use the <code>ProxyJump</code> directive.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -82,8 +37,7 @@ Here&rsquo;s how you can use the <code>ProxyJump</code> directive.</p><div class
 </span><span class=lnt>7
 </span><span class=lnt>8
 </span><span class=lnt>9
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
 </span></span><span class=line><span class=cl><span class=c1># NYU CIMS</span>
 </span></span><span class=line><span class=cl>Host access1 access2 linserv1
 </span></span><span class=line><span class=cl>    User abc1234
@@ -92,9 +46,7 @@ Here&rsquo;s how you can use the <code>ProxyJump</code> directive.</p><div class
 </span></span><span class=line><span class=cl>Host cims
 </span></span><span class=line><span class=cl>    Hostname access.cims.nyu.edu
 </span></span><span class=line><span class=cl>    User abc1234
-</span></span></code></pre></td></tr></table></div></div><p>Lines 7-9 describe the <code>login</code> node, and lines 3-5 describe the <code>compute</code> nodes. So now whenever you type <code>ssh linserv1</code>, you will first login to <code>cims</code> (<code>access.cims.nyu.edu</code>), and upon successful authentication, you will automatically SSH into <code>linserv1</code>. You can setup Greene in the same way.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></span></code></pre></td></tr></table></div></div><p>Lines 7-9 describe the <code>login</code> node, and lines 3-5 describe the <code>compute</code> nodes. So now whenever you type <code>ssh linserv1</code>, you will first login to <code>cims</code> (<code>access.cims.nyu.edu</code>), and upon successful authentication, you will automatically SSH into <code>linserv1</code>. You can setup Greene in the same way.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -103,8 +55,7 @@ Here&rsquo;s how you can use the <code>ProxyJump</code> directive.</p><div class
 </span><span class=lnt>7
 </span><span class=lnt>8
 </span><span class=lnt>9
-</span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
 </span></span><span class=line><span class=cl><span class=c1># NYU Greene</span>
 </span></span><span class=line><span class=cl>Host log-1 log-2 log-3 log-4 log-5
 </span></span><span class=line><span class=cl>    User abc1234
@@ -113,9 +64,7 @@ Here&rsquo;s how you can use the <code>ProxyJump</code> directive.</p><div class
 </span></span><span class=line><span class=cl>Host greene
 </span></span><span class=line><span class=cl>    Hostname greene.hpc.nyu.edu
 </span></span><span class=line><span class=cl>    User abc1234
-</span></span></code></pre></td></tr></table></div></div><p>This setup is particularly helpful because whenever you SSH into <code>greene.hpc.nyu.edu</code>, you are randomly taken to one of the login nodes. Now let&rsquo;s say if you had <code>tmux</code> running on <code>log-3</code> and you lose connectivity. The next time you login, you might be taken into <code>log-4</code>. You type <code>tmux ls</code> and it complains about no open sessions. You&rsquo;re flabbergasted because you clearly remember running <code>tmux</code> a moment ago. Sadly, you didn&rsquo;t remember the hostname.</p><p>With this setup, you can try making a habit of always logging in to one particular node, say <code>ssh log-3</code>, and now you don&rsquo;t have to worry about remembering hostnames anymore.</p><h2 id=2-use-local-ssh-keys>2. Use local SSH keys</h2><p>Did you ever get annoyed when you tried to use <code>git clone</code> on one of the private repositories and you suddenly notice GitHub throwing an error? You may have added your local SSH keys to GitHub to for secure authentication but as you can imagine, GitHub does not recognise the keys from the cluster. The way around it is to use the <code>ForwardAgent</code> directive.</p><div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><p>This setup is particularly helpful because whenever you SSH into <code>greene.hpc.nyu.edu</code>, you are randomly taken to one of the login nodes. Now let&rsquo;s say if you had <code>tmux</code> running on <code>log-3</code> and you lose connectivity. The next time you login, you might be taken into <code>log-4</code>. You type <code>tmux ls</code> and it complains about no open sessions. You&rsquo;re flabbergasted because you clearly remember running <code>tmux</code> a moment ago. Sadly, you didn&rsquo;t remember the hostname.</p><p>With this setup, you can try making a habit of always logging in to one particular node, say <code>ssh log-3</code>, and now you don&rsquo;t have to worry about remembering hostnames anymore.</p><h2 id=2-use-local-ssh-keys>2. Use local SSH keys</h2><p>Did you ever get annoyed when you tried to use <code>git clone</code> on one of the private repositories and you suddenly notice GitHub throwing an error? You may have added your local SSH keys to GitHub to for secure authentication but as you can imagine, GitHub does not recognise the keys from the cluster. The way around it is to use the <code>ForwardAgent</code> directive.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -126,8 +75,7 @@ Here&rsquo;s how you can use the <code>ProxyJump</code> directive.</p><div class
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=hl><span class=lnt>11
-</span></span></code></pre></td><td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
+</span></span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># ~/.ssh/config</span>
 </span></span><span class=line><span class=cl><span class=c1># NYU CIMS</span>
 </span></span><span class=line><span class=cl>Host access1 access2 linserv1
 </span></span><span class=line><span class=cl>    User abc1234
@@ -196,9 +144,7 @@ Here&rsquo;s how you can use the <code>ProxyJump</code> directive.</p><div class
 </span></span><span class=line><span class=cl><span class=gp>$</span> tailslog <span class=m>14879278</span>
 </span></span><span class=line><span class=cl><span class=go>archive  boot  etc   home  lib64  misc  net  proc  run   scratch  srv    sys  usr  vast
 </span></span></span><span class=line><span class=cl><span class=go>bin      dev   gpfs  lib   media  mnt   opt  root  sbin  share    state  tmp  var
-</span></span></span></code></pre></div><h1 id=slurm-gems>Slurm Gems</h1><p>Here are some gems that I discovered during the course of my SLURM usage.</p><ul>
-<li><code>seff &lt;jobid></code>: Displays CPU and Memory usage stats for the job.</li><li><code>sattach &lt;jobid.step></code>: Attaches to the console of an existing job.<br>
-This can be used as an alternative to the <a href=#3-view-output-from-your-job><code>tailslog()</code></a> function described above. If you don&rsquo;t know the <code>step</code> for a job, try using <code>0</code>. Please be aware that this doesn&rsquo;t always work.</li><li><code>sprio -u $USER</code>: Lists the scheduling priorities for pending jobs.</li></ul><h1 id=burst-instructions>Burst Instructions</h1><p>For some courses, you might be alloted a specific number of GPU hours on GCP. To use these resources, you first need to login to the burst node from Greene. Next, you should check if you have access to a class account. If you do, you can specify that account to first submit a non-GPU job to setup your environment and code. When you&rsquo;re comfortable, you can submit a GPU job.</p><h2 id=1-housekeeping>1. Housekeeping</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> <span class=c1># Run these commands from greene</span>
+</span></span></span></code></pre></div><h1 id=slurm-gems>Slurm Gems</h1><p>Here are some gems that I discovered during the course of my SLURM usage.</p><ul><li><code>seff &lt;jobid></code>: Displays CPU and Memory usage stats for the job.</li><li><code>sattach &lt;jobid.step></code>: Attaches to the console of an existing job.<br>This can be used as an alternative to the <a href=#3-view-output-from-your-job><code>tailslog()</code></a> function described above. If you don&rsquo;t know the <code>step</code> for a job, try using <code>0</code>. Please be aware that this doesn&rsquo;t always work.</li><li><code>sprio -u $USER</code>: Lists the scheduling priorities for pending jobs.</li></ul><h1 id=burst-instructions>Burst Instructions</h1><p>For some courses, you might be alloted a specific number of GPU hours on GCP. To use these resources, you first need to login to the burst node from Greene. Next, you should check if you have access to a class account. If you do, you can specify that account to first submit a non-GPU job to setup your environment and code. When you&rsquo;re comfortable, you can submit a GPU job.</p><h2 id=1-housekeeping>1. Housekeeping</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-console data-lang=console><span class=line><span class=cl><span class=gp>$</span> <span class=c1># Run these commands from greene</span>
 </span></span><span class=line><span class=cl><span class=gp>$</span> <span class=c1># SSH into the burst login node</span>
 </span></span><span class=line><span class=cl><span class=gp>$</span> ssh burst
 </span></span><span class=line><span class=cl><span class=err>
@@ -282,27 +228,5 @@ while loading overlay images: failed to open overlay image /path/to/overlay.ext3
     while locking ext3 partition from /path/to/overlay.ext3: 
         can&#39;t open //path/to/overlay.ext3 for writing, currently in use by another process
 </code></pre><p>If you&rsquo;re sure that your overlay file is clean to use, you can run <code>fsck</code> and clean the dirty bit. For more info see <a href=https://github.com/apptainer/singularity/issues/6196>this github issue</a> on the singularity repo.</p><pre tabindex=0><code>$ fsck.ext3 /path/to/overlay.ext3
-</code></pre><h2 id=2-job-killed-because-of-low-gpu-usage>2. Job killed because of Low GPU Usage</h2><p>You should only request a GPU when you need it. However, if you need a dummy script to keep the GPU busy (which I highly recommend against), have a look at this <a href=https://gist.github.com/nikhilweee/b5a2a201f97c386f4701d48cbf7f5a04>gist</a>.</p><p>Hope this helps!</p></div></article><!-- end: layouts/_default/single.html --></div><!-- begin: layouts/partials/footer.html --><div class=wrapper>
-<div class=giscus></div></div><footer class=site-footer>
-<div class=wrapper>
-<p>
-&copy; 2022 <a href=/>Nikhil Verma</a> • Subscribe via <a href=/feed.xml>RSS</a>
-</p></div></footer><!-- end: layouts/partials/footer.html --></main><div class="sidebar sidebar-right">
-<aside class=sidebar-toc>
-<h1>Outline</h1><nav id=TableOfContents>
-<ul>
-<li><a href=#first-things-first>First things first</a>
-<ul>
-<li><a href=#1-passwordless-ssh>1. Passwordless SSH</a></li><li><a href=#2-set-up-ssh-aliases>2. Set up SSH aliases</a></li></ul></li><li><a href=#a-few-simple-tricks>A few simple tricks</a>
-<ul>
-<li><a href=#1-login-directly-into-compute-nodes>1. Login directly into compute nodes</a></li><li><a href=#2-use-local-ssh-keys>2. Use local SSH keys</a></li></ul></li><li><a href=#some-slurm-aliases>Some SLURM aliases</a>
-<ul>
-<li><a href=#1-common-aliases>1. Common aliases</a></li><li><a href=#2-view-your-job-queue>2. View your job queue</a></li><li><a href=#3-view-output-from-your-job>3. View output from your job</a></li></ul></li><li><a href=#slurm-gems>Slurm Gems</a></li><li><a href=#burst-instructions>Burst Instructions</a>
-<ul>
-<li><a href=#1-housekeeping>1. Housekeeping</a></li><li><a href=#2-compute-nodes>2. Compute Nodes</a></li><li><a href=#3-data-transfer>3. Data Transfer</a></li><li><a href=#4-gpu-nodes>4. GPU Nodes</a></li><li><a href=#5-port-forwarding>5. Port Forwarding</a></li></ul></li><li><a href=#troubleshooting>Troubleshooting</a>
-<ul>
-<li><a href=#1-singularity-cant-open-overlay-for-writing>1. Singularity can&rsquo;t open overlay for writing</a></li><li><a href=#2-job-killed-because-of-low-gpu-usage>2. Job killed because of Low GPU Usage</a></li></ul></li></ul></nav></aside></div></body><script type=text/javascript>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark'),document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light'),changeGiscusTheme()):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'),changeGiscusTheme())});function changeGiscusTheme(){let t=localStorage.getItem("pref-theme"),n={setConfig:{theme:t}},e=document.querySelector('iframe.giscus-frame');e&&e.contentWindow.postMessage({giscus:n},'https://giscus.app')}function handleMessage(e){if(e.origin!=='https://giscus.app')return;if(typeof e.data!='object'||!e.data.giscus)return;const t=e.data.giscus;changeGiscusTheme()}window.addEventListener('message',handleMessage)</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0JVB0SEFDJ"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-0JVB0SEFDJ',{anonymize_ip:!1})}</script>
-<script src=https://giscus.app/client.js data-repo=nikhilweee/nikhilweee.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkzOTU5NjUwNTc=" data-category=Comments data-category-id=DIC_kwDOF5nygc4COpdc data-mapping=pathname data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=preferred_color_scheme data-lang=en crossorigin=anonymous async></script><!-- end: layouts/_default/baseof.html -->
-</html>
+</code></pre><h2 id=2-job-killed-because-of-low-gpu-usage>2. Job killed because of Low GPU Usage</h2><p>You should only request a GPU when you need it. However, if you need a dummy script to keep the GPU busy (which I highly recommend against), have a look at this <a href=https://gist.github.com/nikhilweee/b5a2a201f97c386f4701d48cbf7f5a04>gist</a>.</p><p>Hope this helps!</p></div></article><!-- end: layouts/_default/single.html --></div><!-- begin: layouts/partials/footer.html --><div class=wrapper><div class=giscus></div></div><footer class=site-footer><div class=wrapper><p>&copy; 2022 <a href=/>Nikhil Verma</a> • Subscribe via <a href=/feed.xml>RSS</a></p></div></footer><!-- end: layouts/partials/footer.html --></main><div class="sidebar sidebar-right"><aside class=sidebar-toc><h1>Outline</h1><nav id=TableOfContents><ul><li><a href=#first-things-first>First things first</a><ul><li><a href=#1-passwordless-ssh>1. Passwordless SSH</a></li><li><a href=#2-set-up-ssh-aliases>2. Set up SSH aliases</a></li></ul></li><li><a href=#a-few-simple-tricks>A few simple tricks</a><ul><li><a href=#1-login-directly-into-compute-nodes>1. Login directly into compute nodes</a></li><li><a href=#2-use-local-ssh-keys>2. Use local SSH keys</a></li></ul></li><li><a href=#some-slurm-aliases>Some SLURM aliases</a><ul><li><a href=#1-common-aliases>1. Common aliases</a></li><li><a href=#2-view-your-job-queue>2. View your job queue</a></li><li><a href=#3-view-output-from-your-job>3. View output from your job</a></li></ul></li><li><a href=#slurm-gems>Slurm Gems</a></li><li><a href=#burst-instructions>Burst Instructions</a><ul><li><a href=#1-housekeeping>1. Housekeeping</a></li><li><a href=#2-compute-nodes>2. Compute Nodes</a></li><li><a href=#3-data-transfer>3. Data Transfer</a></li><li><a href=#4-gpu-nodes>4. GPU Nodes</a></li><li><a href=#5-port-forwarding>5. Port Forwarding</a></li></ul></li><li><a href=#troubleshooting>Troubleshooting</a><ul><li><a href=#1-singularity-cant-open-overlay-for-writing>1. Singularity can&rsquo;t open overlay for writing</a></li><li><a href=#2-job-killed-because-of-low-gpu-usage>2. Job killed because of Low GPU Usage</a></li></ul></li></ul></nav></aside></div></body><script type=text/javascript>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark"),document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light"),changeGiscusTheme()):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"),changeGiscusTheme())});function changeGiscusTheme(){let t=localStorage.getItem("pref-theme"),n={setConfig:{theme:t}},e=document.querySelector("iframe.giscus-frame");e&&e.contentWindow.postMessage({giscus:n},"https://giscus.app")}function handleMessage(e){if(e.origin!=="https://giscus.app")return;if(typeof e.data!="object"||!e.data.giscus)return;const t=e.data.giscus;changeGiscusTheme()}window.addEventListener("message",handleMessage)</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-0JVB0SEFDJ"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-0JVB0SEFDJ",{anonymize_ip:!1})}</script><script src=https://giscus.app/client.js data-repo=nikhilweee/nikhilweee.github.io data-repo-id="MDEwOlJlcG9zaXRvcnkzOTU5NjUwNTc=" data-category=Comments data-category-id=DIC_kwDOF5nygc4COpdc data-mapping=pathname data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-theme=preferred_color_scheme data-lang=en crossorigin=anonymous async></script><!-- end: layouts/_default/baseof.html --></html>
