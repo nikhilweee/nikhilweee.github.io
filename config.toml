@@ -9,8 +9,8 @@ copyright = "&copy; Nikhil Verma"
 # Number of items to show every page
 paginate = 20
 
-# Use last updated date from git
-enableGitInfo = true
+# Use lastmod date from git
+enableGitInfo = false
 
 # Enable support for emojis
 enableEmoji = true
