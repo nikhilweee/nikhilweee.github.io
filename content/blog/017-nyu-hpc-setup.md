@@ -1,6 +1,7 @@
 +++
 categories = ["References"]
 date = "2022-02-13"
+lastmod = "2022-07-25"
 draft = false
 subtitle = "using SLURM on NYU's HPC cluster"
 title = "Speed up your remote workflow"
@@ -8,11 +9,12 @@ slug = "speed-up-remote-workflow-slurm-nyu-hpc"
 
 +++
 
-Although NYU already a dedicated [website](https://sites.google.com/nyu.edu/nyu-hpc) with all the documentation to get started with the HPC cluster, here's a set of tricks that I use to ease up the workflow by a significant amount.
+Although NYU already a dedicated [website](https://sites.google.com/nyu.edu/nyu-hpc) with all the documentation to get started with the HPC cluster, here's a set of tricks that I use to ease up the workflow by a significant amount. Even if you're not affiliated with NYU, I believe you'd still be able to benefit from this post if your organization uses [Slurm](https://en.wikipedia.org/wiki/Slurm_Workload_Manager).
 
 {{<toc>}}
 
-# First things first
+# Getting Started
+---
 Here's something that I recommend doing for any remote server that you'll access frequently.
 
 ## 1. Passwordless SSH
@@ -42,7 +44,8 @@ Host cims
     User abc1234
 ```
 
-# A few simple tricks
+# Login Hacks
+---
 These are a few hacks which should greatly simplify the overhead of using the cluster.
 
 ## 1. Login directly into compute nodes
@@ -114,8 +117,8 @@ $ ssh-add -l
 3072 SHA256:abcdefghijklmnopqrstuvwxyz nikhil-macbook (RSA)
 ```
 
-# Some SLURM aliases
-
+# Some Slurm Aliases
+---
 If you're using Greene on a regular basis, chances are that you will need to use a few of the SLURM commands to check and manage your jobs. Here's a few aliases that I created, they should be handy for you too. Once logged into the cluster, add the following lines to `~/.bash_aliases`. Make sure to `source ~/.bashrc` every time you make a change for the aliases to take effect.
 
 ## 1. Common aliases
@@ -188,7 +191,8 @@ archive  boot  etc   home  lib64  misc  net  proc  run   scratch  srv    sys  us
 bin      dev   gpfs  lib   media  mnt   opt  root  sbin  share    state  tmp  var
 ```
 
-# Slurm Gems
+# Some Hidden Gems
+---
 Here are some gems that I discovered during the course of my SLURM usage.
 
 * `seff <jobid>`: Displays CPU and Memory usage stats for the job.
@@ -196,8 +200,8 @@ Here are some gems that I discovered during the course of my SLURM usage.
   This can be used as an alternative to the [`tailslog()`](#3-view-output-from-your-job) function described above. If you don't know the `step` for a job, try using `0`. Please be aware that this doesn't always work.
 * `sprio -u $USER`: Lists the scheduling priorities for pending jobs.
 
-# Burst Instructions
-
+# Burst Usage
+---
 For some courses, you might be alloted a specific number of GPU hours on GCP. To use these resources, you first need to login to the burst node from Greene. Next, you should check if you have access to a class account. If you do, you can specify that account to first submit a non-GPU job to setup your environment and code. When you're comfortable, you can submit a GPU job.
 
 ## 1. Housekeeping
@@ -323,6 +327,7 @@ $     ssh -t -L 6006:localhost:6006 b-9-9
 ```
 
 # Troubleshooting
+---
 ## 1. Singularity can't open overlay for writing
 
 If you were actively using a Singularity with an ext3 overlay, and for some reason you didn't exit cleanly (maybe slurm preempted your job), you may run into issues. The next time you try using Singularity, you might get this error complaining that your overlay file is still in use: 
@@ -332,12 +337,20 @@ while loading overlay images: failed to open overlay image /path/to/overlay.ext3
     while locking ext3 partition from /path/to/overlay.ext3: 
         can't open //path/to/overlay.ext3 for writing, currently in use by another process
 ```
-If you're sure that your overlay file is clean to use, you can run `fsck` and clean the dirty bit. For more info see [this github issue](https://github.com/apptainer/singularity/issues/6196) on the singularity repo.
+
+First, I'd check if what the error says is true.
+
+```console
+$ ps aux | grep Singularity
 ```
+
+If there's an active process, use `kill` to terminate it. If there's no active process and you're sure that your overlay file is clean to use, you can run `fsck` and clean the dirty bit. For more info see [this github issue](https://github.com/apptainer/singularity/issues/6196) on the singularity repo.
+
+```console
 $ fsck.ext3 /path/to/overlay.ext3
 ```
 
-## 2. Job killed because of Low GPU Usage
+## 2. Job killed due of low GPU usage
 
 You should only request a GPU when you need it. However, if you need a dummy script to keep the GPU busy (which I highly recommend against), have a look at this [gist](https://gist.github.com/nikhilweee/b5a2a201f97c386f4701d48cbf7f5a04).
 
