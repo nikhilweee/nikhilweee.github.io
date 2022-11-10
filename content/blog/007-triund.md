@@ -2,14 +2,15 @@
 categories = ["Travel"]
 date = "2016-12-18T00:00:00Z"
 draft = false
-subtitle = "The end-sem adventure"
-title = "Triund"
+subtitle = "An end-sem adventure"
+title = "The Triund Trek"
+slug = "triund"
 
 +++
 
-## Prologue
+# Prologue
 
-It was early December and for most BITSians this was the compre[^compre] season. For me though, it is usually at this time of the year when weird ideas surface off. They did, this time too. Me and my friend Sameer were long planning to visit McLeodGanj in search of snow, and this was it. This was the long awaited break.
+It was early December and for most BITSians this was the _compre_[^compre] season. For me though, it is usually at this time of the year when weird ideas surface off. They did, this time too. Me and my friend Sameer were long planning to visit McLeodGanj in search of snow, and this was it. This was the long awaited break.
 
 [^compre]: comprehensive examinations, the final exams of the semester
 
@@ -21,17 +22,15 @@ During the countdown period we gathered two other friends, Mohit and Rajat, and 
 
 [^tnc]: provided you don't spend the night in the room. or still want to spend the night together - you get it, right?
 
-## The Adventure
-
-{{<figure src="https://i.imgur.com/KRRbzAk.jpg" caption="Sunset at the Triund Hill">}}
-
-### Day 0
+# The Adventure
 
 I set off to Delhi just after my last compre (literally). Like all other expeditions to Himachal that I've made, even this was to start from ISBT Kashmere Gate.  We initially planned to take a Volvo but for nearly half the fare and without the air conditioner, a Semi Deluxe didn't seem to be a bad option either! I met the gang over there, had a little chat, and at 7 PM we were all set for Dharamshala. The four of us hadn't seen each other for a long time so in-house entertainment was never an issue.
 
+{{<figure src="https://i.imgur.com/KRRbzAk.jpg" caption="Sunset at the Triund Hill">}}
+
 I'm particularly excited about overnight bus journeys thanks to the roadside food joints, or _dhabas_ that I get to visit. I'm almost always amazed by the promptness of their service. Whatsoever you order will be at your table within five minutes. No annoying delays. None at all. The bus stopped at one such joint where we refueled ourselves. &#8377;120 per head for a standard _thali_. Not bad! Following a full tummy was a good night's sleep.
 
-### Day 1
+# Day 1
 
 We were awaken relatively early at 6 AM by the clamour and it wasn't long before we found out that this was Dharamshala. As was expected from a cold December night in Himachal, I was shivering and could feel the chatter of my teeth. Fortunately there was a bonfire nearby that helped ease me out. The locals suggested we head straight to McLeodGanj, so we took a shared Jeep that cost &#8377;25 per head for the nearly 10 KM uphill travel.
 
@@ -43,8 +42,8 @@ As the day progressed, we set out for our adventure. A modest _aloo paratha_ was
 
 [^triund]: Hindi: त्रिउण्ड IPA: t̪rɪʊɳɖ
 
-## Triund
-
+# Triund
+---
 The trek starts with a mandatory entry at one of the log registers held with the forest department. From there, it's just a rocky trail for the next 6 kilometers. I may have made it sound monotonous, but trust me, it is not. The trek is full of adventures, which I insist one should discover on his own. Nearly halfway through the trek, there's Magic View, claimed to be one of the oldest shops out there.
 
 {{<figure src="https://i.imgur.com/ZmUtv47.jpg" caption="The view from Magic View. You could even see the trek on the upper right.">}}
@@ -67,7 +66,7 @@ The magic began with the inception of dusk. See for yourself!
 
 As the sun receded, the cold surfaced. We desperately needed a campfire. We found a log of wood lying around but it was too dense to burn. A swiss knife would have been handy. _Lesson: Always carry a swiss knife outdoors. And a lighter. And a torch._ Somehow we found our own ways around the fire. It was time to enjoy the moment. The next thing I remember was pure bliss.
 
-### Day 2
+# Day 2
 
 Following a frigid night at the camp, we woke up to the light of the day. After another snap session, we set back towards McLeodGanj. Two hours of a delightful descent landed us back to our rooms. By the time we checked out, the clock hit 12. It was time for lunch.
 

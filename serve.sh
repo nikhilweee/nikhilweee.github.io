@@ -7,4 +7,4 @@ if [ "$1" == "lt" ]; then
 fi
 
 echo "Starting Server ..."
-hugo server --buildDrafts --disableFastRender --navigateToChanged
+hugo server --bind 0.0.0.0 --buildDrafts --disableFastRender --navigateToChanged
