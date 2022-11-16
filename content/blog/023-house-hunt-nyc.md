@@ -10,17 +10,17 @@ Finding a house in the most populated city in the US is no easy feat. Imagine do
 
 > Spoiler Alert: I ultimately ended up staying across the Hudson in Jersey City.
 
-# 1. Requirements
+# Requirements
 ---
 Let's start with a little background. I happen to be a graduate student at NYU. Naturally, proximity to the university's campus around Washington Square Park was a priority for me. My ideal place would get me to campus in under 20 minutes. Being a student, I also had a _limited budget_ of $1500 a month. I was ideally looking for a room in an existing apartment, but I was also comfortable with signing a new lease for a 2BR or a 3BR with my friends. I only needed a place for 6-7 months until my graduation in December, but I was open to signing a year-long lease and finding a sublet later on. Essentially, my only constraints were budget and travel time. I was very flexible in terms of the neighbourhood, roommates, diet and other preferences.
 
 And yes, let me emphasize that $1500 _is_ a limited budget for a single room around lower Manhattan. I started off with a mindset that this would easily get me what I wanted, but little did I know about the post-covid apocalypse. What would get you a spacious room close to the subway last year can only get you a _cozy_ room someplace far off this year. Oh, and 'cozy' is a pseudonym for 'tiny'. That's realty lingo you gotta keep up to.
 
-# 2. Search Platforms
+# Search Platforms
 ---
 I started off by looking for places through Facebook groups. Some quick googling around introduced me to Craigslist. Throughout my search, I discovered other platforms such as Roomi, SpareRoom, and even Reddit. Here is a quick review of the search platforms that I used throughout my house hunt.
 
-## 2.1 Seeking Rooms
+## Seeking Rooms
 
 If you're looking for a room in an existing apartment, I'd recommend checking out [Facebook Groups](https://www.facebook.com/marketplace/), [Craigslist](https://www.craigslist.org/), [SpareRoom](https://spareroom.com) and [Listings Project](https://www.listingsproject.com/). These were the only platforms that worked out for me. All other websites either had abysmal response rates, or were dominated with bots and scams. That being said, each platform had their fair share of hiccups. I'll elaborate on my experience with five popular platforms.
 
@@ -38,18 +38,18 @@ That being said, when I did come across listings posted by individuals, I found 
 
 [**Roommates**](https://roommates.com/) was deceiving. I got new message requests every few hours after I logged in, but most (all?) of them turned out to be scams. These messages even tricked me into buying their VIP subscription. 
 
-## 2.2 Entire Apartments
+## Entire Apartments
 
 [Zillow](https://www.zillow.com/) and [Streeteasy](https://streeteasy.com/) are the obvious choice here. [Apartments.com](https://www.apartments.com/) falls in the same category. These websites are a good option if you're looking for entire apartments. The agents are much more responsive here, but you should be mindful of the broker fee. It usually turns out ot be 15% of the annual rent, which is 1.8 months' rent. That's ridiculous! If you're on a budget, you would really want to reconsider.
 
 I would suggest contacting the property management company directly. Often times there are no broker fees involved. I saw a few apartments from [MetroNest](https://metronest.com/) which were within my budget and had no broker fees. I will also advise you not to shy away from contacting one of the "luxury buildings". I got in touch with [Herald Towers](https://heraldtowers.com/) and to my surprise they had a 3 bed flex arrangement that also fit my budget. For more information, I shall point you to [transparentcity.co's blog](https://www.transparentcity.co/blog/10-great-websites-of-no-fee-management-companies-nyc) for more such property management companies.
 
-## 2.3 A Mix of Both
+## A Mix of Both
 
 [Craigslist](https://craigslist.org) is quite popular amongst New Yorkers and they regularly keep on posting ads about rooms as well as entire apartments. I would also suggest subscribing to the [Listings Project](https://www.listingsproject.com/), which is a curated weekly mailing list. It also has both kinds of listings - entire apartments as well as vacant rooms. While the ads are curated, they are only active for a week. Since it's essentially a list, you also don't have many options to choose from.
 
 
-# 3. Beware of Scams
+# Identifying Scams
 ---
 
 The first lesson that I learnt is that all platforms are filled with scams. The key here is to trust your gut. If you think something is too good to be true, more often than not _it is_. Often times you will be asked to sign a lease or send a deposit online and the person on the other side will promise you to _mail in_ the keys. That's NOT going to happen. The scammer will appeal to your emotional side and make some excuses. Often times they will be very assertive in their tone. Do NOT fall for it. Here are the top excuses that I've come across:
@@ -70,7 +70,7 @@ Based off of my limited experience, here are a few red flags to look for when yo
 
 
 
-# 4. Neighbourhoods
+# Neighbourhoods
 ---
 Over the course of over 2 months of house hunting, I had the _pleasure_ of visiting quite a few neighbourhoods that seemed to check a few boxes. I'll describe what I liked and disliked about each of them.
 
@@ -88,7 +88,7 @@ There are other areas which I didn't get to explore much. I've heard that Hell's
 
 A limited budget in Manhattan can only find you a _cozy_ room. If you're open to living in Brooklyn, you can enjoy a much more breathable space. I've seen students commute from Downtown Brooklyn, Sunset Park, Williamsburg, Prospect Park and other areas which are easily accessible without changing trains. 
 
-# 5. My Reasons
+# My Reasons
 ---
 
 I personally found more value in Jersey City. I eventually found a much more spacious room with a view of the Hudson and Midtown Manhattan from my window. You can check out one of the many residential complexes in Newport. A lot of NYU folks stay at either Parkside East or Parkside West. Target and Morton Williams are right next door. The PATH train to 9th St takes 12 minutes, which is quite reasonable if you ask me. Anyway, this was my choice and I'm sure your circumstances and personal preferences might be different. 
