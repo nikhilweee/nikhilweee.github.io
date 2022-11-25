@@ -3,7 +3,6 @@ date = '2021-09-15T00:00:00Z'
 draft = true
 subtitle = 'From scratch. Yet again.'
 title = 'Configuring a new environment'
-
 +++
 
 As a developer, everyone comes up with a unique set of customizatons over several years of using their machine. I have too. We spend years perfecting each and every setting for each and every app till we get everything right, and one fine day, we realise that our system is too old to function anymore. We get a new one. It has the latest and the greatest features of the present generation, but we realise that something is just not right. We're so used to our bag of tricks that we start tweaking everything to match the previous setup. And at that moment, we got no choice but to wonder, "If only I had documented them somewhere". I recently bought a new machine, and I'm in the same boat.

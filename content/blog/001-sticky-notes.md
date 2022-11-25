@@ -5,7 +5,6 @@ published = true
 subtitle = "Stuff I'd like to keep note of"
 tags = ['hacks', 'tutorial', 'linux']
 title = 'Sticky Notes'
-
 +++
 
 This page hosts little ideas, solutions to problems I've faced in the past or mistakes that I don't want to repeat again - stored here as a reference in case they bother me again. Read on, maybe even you might find something relevant!

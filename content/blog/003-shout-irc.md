@@ -4,7 +4,6 @@ date = '2016-01-28T00:00:00Z'
 subtitle = 'Set up IRC on a blocked connection'
 tags = ['irc', 'web']
 title = 'Shout IRC!'
-
 +++
 
 If you're reading this, there are high chances that you are under internet surveillance and your IT admin has blocked access to IRC. God! Why do they do this? IRC isn't bad at all, you may argue. But unfortunately there's no one to listen. Hush. You'll have to find a way out, and here's exactly how you can do it!

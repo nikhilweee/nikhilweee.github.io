@@ -3,7 +3,7 @@ citation-js -i content/references.bib -o content/bibliography --no-input-generat
 
 if [ "$1" == "lt" ]; then
     echo "Starting LocalTunnel ..."
-    lt -p 1313 -l 127.0.0.1 -s nikhilweee &
+    npx localtunnel -p 1313 -l 127.0.0.1 -s nikhilweee &
 fi
 
 echo "Starting Server ..."

@@ -5,7 +5,6 @@ draft = true
 subtitle = "Visualizing algorithms for the Rubik's Cube"
 tags = ['cube', 'algorithms']
 title = 'Visual Cube'
-
 +++
 > This page is best viewed on Safari. Functionality is known to be broken on Chrome.
 

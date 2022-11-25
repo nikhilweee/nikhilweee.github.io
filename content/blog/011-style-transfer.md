@@ -5,7 +5,6 @@ draft = true
 katex = true
 subtitle = 'Image Style Transfer Using Convolutional Neural Networks'
 title = 'Intro to Style Transfer'
-
 +++
 ## Image Style Transfer Using Convolutional Neural Networks
 

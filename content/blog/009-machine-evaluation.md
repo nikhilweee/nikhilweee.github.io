@@ -1,12 +1,11 @@
 +++
 categories = ['Explanations']
 date = '2017-06-14T00:00:00Z'
-katex = true
 draft = true
+katex = true
 subtitle = 'Automatic evaluation metrics explained'
 tags = ['cube', 'algorithms']
 title = 'Machine Evaluation Metrics'
-
 +++
 
 Over the years, neural networks have only become smarter and better at understanding the world around us. Consider language, for example. Today, these giants very well possess the ability to understand human languages. So much better that they've already started to transform and mould human languages in different domains. Machine translation is a wonderful example.

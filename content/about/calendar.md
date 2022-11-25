@@ -1,7 +1,6 @@
 +++
 layout = 'index'
 title = 'Calendar'
-
 +++
 
 # Calendar

@@ -1,9 +1,9 @@
 +++
-categories = ["RL Series"]
-date = "2022-06-06"
-title = "A Walkthrough of Isaac Gym"
+categories = ['RL Series']
+date = '2022-06-06'
+slug = 'isaac-gym-walkthrough'
 subtitle = "NVIDIA's GPU based RL Framework"
-slug = "isaac-gym-walkthrough"
+title = 'A Walkthrough of Isaac Gym'
 +++
 # Introduction
 

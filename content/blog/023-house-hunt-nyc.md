@@ -1,9 +1,9 @@
 +++
-categories = ["Experiences"]
-date = "2022-07-15"
-title = "House hunting in New York City"
+categories = ['Experiences']
+date = '2022-07-15'
+slug = 'nyc-house-hunt'
 subtitle = "In the summer of '22 as a grad student"
-slug = "nyc-house-hunt"
+title = 'House hunting in New York City'
 +++
 
 Finding a house in the most populated city in the US is no easy feat. Imagine doing that at a time when property prices are soaring, and it gets even worse. I had the _pleasure_ of searching for a room in New York with an upper limit of $1500 at a time when the market was recovering back from super cheap COVID discounts. This post is a glimpse of what I learnt from my house hunting experience in the Summer of '22.

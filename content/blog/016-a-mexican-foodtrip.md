@@ -1,10 +1,9 @@
 +++
-categories = ["Travel", "Long Posts"]
-date = "2022-01-10"
-subtitle = "Roadtrippin across the Yucatan in 9 days"
-title = "A Yucatecan Foodtrip"
-slug = "mexico-yucatecan-foodtrip"
-
+categories = ['Travel', 'Long Posts']
+date = '2022-01-10'
+slug = 'mexico-yucatecan-foodtrip'
+subtitle = 'Roadtrippin across the Yucatan in 9 days'
+title = 'A Yucatecan Foodtrip'
 +++
 
 > Disclaimer: All recommendations made in the blog are solely based on personal experiences. There are no affiliate links, and most of them will anyway take you to Google Maps.

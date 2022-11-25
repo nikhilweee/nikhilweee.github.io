@@ -1,11 +1,10 @@
 +++
-categories = ["Travel"]
-date = "2016-12-18T00:00:00Z"
+categories = ['Travel']
+date = '2016-12-18T00:00:00Z'
 draft = false
-subtitle = "An end-sem adventure"
-title = "The Triund Trek"
-slug = "triund"
-
+slug = 'triund'
+subtitle = 'An end-sem adventure'
+title = 'The Triund Trek'
 +++
 
 # Prologue

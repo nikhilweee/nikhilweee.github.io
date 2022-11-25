@@ -1,12 +1,11 @@
 +++
-categories = ["Long Posts"]
-date = "2021-12-18"
-katex = true
+categories = ['Long Posts']
 citations = true
-title = "Adversarial Attacks on RL Agents"
-subtitle = "using natural observations"
-slug = "adversarial-attacks-deep-rl"
-
+date = '2021-12-18'
+katex = true
+slug = 'adversarial-attacks-deep-rl'
+subtitle = 'using natural observations'
+title = 'Adversarial Attacks on RL Agents'
 +++
 
 > This post a write up for the final project as part of NYU's graduate course on Deep Reinforcement Learning. The project was the result of a collaboration with [Advika Reddy](https://in.linkedin.com/in/advika-sumana-reddy).

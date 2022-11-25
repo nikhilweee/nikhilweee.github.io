@@ -1,8 +1,7 @@
 +++
-layout = 'index'
 aliases = ['/files/', '/resume/view/', '/resume/download/', '/resume.pdf/', '/files/resume/', '/files/resume.pdf/']
+layout = 'index'
 title = 'Resume'
-
 +++
 
 # Resume

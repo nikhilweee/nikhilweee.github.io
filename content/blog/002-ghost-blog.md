@@ -1,11 +1,10 @@
 +++
 categories = ['Tutorials']
 date = '2016-01-08T00:00:00Z'
+slug = 'setup-ghost-blog'
 subtitle = 'from scratch, in under 30 minutes!'
 tags = ['supervisor', 'nginx', 'node', 'digitalocean', 'linux']
 title = 'Set up a Ghost blog'
-slug = 'setup-ghost-blog'
-
 +++
 > This is *not* an in-depth tutorial for a total newbie. That would call for a really long post. Though I've given one-liners explaining each command,
 It would be better if you had some experience working with the linux terminal and a basic understanding of how web content is served.

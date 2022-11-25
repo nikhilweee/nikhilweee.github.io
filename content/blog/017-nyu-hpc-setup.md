@@ -1,12 +1,11 @@
 +++
-categories = ["References"]
-date = "2022-02-13"
-lastmod = "2022-07-25"
+categories = ['References']
+date = '2022-02-13'
 draft = false
-subtitle = "using SLURM on NYU's HPC cluster"
-title = "Speed up your remote workflow"
-slug = "speed-up-remote-workflow-slurm-nyu-hpc"
-
+lastmod = '2022-07-25'
+slug = 'nyu-slurm-hpc-tips'
+subtitle = "Using slurm on NYU's HPC cluster"
+title = 'Speed up slurm workflows'
 +++
 
 Although NYU already a dedicated [website](https://sites.google.com/nyu.edu/nyu-hpc) with all the documentation to get started with the HPC cluster, here's a set of tricks that I use to ease up the workflow by a significant amount. Even if you're not affiliated with NYU, I believe you'd still be able to benefit from this post if your organization uses [Slurm](https://en.wikipedia.org/wiki/Slurm_Workload_Manager).

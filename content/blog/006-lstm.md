@@ -1,11 +1,10 @@
 +++
 categories = ['Explanations']
 date = '2016-11-09T00:00:00Z'
-katex = true
 draft = true
+katex = true
 subtitle = 'the name says it all!'
 title = 'LSTMs'
-
 +++
 
 >This post explains LSTMs used as a part of [assignment 3](http://cs231n.github.io/assignment3/) of Andrej Karpathy's CS231N course at Stanford. I would highly recommend reading Chris Olah's [blog post](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) about LSTMs before continuing.

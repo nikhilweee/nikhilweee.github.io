@@ -4,7 +4,6 @@ date = '2016-08-11T00:00:00Z'
 subtitle = 'Automatically mount linux partitions'
 tags = ['linux']
 title = 'Persistent Mounts'
-
 +++
 After installing your linux distro, though you'll be able to access your Windows/NTFS partitions easily, things can get annoying sometimes with you having to mount the partition manually everytime. Here I describe how to get away with this mess by automatically mounting partitions on boot.
 

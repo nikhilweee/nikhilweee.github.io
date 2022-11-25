@@ -1,9 +1,9 @@
 +++
-categories = ["Experiences"]
-date = "2022-07-23"
-title = "My first ML Conference"
-subtitle = "My experience attending ICML 2022"
-slug = "my-first-ml-conference"
+categories = ['Experiences']
+date = '2022-07-23'
+slug = 'my-first-ml-conference'
+subtitle = 'My experience attending ICML 2022'
+title = 'My first ML Conference'
 +++
 
 I'm excited to attend ICML 2022! Unfortunately I'm not presenting this year (hopefully in the future), but since Baltimore is just 3 hours away from New York I thought I'd give it a shot. The student registration fees this year was $400, but I took advantage of the student volunteer programme which reimburses the registration fees if you agree to volunteer during the conference. I think it's a great deal to save on some costs!

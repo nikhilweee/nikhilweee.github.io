@@ -1,8 +1,7 @@
 +++
+citations = true
 layout = 'index'
 title = 'Projects'
-citations = true
-
 +++
 
 # Current Projects

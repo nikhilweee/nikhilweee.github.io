@@ -1,13 +1,12 @@
 +++
+categories = ['Long Test Category']
+citations = true
 date = '2022-04-01T00:00:00Z'
 draft = true
-title = 'Test Post'
-subtitle = 'So everything works fine'
-categories = ["Long Test Category"]
 katex = true
-citations = true
-slug = "test"
-
+slug = 'test'
+subtitle = 'So everything works fine'
+title = 'Test Post'
 +++
 
 I shall use this post to test the layout of this website. 
