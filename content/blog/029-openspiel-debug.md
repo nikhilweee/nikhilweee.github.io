@@ -317,6 +317,6 @@ This post tries to bring together a bunch of different topics and of course it's
 * [Alex Dzyoba: How to point GDB to your sources](https://alex.dzyoba.com/blog/gdb-source-path/)
 * [RedHat Developers: Debugging Python C extensions with GDB](https://developers.redhat.com/articles/2021/09/08/debugging-python-c-extensions-gdb)
 
-# Bonus Tip
+# Bonus Tip: Python Debug Builds
 ---
 If you need a debug build of Python and don't have sudo access, check out [#597](https://github.com/conda-forge/python-feedstock/pull/597) on the [python-feedstock](https://github.com/conda-forge/python-feedstock) repository. Once merged, you should be able to install debug builds using `conda install python -c conda-forge/label/python_debug`. While this PR is still in progress, I've published debug builds for linux on [my channel](https://anaconda.org/nikhilweee/python) in the meanwhile. You're free to install them using `conda install python -c nikhilweee`. 
