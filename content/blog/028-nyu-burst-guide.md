@@ -1,7 +1,6 @@
 +++
 categories = ['References']
 date = '2022-11-11'
-draft = true
 slug = 'nyu-slurm-burst-guide'
 subtitle = "Using burst nodes on NYU's HPC cluster"
 title = 'Cloud Bursting with Slurm'
