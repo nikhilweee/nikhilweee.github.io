@@ -1,7 +1,7 @@
 +++
 categories = ['References']
-date = '2016-01-01T00:00:00Z'
-published = true
+date = '2016-01-01'
+expiryDate = '2021-12-31'
 subtitle = "Stuff I'd like to keep note of"
 tags = ['hacks', 'tutorial', 'linux']
 title = 'Sticky Notes'
