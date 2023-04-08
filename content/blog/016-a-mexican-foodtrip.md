@@ -91,10 +91,10 @@ Once you are done with flight, car and hotel bookings, you're all set. _Mexico, 
 Here's a suggested itinerary based on how our trip turned out to be. We did a lot of improvisations here and there, but at the end of the day, we were really happy with what we could achieve.
 
 ## Day 1: Cancun and Valladolid
+
 Arrive at Cancun, where you can use the Airport's Wi-Fi to contact the car representative. Get your car, and head over to the nearest Oxxo to get a SIM card if you want. For lunch, you can then head over to [Ninfa's Cafe](https://goo.gl/maps/iXzmBeGiXGVgR9TM8). This cute little cafe is famous for its Oaxacan cuisine. The host, Ninfa, is very welcoming. Try their coffee if you can. It has a certain earthy flavour -- Shavak loved it!
 
 {{<figure src="https://i.imgur.com/Fb6HgRM.jpg" caption="Oaxacan food at [Ninfa's Cafe](https://goo.gl/maps/iXzmBeGiXGVgR9TM8), Cancun">}}
-
 
 Post lunch, drive towards Valladolid. You can either take the [toll road](https://goo.gl/maps/eotksjis6Mk1Q48o7) or the [toll-free road](https://goo.gl/maps/N5hmhzwJGRt2GWXi6). The toll is 338 MXN for a car. We took the toll road, but I guess the other road wouldn't have been a bad idea either. Be aware that Valladolid lies in the state of Yucatan, which, unlike Cancun, follows the Central time zone. So keep in mind that you'll be saving an hour during the journey. You can use this time to check-in, freshen up, and explore the local market that Valladolid has to offer.
 
@@ -105,6 +105,7 @@ In Valladolid, visit [Calzada de Los Frailes](https://goo.gl/maps/LV9YfaJWqVJnW3
 For dinner, you can have traditional mayan cuisine at [Ix Cat Ik](https://g.page/iixcatik?share), or have tamales at [La Palapita de los Tamales](https://g.page/palapitadelostamales?share). This is the first place where I tried the classic chaya juice with lemon, and it has a characteristic tangy flavour that I absolutely fell in love with! Post dinner, you can have a taste of the alcohol that you bought, and prepare for the next day where we visit the historic Chichen Itza.
 
 ## Day 2: Chichen Itza and the Cenotes
+
 Get up early, have breakfast, and try reaching Chichen Itza before 11am -- which is when tourist buses start crowding up. The entry fee is 533 MXN, which includes two types of fees -- a federal fee of 400 MXN, which you can pay by card, and a state fee of 83 MXN, which you can only pay by cash. At the ticket counter, you will also have the option to hire a guide. Exploring the ancient mayan ruins takes about 2-3 hours. The main attraction is [El Castillo](https://goo.gl/maps/sEyQrE6JT927XPbG9), which is a restored step-pyramid. There's also a [sacred cenote](https://goo.gl/maps/gZpdjWgfECMtAAMEA) nerarby which is walk of around half a kilometre. There are a lot of vendors inside the complex selling all sorts of souvenirs, but most only accept cash.
 
 {{<figure src="https://i.imgur.com/jAuen6i.jpg" caption="El Castillo at [Chichen Itza](https://goo.gl/maps/nfQJ8CmfV5qqBkhX8)">}}
@@ -121,8 +122,8 @@ We only had snacks at Ik-Kil, so we headed over to the nearby town of [Pisté](h
 
 This town is home to cenote [Lol-Ha](https://goo.gl/maps/DojG4oRCBohvJdpA6). This severely underrated cenote, known for its aqua blue water, is about 25km south of Pisté. The road is mostly well made except for some abrupt _topes_ (speed-bumps) and potholes along the way. After the bluish-green waters and touristy crowds at Ik-Kil, you will be pleasantly surprised by the aqua-blue water at Lol-Ha. The entry fee is 100 MXN, life jackets are optional. Keep in mind that there is no network around here. Once you're done, hop on to highway 180 towards our next stop: Merida.
 
-
 ## Day 3: Merida and Progreso
+
 Check in to your accomodation, freshen up, and head to [La Chaya Maya](https://goo.gl/maps/YURSHmVaZa972XV36). They have two branches, but I've heard both serve equally good food. You can then head to the central square and treat yourselves with marquesitas before coming back home to rest for the day.
 
 {{<figure src="https://i.imgur.com/YifcN8L.jpg" caption="Merida">}}
@@ -139,9 +140,8 @@ However, we didn't want to take on the hassle of cancellations, and besides, we 
 
 For dinner, head over to [Picheta](https://goo.gl/maps/1UJvhTuTubVEgScc9). They have rooftop dining which overlooks the [Plaza Grande](https://goo.gl/maps/Wm1V9WdXJjQhmFp9A). If you are lucky, you might also get to witness one of the social events at the central square. We arrived here on a Monday and a cultural programme of sorts was underway right in front of [Museo Casa Montejo](https://goo.gl/maps/g2JKsppv3hjcVrNr8). We were told the entry is free, however, the seats got occupied quickly. When you're done, get back home to finish the day with the Xtabentún we got earlier.
 
-
-
 ## Day 4: Enroute Bacalar
+
 The next day, check out, and have huevos motuleños at [Huevos Motuleños y Más](https://goo.gl/maps/ut25cKLvVYGHKq2f8). It's a bit outside of the city, but the place is highly recommended for their traditional egg-based breakfast. 
 
 {{<figure src="https://i.imgur.com/r8JmiA8.jpg" caption="Huevos motuleños at [Huevos Motuleños y Más](https://goo.gl/maps/ut25cKLvVYGHKq2f8)">}}
@@ -157,6 +157,7 @@ Upon arriving in Bacalar, have seafood for lunch at [Balneario Ejidal Mágico Ba
 In the evening, you can explore the local market, buy some souvenirs, and head over to [La Playita](https://g.page/laplayitabacalar?share) for dinner. This is situated right next to Balneario Ejidal, the place we suggested for lunch. Surprisingly, over here, beer is cheaper than water. However, all that aside, the vibe of this place was the best amongst all the places we visited on our trip. Try to find a seat by the lagoon if you can. It's really beautiful. Spend some time here before heading back home to relax.
 
 ## Day 5: Bacalar Lagoon and Tulum
+
 The next morning, arrange for a kayak and enjoy the serenity as you watch the sunrise from the lagoon. Have some breakfast at the hotel, and head to [Los Rapidos](https://goo.gl/maps/9NecUuJ4ud35R8Uh7). It's a narrow stretch of shallow water where you can float around in the clear blue water of the lagoon. We have to warn you that we did see a lot of tourists over here. The entry is very reasonable for 150 MXN, and life jackets are included in the price. After drifting through the rapids, you can enjoy your time around the hammocks. When you're hungry, head over to [El Manatí](https://goo.gl/maps/rxfdnc8uNDhRrEx86) for breakfast. If you're in the mood for some local cuisine, you can try _huevos rancheros_. If you're in for some western options, can also try their sandwich variants. Post breakfast, we head over to our next stop: Tulum.
 
 Tulum is divided into two regions -- the _zona hotelera_ or the hotel zone, which is a strip of hotels and resorts by the beach; and _pueblo_ or the city, which is the centre of Tulum. The hotel zone was too crowded for us, so we decided to stay in the city. For this reason, we didn't go to the hotel zone during our stay at Tulum. You can corroborate this yourself if you pass through the hotel zone on your way to the accomodation. Check in, and head out to explore Tulum.
@@ -172,6 +173,7 @@ If you stay in the city centre (pueblo) and want to explore the nightlife, you h
 If you have midnight hunger pangs, try some of the roadside joints in the area next to the PEMEX fuel station. We tried [Tio's Tacos and Tortas](https://goo.gl/maps/2D1BLNVZYNc7w1wA9), and I have to admit that the guy makes one of the best tacos we had. We liked it so much that we decided to repeat our order. But take this with a pinch of salt -- maybe it was the alcohol speaking, but we really liked it. After such a night of partying, your body really deserves some rest, and should rightfully get some.
 
 ## Day 6: Around Tulum
+
 The next day, feel free to have a lazy morning, and head over to the archaeological zone of [Coba](https://goo.gl/maps/K7AzgSdqyKUan1ve6). It was once famous for having a pyramid that you could climb on, but unfortunately that's no longer the case. On your way back, you can take a swim in the [Gran Cenote](https://goo.gl/maps/6WptCGxQvEPDiVRH6) or [Cenote Cavalera](https://g.page/cenote-calavera?share). We couldn't go to the Gran Cenote since we were late, but Cavalera had an instagrammable swing and some pits from which you can jump directly into the cenote, which was pretty cool. 
 
 {{<figure src="https://i.imgur.com/ZsvHhBw.jpg?1" caption="Shavak on the swings of Cenote Cavalera" >}}
@@ -179,6 +181,7 @@ The next day, feel free to have a lazy morning, and head over to the archaeologi
 You can then head back and visit [El Takazo Jr.](https://goo.gl/maps/BzarUWo8qcXYACbX7) to have some gringa chorizos, followed by [Horus](https://goo.gl/maps/ZkRgJ16uhTb1Tbcp9) to enjoy some hookah. You might want to stay over there until you feel like calling it a night.
 
 ## Day 7: Yal-Ku and Playa del Carmen
+
 In the morning, you can head over to the hotel zone and have breakfast at whatever resort you feel like. You can then start your journey towards Playa del Carmen, and on the way, you can stop by at [Yal-Ku Lagoon and Cenote](https://g.page/yalkucenote?share) to enjoy snorkelling. The coral life that you get to see over here is truly amazing. Make sure to get the diving set complete with fins, visors, snorkels and life jackets -- it's really worth it. The flow of water is usually towards the ocean, so keep in mind that swimming back will require a more strenuous effort. I certainly had a hard time returning back! After spending some time here, we continue our journey to Playa del Carmen.
 
 {{<figure src="https://i.imgur.com/7ZqYQGG.jpg" caption="The clear blue waters of Playa del Carmen" >}}
@@ -188,6 +191,7 @@ In Playa, park your car (Playa has metered street parking), and head over to [El
 Once your tummy is full, head over to the accomodation to check in, have some rest, and in the evening, explore the local market. You can have hot chocolate at [Ah Cacao](https://g.page/AhCacaoConstituyentes?share). They have chocolate tamales which I'm sure you'd love. If you're a beer connoisseur, you would love going to [Club de la Cerveza](https://g.page/clubdelacervezagram?share), or _The Beer Club_. The guy over there knows his thing. You can actually sit by the bar and order drinks off the menu as well. Next, you might want to go to one of the nightclubs on the _Quinta Avenida_, or the Fifth Avenue. It was a bit too much for me, so we skipped it. It would have been a long day by now so you might actually consider resting for the night.
 
 ## Day 8: Cozumel
+
 Although relatively near to the mainland, Cozumel is an experience in itself. To get to Cozumel from Playa, head over to the pier and buy tickets to the ferry. There's one ferry every hour, so you might have to wait for some time. If you need to get COVID tests done, now might be the right time. There are two operators -- Winjet is 220 MXN per person, whereas Ultramar is 250 MXN plus taxes. The ferry takes about 35 minutes. Although it must be possible to take your car over too, but we don't recommend doing that just to save you the hassle. 
 
 Upon arriving, you can rent a car from one of the shops around [San Miguel Church](https://goo.gl/maps/JNesHXs45mKxYNfn9). There is definitely room for bargain, especially when you're taking a car for half a day. I was surprised to find convertible Beetles up for rent, so we had a clear winner. The dashboard said VW96 somewhere, so we're guessing it was made in 1996. The Beetle cost us 1000 MXN, plus taxes.
@@ -205,6 +209,10 @@ Since you're already at the entrance, you can decide to go into the Punta Sur ec
 Next, continue cruising along the main road towards the north, and enjoy the views. Fuel up, return your car, and head over to the pier to watch the sunset. Take your tickets to the next ferry, and head back to Playa del Carmen. For dinner, you can go to [Zenzi](https://goo.gl/maps/fZHKzmXFLGdK4hEv5) and enjoy the food. The restaurant closes at 1am, but you can sit by the beach if you want. Since this would be the last night of the trip, take some time and let the sea sink in.
 
 ## Day 9: Cancun
+
 Get up early, watch the sunrise again if you want, have breakfast, pack your bags and check out. Head over to Cancun and spend some time at your favourite restaurant, or drive by the [Hotel Zone](https://goo.gl/maps/nuEbzzH895MQyWki6). It's surrounded by a lagoon on one side and the ocean on the other. You can stop by the beach to have a marquesita once again. An hour or two before your flight, call up your car rental agent and return your car. It should now be time for your flight. _Hasta la vista Mexico!_ 
+
+# Mekiko! Ay ay ay!
+---
 
 Although this might not be the itinerary that you choose to follow, I hope this post gave you ample recommendations so you can feel more confident about your next vacation to Mexico! As always, your comments and suggestions would be much appreciated. Until next time!
