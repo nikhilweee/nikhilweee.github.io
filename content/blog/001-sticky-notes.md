@@ -138,3 +138,11 @@ def pudb_stringifier(obj):
 - https://minimal-blog.lekoarts.de/
 - https://github.com/chesterhow/tale
 - https://github.com/artemsheludko/reked
+
+# Installing docker-compose in Ubuntu 22.04 LTS
+`sudo apt install docker-compose`
+You will get an error when you try
+```
+$ docker compose
+docker: 'compose' is not a docker command.
+```
