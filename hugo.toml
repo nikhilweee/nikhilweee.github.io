@@ -42,7 +42,7 @@ keepComments = true
 # Set feed to feed.xml
 [outputFormats]
 [outputFormats.RSS]
-mediatype = "application/rss"
+mediaType = "application/rss+xml"
 baseName = "feed"
 
 

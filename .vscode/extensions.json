@@ -4,9 +4,9 @@
 
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
-    "tamasfe.even-better-toml",
-    "samuelcolvin.jinjahtml",
-    "esbenp.prettier-vscode"
+    "budparr.language-hugo-vscode",
+    "esbenp.prettier-vscode",
+    "tamasfe.even-better-toml"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
