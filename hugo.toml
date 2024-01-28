@@ -1,7 +1,7 @@
 baseURL = "https://nikhilweee.me"
 languageCode = "en-us"
 title = "weeeblog"
-theme = ["hugo-whiteglass", "hugo-cite"]
+theme = ["wtfhugo", "hugo-whiteglass", "hugo-cite"]
 
 # Used under RSS
 copyright = "&copy; Nikhil Verma"
@@ -24,41 +24,42 @@ disableKinds = ["taxonomy"]
 
 # Disable tags
 [taxonomies]
-  category = 'categories'
+category = 'categories'
 
 # Change permalink format
 [permalinks]
-  blog = "blog/:year/:slug/"
-  categories = "blog/archives/:slug"
-  about = "/:slug"
+blog = "blog/:year/:slug/"
+categories = "blog/archives/:slug"
+about = "/:slug"
 
 # Minify Output
 [minify]
-  minifyOutput = true
-  [minify.tdewolff.html]
-    keepComments = true
+minifyOutput = true
+[minify.tdewolff.html]
+keepComments = true
 
-# Citation style
-[params]
-  citationStyle = "custom"
 
 # Set feed to feed.xml
 [outputFormats]
-  [outputFormats.RSS]
-    mediatype = "application/rss"
-    baseName = "feed"
+[outputFormats.RSS]
+mediatype = "application/rss"
+baseName = "feed"
 
-# Used under every post and in RSS.
-[author]
-  name = "Nikhil Verma"
-  email = "nikhilweee@gmail.com"
-  url = "/"
+
+# Citation style
+[params]
+citationStyle = "custom"
+# Used under every post and in RSS
+[params.author]
+name = "Nikhil Verma"
+email = "nikhilweee@gmail.com"
+url = "/"
 
 [markup]
-  [markup.highlight]
-    noClasses = false
-    style = "monokailight"
-  [markup.tableOfContents]
-    startLevel = 1
-    endLevel = 3
-    ordered = false
+[markup.highlight]
+noClasses = false
+style = "monokailight"
+[markup.tableOfContents]
+startLevel = 1
+endLevel = 3
+ordered = false

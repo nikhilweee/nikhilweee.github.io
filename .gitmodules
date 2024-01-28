@@ -4,3 +4,6 @@
 [submodule "themes/hugo-whiteglass"]
 	path = themes/hugo-whiteglass
 	url = https://github.com/nikhilweee/hugo-whiteglass.git
+[submodule "themes/wtfhugo"]
+	path = themes/wtfhugo
+	url = https://github.com/i40west/wtfhugo

@@ -4,6 +4,7 @@ url = '/'
 +++
 
 {{< rawhtml >}}
+
 <div class="profile-div">
 <img class="profile-image" src="https://i.imgur.com/rbNi4kX.png" alt="Cheese!">
 <p class="profile-links">
@@ -21,21 +22,40 @@ url = '/'
 </div>
 {{< /rawhtml >}}
 
-Hi there! I'm a Computer Science Master's student at NYU's Courant Institute of Mathematical Sciences. I'm a part of the [CILVR](https://wp.nyu.edu/cilvr/) group, working with [Prof. Lerrel Pinto](https://www.lerrelpinto.com/) and [Prof. Rob Fergus]().
+Hi! My name is Nikhil and this is my home on the internet.
 
-Before NYU, I was a Deep Learning Engineer at [Flixstock](https://www.flixstock.com/), where I worked on GANs for photorealistic image editing.
-Previously, I was a Research Engineer at [IBM Research India](https://research.ibm.com/labs/india/) where I developed novel techniques for conversational question answering with [Danish Contractor](https://sites.google.com/site/danishcontractor1/home) and his team.
+I'm currently building LLM based systems for document understanding at
+[Roots Automation](https://www.rootsautomation.com/). I graduated from NYU's
+Courant Institute with a Masters in Computer Science, where I was a part of the
+[CILVR](https://wp.nyu.edu/cilvr/) group working with
+[Prof. Lerrel Pinto](https://www.lerrelpinto.com/) and
+[Prof. Rob Fergus](https://cs.nyu.edu/~fergus/pmwiki/pmwiki.php). My research
+culminated into a
+[thesis](https://drive.google.com/file/d/1q1yeEaq8DBPaiMIT0vS4exm3ayViZzB0/view)
+on Offline Reinforcement Learning for Imperfect Information Games.
 
-I got the opportunity to pursue my bachelor's thesis as a Research Intern at [Microsoft Research India](https://www.microsoft.com/en-us/research/lab/microsoft-research-india/) where I worked with [Navin Goyal](https://www.microsoft.com/en-us/research/people/navingo/) on translating code to natural language.
-
-I graduated from [BITS Pilani](https://www.bits-pilani.ac.in/) with a B.E. (Hons) in Electrical and Electronics Engineering. For more information, you can go through a list of my [projects](/projects), or have a look at my [resume](/resume). Feel free to reach out to me using your preferred platform. _Links are right below that beautiful smile_ :)
-
+Before NYU, I was working on novel techniques for conversational question
+answering with
+[Danish Contractor](https://sites.google.com/site/danishcontractor1/home) and
+his team at [IBM Research India](https://research.ibm.com/labs/india/).
+Subsequently, I also worked with GANs for photorealistic image generation at
+[Flixstock](https://www.flixstock.com/). I hold a bachelor's degree from
+[BITS Pilani](https://www.bits-pilani.ac.in/) in Electrical Engineering, where I
+got the opportunity to write a thesis as a Research Intern at
+[Microsoft Research India](https://www.microsoft.com/en-us/research/lab/microsoft-research-india/).
+I worked with
+[Navin Goyal](https://www.microsoft.com/en-us/research/people/navingo/) on
+translating code to natural language. For more information, you can have a look
+at my [resume](/resume).
 
 ## Publications
+
 ---
+
 {{<spanright>}}[[Abstract]](https://aclanthology.org/2020.emnlp-main.589/){{</spanright>}}
 **Neural Conversational QA: Learning to Reason vs Exploiting Patterns**  
-_**Nikhil Verma**, Abhishek Sharma, Dhiraj Madan, Danish Contractor, Harshit Kumar, Sachindra Joshi_  
+_**Nikhil Verma**, Abhishek Sharma, Dhiraj Madan, Danish Contractor, Harshit
+Kumar, Sachindra Joshi_  
 Paper published at EMNLP 2020
 
 {{<spanright>}}[[US 16/892805]](https://patents.google.com/patent/US20210383077A1/en){{</spanright>}}
@@ -44,20 +64,22 @@ _Danish Contractor, **Nikhil Verma**, Harshit Kumar and Sachindra Joshi_
 Patent filed with the US Patent and Trademark Office
 
 ## Open Source
+
 ---
+
 {{<spanright>}}[[GitHub]](https://github.com/nikhilweee/shis){{</spanright>}}
 **SHIS: Simple HTTP Image Server**  
 A drop-in replacement for `python -m http.server`, albeit for images.
 
 ## Affiliations
+
 ---
+
 {{<centerwrap>}}
-{{<affiliation img="https://i.imgur.com/mcSg2hB.png" href="https://www.bits-pilani.ac.in/" 
-               name="BITS Pilani" desc="2014-2018">}}
-{{<affiliation img="https://i.imgur.com/lkzx6nW.jpg" href="https://www.microsoft.com/en-us/research/" 
+{{<affiliation img="https://i.imgur.com/mcSg2hB.png" href="https://www.bits-pilani.ac.in/"
+               name="BITS Pilani" desc="2014-2018">}} {{<affiliation img="https://i.imgur.com/lkzx6nW.jpg" href="https://www.microsoft.com/en-us/research/"
                name="Microsoft Research" desc="Spring 2018">}}
-{{<affiliation img="https://i.imgur.com/RmexH3t.png" href="https://research.ibm.com/" 
-               name="IBM Research" desc="2018-2020">}}
-{{<affiliation img="https://i.imgur.com/ufM9VhW.png" href="https://www.nyu.edu/" 
+{{<affiliation img="https://i.imgur.com/RmexH3t.png" href="https://research.ibm.com/"
+               name="IBM Research" desc="2018-2020">}} {{<affiliation img="https://i.imgur.com/ufM9VhW.png" href="https://www.nyu.edu/"
                name="New York University" desc="2021-Present">}}
 {{</centerwrap>}}
