@@ -7,7 +7,7 @@ theme = ["wtfhugo", "hugo-whiteglass", "hugo-cite"]
 copyright = "&copy; Nikhil Verma"
 
 # Number of items to show every page
-paginate = 20
+paginate = 10
 
 # Use lastmod date from git
 enableGitInfo = false
@@ -29,7 +29,7 @@ category = 'categories'
 # Change permalink format
 [permalinks]
 blog = "blog/:year/:slug/"
-categories = "blog/archives/:slug"
+categories = "blog/categories/:slug"
 about = "/:slug"
 
 # Minify Output

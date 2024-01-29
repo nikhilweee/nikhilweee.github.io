@@ -5,21 +5,24 @@ url = '/'
 
 {{< rawhtml >}}
 
-<div class="profile-div">
-<img class="profile-image" src="https://i.imgur.com/rbNi4kX.png" alt="Cheese!">
-<p class="profile-links">
+<figure style="float: right">
+<img src="https://i.imgur.com/rbNi4kX.png" width="100%" style="border-radius: 50%">
+<figcaption style="text-align: center">
   <a href="mailto:nikhilweee@gmail.com" title="Email"><i class="fa-solid fa-at fa-xl"></i></a> • 
   <a href="/calendar" title="Calendar"><i class="fa-solid fa-calendar-day fa-lg"></i></a> • 
   <a href="https://github.com/nikhilweee" title="GitHub"><i class="fa-brands fa-github fa-xl"></i></a> • 
   <a href="https://twitter.com/nikhilweee" title="Twitter"><i class="fa-brands fa-twitter fa-xl"></i></a> • 
   <a href="https://linkedin.com/in/nikhilweee" title="LinkedIn"><i class="fa-brands fa-linkedin fa-xl"></i></a>
-</p>
-<!-- 
-<p class="profile-links">
-  <a href="/resume/">Resume</a>
-</p> 
--->
-</div>
+</figcaption>
+</figure>
+<style>
+@media screen and (min-width: 1280px) {
+  figure {
+    max-width: 256px
+  }
+}
+</style>
+
 {{< /rawhtml >}}
 
 Hi! My name is Nikhil and this is my home on the internet.
