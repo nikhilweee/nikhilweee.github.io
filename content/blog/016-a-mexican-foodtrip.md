@@ -8,22 +8,22 @@ title = 'A Yucatecan Foodtrip'
 
 > Disclaimer: All recommendations made in the blog are solely based on personal experiences. There are no affiliate links, and most of them will anyway take you to Google Maps.
 
-[Shavak](https://www.linkedin.com/in/shavaka/) and I had been planning to meet all winter. It was turning out to be difficult because he was working out of Vancouver and I was studying in New York. Neither of us had visas to the other country. A week before the New Year, he calls me up. "Bro, let's go to Mexico!?" he said. 
+[Shavak](https://www.linkedin.com/in/shavaka/) and I had been planning to meet all winter. It was turning out to be difficult because he was working out of Vancouver and I was studying in New York. Neither of us had visas to the other country. A week before the New Year, he calls me up. "Bro, let's go to Mexico!?" he said.
 
-You see, Mexico doesn't require any additional visa if you already have a valid US or Canadian visa, so that wasn't going to be an issue. Me being me, without thinking too much, I answered "Sure, let's go!". And that's where the fun ended. Neither of us had ever been on an international vacation before. So in the two weeks before our departure, we had to plan *everything*. 
+You see, Mexico doesn't require any additional visa if you already have a valid US or Canadian visa, so that wasn't going to be an issue. Me being me, without thinking too much, I answered "Sure, let's go!". And that's where the fun ended. Neither of us had ever been on an international vacation before. So in the two weeks before our departure, we had to plan _everything_.
 
-Now that we're back from our trip, in hindsight, it feels like we managed to accomplish a lot despite our constraints. So to save you from all the trouble that we had to go through, this blog is a documentation of the logistics of our trip. Our trip was centred around two primary objectives: a *roadtrip*, because I love them; and *food*, because that's Shavak's forte.
-
-{{<toc>}}
+Now that we're back from our trip, in hindsight, it feels like we managed to accomplish a lot despite our constraints. So to save you from all the trouble that we had to go through, this blog is a documentation of the logistics of our trip. Our trip was centred around two primary objectives: a _roadtrip_, because I love them; and _food_, because that's Shavak's forte.
 
 # Itinerary
+
 ---
 
-From Tijuana in the east to Cancun in the west, Mexico has a lot to offer. Naturally it's a really difficult choice to decide on your destination. After some research online, we ultimately decided to explore the Yucatan peninsula. It seemed like the more touristy region of Mexico with a lot of diverse experiences to offer. Here is the [route map](https://goo.gl/maps/YGdUxtVmbUXPq1fDA) of the road trip that we were planning to go on. 
+From Tijuana in the east to Cancun in the west, Mexico has a lot to offer. Naturally it's a really difficult choice to decide on your destination. After some research online, we ultimately decided to explore the Yucatan peninsula. It seemed like the more touristy region of Mexico with a lot of diverse experiences to offer. Here is the [route map](https://goo.gl/maps/YGdUxtVmbUXPq1fDA) of the road trip that we were planning to go on.
 
 Starting from Cancun, our plan was to visit the quaint little town of Valladolid, followed by the ancient ruins of Chichen Itza, before finally arriving at Merida. We would also visit the beach town of Progreso and head over to Bacalar in the southern part of the peninsula. From there, we'd travel north towards the more touristy cities of Tulum and Playa del Carmen and then we would finally come back to Cancun. During our stay in Playa, we might also visit the nearby island of Cozumel. Complete with beaches, ancient Mayan ruins, cenotes, lagoons, and of course, food from all over the peninsula -- this journey of over 1500 kms definitely checked all the boxes!
 
 {{< rawhtml >}}
+
 <figure>
   <iframe src="https://www.google.com/maps/embed?pb=!1m76!1m12!1m3!1d1918893.913315642!2d-89.09878443141888!3d20.05715704998279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m61!3e0!4m5!1s0x8f4e8047678409bf%3A0x5fd4feaf78eabb92!2sCancun%20International%20Airport!3m2!1d21.041703299999998!2d-86.8740062!4m5!1s0x8f510ada7bbef3f7%3A0xed7a1f8fe539aa31!2sValladolid%2C%20Yucatan%2C%20Mexico!3m2!1d20.68964!2d-88.20224879999999!4m5!1s0x8f5138b9a098f833%3A0xf70a67530750d45!2zQ2hpY2jDqW4tSXR6w6EsIFl1Y2F0YW4sIE1leGljbw!3m2!1d20.6791438!2d-88.5683091!4m5!1s0x8f56715cab450d17%3A0x5dfc155715abeb09!2sMerida%2C%20Yucatan%2C%20Mexico!3m2!1d20.967370199999998!2d-89.5925857!4m5!1s0x8f55c2ddbdef23d3%3A0xfcf3f77278b55d2d!2sProgreso%2C%20Yucatan%2C%20Mexico!3m2!1d21.281190799999997!2d-89.66516279999999!4m5!1s0x8f5bad97578b91d5%3A0x33929c6f745708e7!2sBacalar%20Lagoon%2C%20Quintana%20Roo%2C%20Mexico!3m2!1d18.7671365!2d-88.30688169999999!4m5!1s0x8f4fd40310e42a4b%3A0xeedc0db93ff9ab7!2sTulum%2C%20Quintana%20Roo%2C%20Mexico!3m2!1d20.2114185!2d-87.46535019999999!4m5!1s0x8f4e4323d22d4e61%3A0xe8c10b783bab4adc!2sPlaya%20del%20Carmen%2C%20Quintana%20Roo%2C%20Mexico!3m2!1d20.6295586!2d-87.0738851!4m5!1s0x8f4ef8efb0d19327%3A0x342ebcae5c018bfc!2sCozumel%2C%20Quintana%20Roo%2C%20Mexico!3m2!1d20.4229839!2d-86.9223432!4m5!1s0x8f4e8047678409bf%3A0x5fd4feaf78eabb92!2sCancun%20International%20Airport!3m2!1d21.041703299999998!2d-86.8740062!5e0!3m2!1sen!2sus!4v1642905304199!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   <figcaption>Our triangular <a href="https://goo.gl/maps/YGdUxtVmbUXPq1fDA">route map</a> across the Yucatan</figcaption>
@@ -32,60 +32,70 @@ Starting from Cancun, our plan was to visit the quaint little town of Valladolid
 
 Here's the itinerary that we kept in mind while booking our accomodations. You might also plan something along the same lines. Now that we're back from the trip, in hindsight, I would recommend staying in Progreso on Day 3 instead of Merida.
 
-* **Day 1**: Arrive at Cancun, stay in Valladolid
-* **Day 2**: Explore Chichen Itza, stay in Merida
-* **Day 3**: Explore Progreso, stay in Merida / Progreso
-* **Day 4**: Drive to, and stay in Bacalar
-* **Day 5**: Explore Bacalar, stay in Tulum
-* **Day 6**: Explore Coba, stay in Tulum
-* **Day 7**: Visit Yal-Ku, stay in Playa del Carmen
-* **Day 8**: Explore Cozumel, stay in Playa del Carmen
-* **Day 9**: Explore Cancun, return back home
+- **Day 1**: Arrive at Cancun, stay in Valladolid
+- **Day 2**: Explore Chichen Itza, stay in Merida
+- **Day 3**: Explore Progreso, stay in Merida / Progreso
+- **Day 4**: Drive to, and stay in Bacalar
+- **Day 5**: Explore Bacalar, stay in Tulum
+- **Day 6**: Explore Coba, stay in Tulum
+- **Day 7**: Visit Yal-Ku, stay in Playa del Carmen
+- **Day 8**: Explore Cozumel, stay in Playa del Carmen
+- **Day 9**: Explore Cancun, return back home
 
 # Planning
+
 ---
 
 Before flying to Cancun, here's a non-exhaustive list of things that we needed to sort out.
 
 ## Flights
+
 We needed to sync our flights so we would land around the same time. However, it didn't go so well. Shavak was already in Mexico by the time I boarded my flight. We noticed that this was a common trend, though. Flights from NYC mostly take-off early morning, while flights from YVR usually land around that time. That being said, your situation might be completely different.
 
 If you're taking a budget carrier, just make sure to check out their baggage allowances. As I said before, you don't need a Mexican visa if you already have an active US or Canadian visa. However, it's always advisable to check the latest regulations. For more info, check out the [official website](https://consulmex.sre.gob.mx/washington/index.php/servicios-para-extranjeros-visas?id=182) of the Mexican Embassy.
 
 ## Insurance
+
 This is another decision that is totally up to you. During our trip, Shavak took a travel insurance whereas I didn't. Luckily enough, neither of us had to use it. Make sure you carefully check the fine print, though. There are multiple non-intuitive clauses that might bite you in case of an emergency, so please double check. As an example, did you know that if your country issues a travel advisory against your destination, you might not be covered? If you're considering taking a travel insurance, make sure that any unique circumstances (such as COVID) is covered as well.
 
 ## COVID Tests
+
 At the time of writing, Mexico didn't have any additional vaccine requirements. However, the US and Canada had separate testing requirements while returning back. There are COVID testing centres easily available in Cancun and Playa del Carmen, so you shouldn't worry about it. We got our tests done from [PlayaLab](https://g.page/PLAYALAB?share) right next to the pier in Playa del Carmen because of the location, reviews and prices. The process was really smooth, and I can definitely recommend them again.
 
 ## Foreign Currency
+
 Credit cards are accepted in Mexico, but many places will add an additional surcharge of up to 4% per transaction. Some smaller merchants might not accept American Express, so carrying a Visa or a MasterCard is recommended. Make sure to check the foreign currency markup on your card - it's best if your card doesn't have one, or if the reward rate makes up for it.
 
 To withdraw cash, you can either use a forex/travel card, or a debit card. Just make sure you withdraw from a bank's ATM, and not the ones which are privately owned. I could easily find ScotiaBank and Santander ATMs near the touristy locations. Cash withdrawals cost me 50 MXN per instance, so it's best if you keep the number of ATM visits to a minimum.
 
 ## Internet
-You can buy a local TelCel SIM card from a nearby Oxxo as soon as you arrive in Mexico. Or if you're using T-Mobile like me, just talk to them about the Mexico and Canada add-on. For 5 USD, I got free calls to Canada and Mexico with 4GB of high speed data. Unfortunately my phone's internet refused to cooperate when I landed, and neither was I able to make any calls. Luckily, I managed to reach T-Mobile at *233 and they proactively resolved the issue in a timely manner.
+
+You can buy a local TelCel SIM card from a nearby Oxxo as soon as you arrive in Mexico. Or if you're using T-Mobile like me, just talk to them about the Mexico and Canada add-on. For 5 USD, I got free calls to Canada and Mexico with 4GB of high speed data. Unfortunately my phone's internet refused to cooperate when I landed, and neither was I able to make any calls. Luckily, I managed to reach T-Mobile at \*233 and they proactively resolved the issue in a timely manner.
 
 ## Things to Pack
-Mexico was very pleasant in January when we visited. However, do check the forecast for any surprises. Apart from personal belongings, I'd recommend keeping a *cenote bag* that you could use while diving in the water. This is basically a wet bag with some swimwear, footwear, sunscreen, sunglasses, and a towel. If you can get a snorkel or a GoPro, that would be great. We would also advise you to keep some spare US Dollars that would be handy if you run out of Mexican Pesos.
+
+Mexico was very pleasant in January when we visited. However, do check the forecast for any surprises. Apart from personal belongings, I'd recommend keeping a _cenote bag_ that you could use while diving in the water. This is basically a wet bag with some swimwear, footwear, sunscreen, sunglasses, and a towel. If you can get a snorkel or a GoPro, that would be great. We would also advise you to keep some spare US Dollars that would be handy if you run out of Mexican Pesos.
 
 ## Car Rental
+
 We chose [Yes Rent a Car](https://g.page/yescarcancun?share) because of their reviews and prices. They were kind enough to offer free pick-up and drop-off services to and from Cancun Airport. If you message them on WhatsApp, you can also ask for a better price than the one quoted on their 🌎 [website](https://yesrentacar.com.mx/english/). An automatic sedan for 9 days cost us 522 USD. This price also included a zero deductible plan. We were happy to get a free upgrade from a Chevy Aveo to a VW Jetta. Overall, definitely recommended.
 
 There are a few things to keep in mind though. **One**, it is mandatory to take a Third Party Insurance (TPI) in Mexico. In most cases this will already be included with your rental. **Two**, most car rental insurances that are bundled with US credit card are not valid in Mexico. **Three**, don't fall for insanely cheap prices. Some websites might quote unbelievable prices (as low as 3-4 USD per day) for the car but as soon as you go to the checkout page, you'll see a hefty insurance charge. **Four**, beware of car rental scams happening around the airport. It's better if you book a car in advance and have someone from the rental company escort you from the airport. For these reasons, we took the all inclusive package with a zero deductible, all insurances included.
 
 ## Accomodation
+
 We booked a budget accomodation for every city except Playa del Carmen. You could either book a regular hotel room, or a BnB. We preferred the latter. You can also consider hostels -- plenty of which can be found on [hostelworld.com](https://www.hostelworld.com/). Here are some extra pointers for every location.
 
-- **Valladolid** is a small town, most of which is centred around the [Parque Principal](https://goo.gl/maps/rziCv4Bzdri8YNcd6). It's great if you could find accomodation close to the park. That way, you can easily walk down [Calzada de Los Frailes](https://goo.gl/maps/7JPapMbi1BB3XX4c9), which ends in the historic [Convent of San Bernardino](https://goo.gl/maps/sSBtTJ5FyxuG6AB36).  
-- **Merida** is a large city, but we wanted to explore its historic center. So we looked for a place close to [Plaza Grande](https://goo.gl/maps/b4SSGS6wPtgC1u1j7). We also saw a few hostels nearby, which might be worth a shot.  
-- **Bacalar** is a small town by the lake. Although we booked a place 18kms away from the town at the end of the lagoon, we would suggest you find a place in the [town](https://goo.gl/maps/21HYHucGefCp5cvn8) itself.  
-- **Tulum** has two parts: one is the [city centre](https://goo.gl/maps/7NP1KWt5ScddwLVv5), and the other is the [hotel zone](https://goo.gl/maps/BM6EWxMKQvEoie6U9). Most tourists stay in the hotel zone, but we avoided it because the resorts over there were prohibitively expensive. If you can find a good deal, go for it. We, however, stayed close to the city centre. 
+- **Valladolid** is a small town, most of which is centred around the [Parque Principal](https://goo.gl/maps/rziCv4Bzdri8YNcd6). It's great if you could find accomodation close to the park. That way, you can easily walk down [Calzada de Los Frailes](https://goo.gl/maps/7JPapMbi1BB3XX4c9), which ends in the historic [Convent of San Bernardino](https://goo.gl/maps/sSBtTJ5FyxuG6AB36).
+- **Merida** is a large city, but we wanted to explore its historic center. So we looked for a place close to [Plaza Grande](https://goo.gl/maps/b4SSGS6wPtgC1u1j7). We also saw a few hostels nearby, which might be worth a shot.
+- **Bacalar** is a small town by the lake. Although we booked a place 18kms away from the town at the end of the lagoon, we would suggest you find a place in the [town](https://goo.gl/maps/21HYHucGefCp5cvn8) itself.
+- **Tulum** has two parts: one is the [city centre](https://goo.gl/maps/7NP1KWt5ScddwLVv5), and the other is the [hotel zone](https://goo.gl/maps/BM6EWxMKQvEoie6U9). Most tourists stay in the hotel zone, but we avoided it because the resorts over there were prohibitively expensive. If you can find a good deal, go for it. We, however, stayed close to the city centre.
 - **Playa del Carmen**'s touristy promenade is the Fifth Avenue, or [_Quinta Avenida_](https://goo.gl/maps/o6SKeXkUPh8XPWyy6). If you stay around this area, everything from restaurants to shopping malls will be accessible by foot. We stayed at [Hotel Colibri Beach](https://g.page/hotelcolibribeach?share), and the location couldn't have been any better!
 
 Once you are done with flight, car and hotel bookings, you're all set. _Mexico, ¡aquí vengo!_
 
 # The Trip
+
 ---
 
 Here's a suggested itinerary based on how our trip turned out to be. We did a lot of improvisations here and there, but at the end of the day, we were really happy with what we could achieve.
@@ -128,11 +138,11 @@ Check in to your accomodation, freshen up, and head to [La Chaya Maya](https://g
 
 {{<figure src="https://i.imgur.com/YifcN8L.jpg" caption="Merida">}}
 
-The next day, you can refuel your car at one of the PEMEX outlets. The fuel rates vary, but we found a PEMEX outlet with a rate of 19.99 MXN per litre. Surprisingly this was the best rate we could find across our roadtrip. You can then head over to the [Mayan World Musuem](https://goo.gl/maps/3AnCaeFKKvoKuscD8), explore around a bit, and then progress towards Progreso. Have brunch at the beach restaurant [Almadia](https://goo.gl/maps/3iVXaQFUXdCrNVMQA), and if you feel like, you can just spend some time lazing around by the beach. 
+The next day, you can refuel your car at one of the PEMEX outlets. The fuel rates vary, but we found a PEMEX outlet with a rate of 19.99 MXN per litre. Surprisingly this was the best rate we could find across our roadtrip. You can then head over to the [Mayan World Musuem](https://goo.gl/maps/3AnCaeFKKvoKuscD8), explore around a bit, and then progress towards Progreso. Have brunch at the beach restaurant [Almadia](https://goo.gl/maps/3iVXaQFUXdCrNVMQA), and if you feel like, you can just spend some time lazing around by the beach.
 
 {{<figure src="https://i.imgur.com/TnQnIRA.jpg" caption="Salmon and Oysters at [Almadia](https://goo.gl/maps/3iVXaQFUXdCrNVMQA), Progreso">}}
 
-You can then head over to the [Ecological Reserve of El Corcito](https://goo.gl/maps/wxfAhVUK8VREC9yN7) which is a mangrove swamp that is home to three cenotes. These are shallow ones, so you most likely won't even need a life jacket. When you're done, you can head over 30km towards the west to see the pink waters and the flamingos of [Laguna Rosada](https://goo.gl/maps/fAGhRz9c2L5MCyqW7). You would have had a long day by now. We did too, and by now we totally wished that we had decided to stay the night in Progreso.  
+You can then head over to the [Ecological Reserve of El Corcito](https://goo.gl/maps/wxfAhVUK8VREC9yN7) which is a mangrove swamp that is home to three cenotes. These are shallow ones, so you most likely won't even need a life jacket. When you're done, you can head over 30km towards the west to see the pink waters and the flamingos of [Laguna Rosada](https://goo.gl/maps/fAGhRz9c2L5MCyqW7). You would have had a long day by now. We did too, and by now we totally wished that we had decided to stay the night in Progreso.
 
 However, we didn't want to take on the hassle of cancellations, and besides, we had a car -- so we decided to head back to Merida. If you're able to make it before 6PM, try going to [Manjar Blanco](https://g.page/elmanjarblanco?share). If you're late, you can still have street food at the nearby [Santa Ana Market](https://goo.gl/maps/WQxsN5MZqDckLVBP6). I was craving for another Chaya Juice with Lime, so that's what we had along with some snacks.
 
@@ -142,7 +152,7 @@ For dinner, head over to [Picheta](https://goo.gl/maps/1UJvhTuTubVEgScc9). They 
 
 ## Day 4: Enroute Bacalar
 
-The next day, check out, and have huevos motuleños at [Huevos Motuleños y Más](https://goo.gl/maps/ut25cKLvVYGHKq2f8). It's a bit outside of the city, but the place is highly recommended for their traditional egg-based breakfast. 
+The next day, check out, and have huevos motuleños at [Huevos Motuleños y Más](https://goo.gl/maps/ut25cKLvVYGHKq2f8). It's a bit outside of the city, but the place is highly recommended for their traditional egg-based breakfast.
 
 {{<figure src="https://i.imgur.com/r8JmiA8.jpg" caption="Huevos motuleños at [Huevos Motuleños y Más](https://goo.gl/maps/ut25cKLvVYGHKq2f8)">}}
 
@@ -174,7 +184,7 @@ If you have midnight hunger pangs, try some of the roadside joints in the area n
 
 ## Day 6: Around Tulum
 
-The next day, feel free to have a lazy morning, and head over to the archaeological zone of [Coba](https://goo.gl/maps/K7AzgSdqyKUan1ve6). It was once famous for having a pyramid that you could climb on, but unfortunately that's no longer the case. On your way back, you can take a swim in the [Gran Cenote](https://goo.gl/maps/6WptCGxQvEPDiVRH6) or [Cenote Cavalera](https://g.page/cenote-calavera?share). We couldn't go to the Gran Cenote since we were late, but Cavalera had an instagrammable swing and some pits from which you can jump directly into the cenote, which was pretty cool. 
+The next day, feel free to have a lazy morning, and head over to the archaeological zone of [Coba](https://goo.gl/maps/K7AzgSdqyKUan1ve6). It was once famous for having a pyramid that you could climb on, but unfortunately that's no longer the case. On your way back, you can take a swim in the [Gran Cenote](https://goo.gl/maps/6WptCGxQvEPDiVRH6) or [Cenote Cavalera](https://g.page/cenote-calavera?share). We couldn't go to the Gran Cenote since we were late, but Cavalera had an instagrammable swing and some pits from which you can jump directly into the cenote, which was pretty cool.
 
 {{<figure src="https://i.imgur.com/ZsvHhBw.jpg?1" caption="Shavak on the swings of Cenote Cavalera" >}}
 
@@ -192,7 +202,7 @@ Once your tummy is full, head over to the accomodation to check in, have some re
 
 ## Day 8: Cozumel
 
-Although relatively near to the mainland, Cozumel is an experience in itself. To get to Cozumel from Playa, head over to the pier and buy tickets to the ferry. There's one ferry every hour, so you might have to wait for some time. If you need to get COVID tests done, now might be the right time. There are two operators -- Winjet is 220 MXN per person, whereas Ultramar is 250 MXN plus taxes. The ferry takes about 35 minutes. Although it must be possible to take your car over too, but we don't recommend doing that just to save you the hassle. 
+Although relatively near to the mainland, Cozumel is an experience in itself. To get to Cozumel from Playa, head over to the pier and buy tickets to the ferry. There's one ferry every hour, so you might have to wait for some time. If you need to get COVID tests done, now might be the right time. There are two operators -- Winjet is 220 MXN per person, whereas Ultramar is 250 MXN plus taxes. The ferry takes about 35 minutes. Although it must be possible to take your car over too, but we don't recommend doing that just to save you the hassle.
 
 Upon arriving, you can rent a car from one of the shops around [San Miguel Church](https://goo.gl/maps/JNesHXs45mKxYNfn9). There is definitely room for bargain, especially when you're taking a car for half a day. I was surprised to find convertible Beetles up for rent, so we had a clear winner. The dashboard said VW96 somewhere, so we're guessing it was made in 1996. The Beetle cost us 1000 MXN, plus taxes.
 
@@ -210,9 +220,10 @@ Next, continue cruising along the main road towards the north, and enjoy the vie
 
 ## Day 9: Cancun
 
-Get up early, watch the sunrise again if you want, have breakfast, pack your bags and check out. Head over to Cancun and spend some time at your favourite restaurant, or drive by the [Hotel Zone](https://goo.gl/maps/nuEbzzH895MQyWki6). It's surrounded by a lagoon on one side and the ocean on the other. You can stop by the beach to have a marquesita once again. An hour or two before your flight, call up your car rental agent and return your car. It should now be time for your flight. _Hasta la vista Mexico!_ 
+Get up early, watch the sunrise again if you want, have breakfast, pack your bags and check out. Head over to Cancun and spend some time at your favourite restaurant, or drive by the [Hotel Zone](https://goo.gl/maps/nuEbzzH895MQyWki6). It's surrounded by a lagoon on one side and the ocean on the other. You can stop by the beach to have a marquesita once again. An hour or two before your flight, call up your car rental agent and return your car. It should now be time for your flight. _Hasta la vista Mexico!_
 
 # Mekiko! Ay ay ay!
+
 ---
 
 Although this might not be the itinerary that you choose to follow, I hope this post gave you ample recommendations so you can feel more confident about your next vacation to Mexico! As always, your comments and suggestions would be much appreciated. Until next time!

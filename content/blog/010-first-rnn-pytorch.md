@@ -7,15 +7,14 @@ slug = 'first-rnn-pytorch'
 subtitle = 'with PyTorch 0.4!'
 title = 'Building your first RNN'
 +++
-If you have some understanding of recurrent networks, want to get your hands dirty, but haven't really tried to do that on your own, then you are certainly at the right place. This tutorial is a practical guide about getting started with recurrent networks using PyTorch. We'll solve a simple cipher using PyTorch 0.4.0, which is the latest version at the time of this writing.
 
-{{<toc>}}
+If you have some understanding of recurrent networks, want to get your hands dirty, but haven't really tried to do that on your own, then you are certainly at the right place. This tutorial is a practical guide about getting started with recurrent networks using PyTorch. We'll solve a simple cipher using PyTorch 0.4.0, which is the latest version at the time of this writing.
 
 You are only expected to have some understanding of recurrent networks. If you don't, here's the link to the [golden resource](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) - Chris Olah's post on Understanding LSTMs. We'll use a single layer LSTM for the task of learning ciphers, which should be a fairly easy exercise.
 
 # The Problem
 
-Before starting off, let's first define the problem in a concrete manner. We wish to decrypt secret messages using an LSTM. For the sake of simplicity, let's assume that our messages are encrypted using the [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher), which is a really simple substitution cipher.  
+Before starting off, let's first define the problem in a concrete manner. We wish to decrypt secret messages using an LSTM. For the sake of simplicity, let's assume that our messages are encrypted using the [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher), which is a really simple substitution cipher.
 
 Caesar cipher works by replacing each letter of the original message by another letter from a given alphabet to form an encrypted message. In this tutorial we'll use a right shift of 13, which basically means that the encrypted version of each letter in the alphabet is the one which occurs 13 places to the right of it. So `A`(1) becomes `N`(1+13), `B`(2) becomes `O`(2+13), and so on. Our alphabet will only include uppercase English characters `A` through `Z`, and an extra letter, `-`, to represent any foreign character.
 
@@ -34,12 +33,14 @@ The first row shows all the letters of the alphabet in order. To encrypt a messa
 
 # The Dataset
 
-Like any other neural network, we'll need data. Loads of it. We'll use a parallel dataset of the following form where each tuple represents a pair of (encrypted, decrypted) messages. 
+Like any other neural network, we'll need data. Loads of it. We'll use a parallel dataset of the following form where each tuple represents a pair of (encrypted, decrypted) messages.
+
 ```
 ('FUVEMVEMNMERPDRF', 'THIS-IS-A-SECRET')
 ('FUVEMVEMN-AFURDMERPDRF', 'THIS-IS-ANOTHER-SECRET')
 ...
 ```
+
 Having defined our problem, we'll feed the `encrypted` message as the input to our LSTM and expect it to emit the original message as the target. Sounds simple right?
 
 It does, except that we have a little problem. Neural networks are essentially number crunching machines, and have no idea how to hande our encrypted messages. We'll somehow have to convert our strings into numbers for the network to make sense of them.
@@ -52,16 +53,17 @@ Often, these vectors are stored together as $ V \times D $ dimensional **embeddi
 
 ```
 [[-1.4107, -0.8142,  0.8486,  2.8257, -0.7130],
- [ 0.5434,  3.8553,  2.9420, -2.8364, -4.0077], 
+ [ 0.5434,  3.8553,  2.9420, -2.8364, -4.0077],
  [ 1.6781, -0.2496,  2.5569, -0.2952, -2.2911],
  ...
  [ 2.7912,  1.3261,  1.7603,  3.3852, -2.1643]]
 ```
+
 $ E[0] $ then represents the word vector for `A`, which is `[-1.4107, -0.8142,  0.8486,  2.8257, -0.7130]`.
 
 [^char-embedding]Aside : but [I read something different!](#fn:char-embedding)
 
-[^char-embedding]: **I think I read something different!** Strictly speaking, what I just described here is called a _character embedding_, beacause we have a vector for each _character_ in the alphabet. In case we had a vector for each _word_ in a vocabulary, we would be using _word embeddings_ instead. Notice the analogy here. An alphabet is the set of all the letters in a language. Similarly, a vocabulary is the collection of all the words in a language. 
+[^char-embedding]: **I think I read something different!** Strictly speaking, what I just described here is called a _character embedding_, beacause we have a vector for each _character_ in the alphabet. In case we had a vector for each _word_ in a vocabulary, we would be using _word embeddings_ instead. Notice the analogy here. An alphabet is the set of all the letters in a language. Similarly, a vocabulary is the collection of all the words in a language.
 
 P.S. I'll be using alphabet and vocabulary interchangably throughout this tutorial. Similarly, word embeddings, word vectors, character embeddings, or simply embeddings will mean the same thing.
 
@@ -71,7 +73,7 @@ Now that we have enough background, let's get our hands dirty and finally jump i
 
 {{< gist nikhilweee 13243631f8ed219167ccd3866ce3204e module-cipher.py >}}
 
-We create the `encode` function which uses the parameters `vocab` and `key` to encrypt each character. Since we're working with letters, `vocab` in this context simply means the alphabet.  The encryption algorithm should be fairly easy to understand. Notice how we use the modulo operator in line `8` to prevent the indexes from overflowing.
+We create the `encode` function which uses the parameters `vocab` and `key` to encrypt each character. Since we're working with letters, `vocab` in this context simply means the alphabet. The encryption algorithm should be fairly easy to understand. Notice how we use the modulo operator in line `8` to prevent the indexes from overflowing.
 
 To check the implementation, you can check for some random inputs. For example, ensure that `encrypt('ABCDEFGHIJKLMNOPQRSTUVWXYZ-')` returns `NOPQRSTUVWXYZ-ABCDEFGHIJKLM`.
 
@@ -92,7 +94,7 @@ You can satisfy yourself by having a look at what this function does. A quick ca
 ```python
 [[tensor([ 20,   3,  21,   0,  14,   4,   2,   4,  13,  12,   8,  23,
          12,  10,  25,  17,  19,   1,   2,  22,  12,  15,  16,   3,
-         13,  10,  20,  23,  25,  15,  19,   4]), 
+         13,  10,  20,  23,  25,  15,  19,   4]),
   tensor([  7,  17,   8,  14,   1,  18,  16,  18,   0,  26,  22,  10,
          26,  24,  12,   4,   6,  15,  16,   9,  26,   2,   3,  17,
           0,  24,   7,  10,  12,   2,   6,  18])]]
@@ -100,7 +102,7 @@ You can satisfy yourself by having a look at what this function does. A quick ca
 
 With this we're done with the basics. Let's start building the network. It's a good idea to first have a general overview of what we aim to achieve. One might think of something along the following lines.
 
->On a very high level, the first step in a general workflow will be to feed in inputs to an LSTM to get the predictions. Next, we pass on the predictions along with the targets to the loss function to calculate the loss. Finally, we backpropagate through the loss to update our model's parameters.
+> On a very high level, the first step in a general workflow will be to feed in inputs to an LSTM to get the predictions. Next, we pass on the predictions along with the targets to the loss function to calculate the loss. Finally, we backpropagate through the loss to update our model's parameters.
 
 Hmm, that sounds easy, right? But how do you actually make it work? Let's dissect this step by step. We'll first identify the components needed to build our model, and finally put them to gether as a single piece to make it work.
 
@@ -108,7 +110,7 @@ Hmm, that sounds easy, right? But how do you actually make it work? Let's dissec
 
 ## The PyTorch paradigm
 
-... before diving in, it's important to know a couple of things. PyTorch provides implementations for most of the commonly used entities from layers such as LSTMs, CNNs and GRUs to optimizers like SGD, Adam, and what not (Isn't that the whole point of using PyTorch in the first place?!). The general paradigm to use any of these entities is to first create an instance of `torch.nn.entity` with some required parameters. As an example, here's how we instantiate an `lstm`. 
+... before diving in, it's important to know a couple of things. PyTorch provides implementations for most of the commonly used entities from layers such as LSTMs, CNNs and GRUs to optimizers like SGD, Adam, and what not (Isn't that the whole point of using PyTorch in the first place?!). The general paradigm to use any of these entities is to first create an instance of `torch.nn.entity` with some required parameters. As an example, here's how we instantiate an `lstm`.
 
 ```python
 # Step 1
@@ -132,7 +134,7 @@ Getting back to code now, let's dissect our 'high level' understanding again.
 
 # 1. Prepare inputs
 
->... **feed in inputs** to an LSTM to get the predictions ...
+> ... **feed in inputs** to an LSTM to get the predictions ...
 
 To feed in inputs, well, we first need to prepare the inputs. Remember the embedding matrix $ E $ we described [earlier](#the-dataset-finally)? we'll use $ E $ to convert the pair of indices we get from `dataset()` into the corresponding embedding vectors. Following the general paradigm, we create an instance of `torch.nn.Embedding`.
 
@@ -160,10 +162,9 @@ tensor([[ 0.2666,  2.1146,  1.3225,  1.3261, -2.6993],
         [-1.8041, -1.8606,  2.5406, -3.5191,  1.7761]])
 ```
 
-
 # 2. Build an LSTM
 
->... feed in inputs **to an LSTM** to get the predictions ...
+> ... feed in inputs **to an LSTM** to get the predictions ...
 
 Next, we need to create an LSTM. We do this in a similar fashion by creating an instance of `torch.nn.LSTM`. This time, the [docs](https://pytorch.org/docs/stable/nn.html#torch.nn.LSTM) list the required parameters as `input_size: the number of expected features in the input` and `hidden_size: the number of features in the hidden state`. Since LSTMs typically operate on variable length sequences, the `input_size` refers to the size of each entity in the input sequence. In our case, this means the `embedding_dim`. This might sound counter-intuitive, but if you think for a while, it makes sense.
 
@@ -178,7 +179,7 @@ lstm = torch.nn.LSTM(embedding_dim, hidden_dim)
 
 ## A note on dimensionality
 
-During step 2 of the [general paradigm](#the-pytorch-paradigm), `torch.nn.LSTM` expects the input to be a 3D input tensor of size `(seq_len, batch, embedding_dim)`, and returns an output tensor of the size `(seq_len, batch, hidden_dim)`. We'll only feed in one input at a time, so `batch` is always `1`. 
+During step 2 of the [general paradigm](#the-pytorch-paradigm), `torch.nn.LSTM` expects the input to be a 3D input tensor of size `(seq_len, batch, embedding_dim)`, and returns an output tensor of the size `(seq_len, batch, hidden_dim)`. We'll only feed in one input at a time, so `batch` is always `1`.
 
 As an example, consider the input-output pair `('ERPDRF', 'SECRET')`. Using an `embedding_dim` of 5, the 6 letter long input `ERPDRF` is transformed into an input tensor of size `6 x 1 x 5`. If `hidden_dim` is 10, the input is processed by the LSTM into an output tensor of size `6 x 1 x 10`.
 
@@ -192,7 +193,7 @@ So how do we solve this?
 
 # 3. Transform the outputs
 
->... feed in inputs to an LSTM to **get the predictions** ...
+> ... feed in inputs to an LSTM to **get the predictions** ...
 
 The general workaround is to transform the $ D $ dimensional tensor into a $ V $ dimensional tensor through what is called an affine (or linear) transform. Sparing the definitions aside, the idea is to use matrix multiplication to get the desired dimensions.
 
@@ -200,7 +201,7 @@ Let's say the LSTM produces an output tensor $ O $ of size `seq_len x batch x hi
 
 To implement the linear layer, ... you guessed it! We create an instance of `torch.nn.Linear`. This time, the [docs](https://pytorch.org/docs/stable/nn.html#torch.nn.Linear) list the required parameters as `in_features:  size of each input sample` and `out_features:  size of each output sample`. Note that this only transforms the last dimension of the input tensor. So for example, if we pass in an input tensor of size `(d1, d2, d3, ..., dn, in_features)`, the output tensor will have the same size for all but the last dimension, and will be a tensor of size `(d1, d2, d3, ..., dn, out_features)`.
 
-With this knowledge in mind, it's easy to figure out that `in_features` is `hidden_dim`, and `out_features` is `vocab_size`. The linear layer is initialised below. 
+With this knowledge in mind, it's easy to figure out that `in_features` is `hidden_dim`, and `out_features` is `vocab_size`. The linear layer is initialised below.
 
 ```python
 # Step 1
@@ -213,7 +214,7 @@ With this we're preddy much done with the essentials. Time for some learning!
 
 > Next, we pass on the predictions along with the targets to the loss function to calculate the loss.
 
-If you think about it, the LSTM is essentially performing multi-class classification at every time step by choosing one letter out of the 27 characters of the vocabulary. A common choice in such a case is to use the cross entropy loss function `torch.nn.CrossEntropyLoss`. We initialize this in a similar manner. 
+If you think about it, the LSTM is essentially performing multi-class classification at every time step by choosing one letter out of the 27 characters of the vocabulary. A common choice in such a case is to use the cross entropy loss function `torch.nn.CrossEntropyLoss`. We initialize this in a similar manner.
 
 ```python
 loss_fn = torch.nn.CrossEntropyLoss()
