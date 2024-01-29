@@ -8,11 +8,12 @@ url = '/'
 <figure style="float: right">
 <img src="https://i.imgur.com/rbNi4kX.png" width="100%" style="border-radius: 50%">
 <figcaption style="text-align: center">
-  <a href="mailto:nikhilweee@gmail.com" title="Email"><i class="fa-solid fa-at fa-xl"></i></a> • 
-  <a href="/calendar" title="Calendar"><i class="fa-solid fa-calendar-day fa-lg"></i></a> • 
   <a href="https://github.com/nikhilweee" title="GitHub"><i class="fa-brands fa-github fa-xl"></i></a> • 
-  <a href="https://twitter.com/nikhilweee" title="Twitter"><i class="fa-brands fa-twitter fa-xl"></i></a> • 
-  <a href="https://linkedin.com/in/nikhilweee" title="LinkedIn"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+  <a href="https://twitter.com/nikhilweee" title="Twitter"><i class="fa-brands fa-x-twitter fa-xl"></i></a> • 
+  <a href="https://linkedin.com/in/nikhilweee" title="LinkedIn"><i class="fa-brands fa-linkedin fa-xl"></i></a> &nbsp; | &nbsp;
+  <a href="/calendar" title="Calendar"><i class="fa-solid fa-calendar-day fa-lg"></i></a> • 
+  <a href="mailto:nikhilweee@gmail.com" title="Email"><i class="fa-solid fa-at fa-xl"></i></a> • 
+  <a href="/resume" title="Resume"><i class="fa-solid fa-file fa-xl"></i></a>
 </figcaption>
 </figure>
 <style>
@@ -80,9 +81,11 @@ A drop-in replacement for `python -m http.server`, albeit for images.
 
 {{<centerwrap>}}
 {{<affiliation img="https://i.imgur.com/mcSg2hB.png" href="https://www.bits-pilani.ac.in/"
-               name="BITS Pilani" desc="2014-2018">}} {{<affiliation img="https://i.imgur.com/lkzx6nW.jpg" href="https://www.microsoft.com/en-us/research/"
+               name="BITS Pilani" desc="2014-2018">}}
+{{<affiliation img="https://i.imgur.com/lkzx6nW.jpg" href="https://www.microsoft.com/en-us/research/"
                name="Microsoft Research" desc="Spring 2018">}}
 {{<affiliation img="https://i.imgur.com/RmexH3t.png" href="https://research.ibm.com/"
-               name="IBM Research" desc="2018-2020">}} {{<affiliation img="https://i.imgur.com/ufM9VhW.png" href="https://www.nyu.edu/"
-               name="New York University" desc="2021-Present">}}
+               name="IBM Research" desc="2018-2020">}}
+{{<affiliation img="https://i.imgur.com/ufM9VhW.png" href="https://www.nyu.edu/"
+               name="New York University" desc="2021-2022">}}
 {{</centerwrap>}}
