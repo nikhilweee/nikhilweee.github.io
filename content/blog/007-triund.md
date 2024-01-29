@@ -23,7 +23,7 @@ During the countdown period we gathered two other friends, Mohit and Rajat, and 
 
 # The Adventure
 
-I set off to Delhi just after my last compre (literally). Like all other expeditions to Himachal that I've made, even this was to start from ISBT Kashmere Gate.  We initially planned to take a Volvo but for nearly half the fare and without the air conditioner, a Semi Deluxe didn't seem to be a bad option either! I met the gang over there, had a little chat, and at 7 PM we were all set for Dharamshala. The four of us hadn't seen each other for a long time so in-house entertainment was never an issue.
+I set off to Delhi just after my last compre (literally). Like all other expeditions to Himachal that I've made, even this was to start from ISBT Kashmere Gate. We initially planned to take a Volvo but for nearly half the fare and without the air conditioner, a Semi Deluxe didn't seem to be a bad option either! I met the gang over there, had a little chat, and at 7 PM we were all set for Dharamshala. The four of us hadn't seen each other for a long time so in-house entertainment was never an issue.
 
 {{<figure src="https://i.imgur.com/KRRbzAk.jpg" caption="Sunset at the Triund Hill">}}
 
@@ -33,7 +33,7 @@ I'm particularly excited about overnight bus journeys thanks to the roadside foo
 
 We were awaken relatively early at 6 AM by the clamour and it wasn't long before we found out that this was Dharamshala. As was expected from a cold December night in Himachal, I was shivering and could feel the chatter of my teeth. Fortunately there was a bonfire nearby that helped ease me out. The locals suggested we head straight to McLeodGanj, so we took a shared Jeep that cost &#8377;25 per head for the nearly 10 KM uphill travel.
 
-On the way, reality struck hard. There was no sign of snow. sob sob :cry:. Sure it was disappointing, but that couldn't ruin our adventure. Everyone kept calm. Nobody discussed the issue.  
+On the way, reality struck hard. There was no sign of snow. sob sob :cry:. Sure it was disappointing, but that couldn't ruin our adventure. Everyone kept calm. Nobody discussed the issue.
 
 As soon as we arrived at McLeodGanj main square, we were surrounded by concierges. We followed one of them and found a good enough room for &#8377;600. Since we planned to trek during the day and spend the night camping, one room was enough for us. We only needed the room to freshen up and prepare our backpacks for the adventure. The receptionist was kind enough to allow 6 extra hours so we had the room until the following noon. &#8377;150 per head for 30 hours. The trip had been great so far!
 
@@ -42,7 +42,9 @@ As the day progressed, we set out for our adventure. A modest _aloo paratha_ was
 [^triund]: Hindi: त्रिउण्ड IPA: t̪rɪʊɳɖ
 
 # Triund
+
 ---
+
 The trek starts with a mandatory entry at one of the log registers held with the forest department. From there, it's just a rocky trail for the next 6 kilometers. I may have made it sound monotonous, but trust me, it is not. The trek is full of adventures, which I insist one should discover on his own. Nearly halfway through the trek, there's Magic View, claimed to be one of the oldest shops out there.
 
 {{<figure src="https://i.imgur.com/ZmUtv47.jpg" caption="The view from Magic View. You could even see the trek on the upper right.">}}
@@ -79,6 +81,6 @@ After a bit of shopping around, we bought the return tickets. We still had a han
 
 After another full tummy it was time for farewell. We took the semi deluxe again from McLeodGanj. A three and half hour long debate on demonetization was enough food for thought to make us sleep. By the time I was back to Delhi, Splitwise still read &#8377;2900. The trip cost us less than &#8377;3000 per head. Great!
 
-Tibet (whoops, McLeodGanj) had been a wonderful experience. I'd definitely want to visit sometime later. But this time, when it snows.  
+Tibet (whoops, McLeodGanj) had been a wonderful experience. I'd definitely want to visit sometime later. But this time, when it snows.
 
 Until next time!
