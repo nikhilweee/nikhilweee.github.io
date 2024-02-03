@@ -1,11 +1,6 @@
 {
+  "proseWrap": "always",
+  "printWidth": 100,
   "plugins": ["prettier-plugin-go-template"],
-  "overrides": [
-    {
-      "files": ["*.html"],
-      "options": {
-        "parser": "go-template"
-      }
-    }
-  ]
+  "overrides": [{ "files": ["*.html"], "options": { "parser": "go-template" } }]
 }
