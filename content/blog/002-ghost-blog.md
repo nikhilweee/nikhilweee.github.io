@@ -37,12 +37,11 @@ https://www.digitalocean.com/?refcode=ad1b7e083b2e
 
 # 2. Set up your server
 
-Now that you've bought your own server, its time to set it up. Use the following commands from your
-terminal. Consult these
+Now that you've bought your own server, its time to set it up.
+[Connect to your server via ssh](https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh).
+Consult these
 [community tutorials](https://www.digitalocean.com/community/tutorial_series/new-ubuntu-14-04-server-checklist)
 for more details.
-
-- [**Connect to your server via ssh**](https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh)
 
 The server IP and root password can be found in your email when you set up your droplet.
 
@@ -52,8 +51,8 @@ $ ssh root@<server IP>
 
 # 3. Secure your server
 
-These steps are not necessary, but _strictly recommended_. I have skipped explaining them for
-brevity. Consult the DigitalOcean
+These steps are not necessary, but _highly recommended_. I have skipped explaining them for brevity.
+Consult the DigitalOcean
 [community tutorials](https://www.digitalocean.com/community/tutorial_series/new-ubuntu-14-04-server-checklist)
 which explains all these steps in detail.
 
@@ -86,7 +85,7 @@ ns3.digitalocean.com
 
 Now that we've connected the domain and the droplet, it's time to set up your Ghost blog.
 
-- **Install and update `npm` and `node`**.
+## Install `npm` and `node`
 
 Ghost is written in javascript and needs node and npm to build and run on the server.
 
@@ -99,7 +98,7 @@ $ npm install -g npm
 $ ln -s "$(which nodejs)" /usr/bin/node
 ```
 
-- **Install Ghost**.
+## Install Ghost
 
 We'll download the latest version, extract and then install it to the recommended install directory.
 
@@ -118,7 +117,7 @@ $ cd ghost/
 $ sudo npm install --production
 ```
 
-- **Configure Ghost**
+## Configure Ghost
 
 Ghost stores your blog url in a `config.js` file. We'll first create the file using a default
 template and then set the appropriate url. Open the config file by using the following commands, and
@@ -135,7 +134,7 @@ Nginx (read Engine-X) is the server software (that technically makes your drople
 we'll use to serve our blog. We won't use the ghost development server as that isn't a good
 practice.
 
-- **Install nginx**
+## Install nginx
 
 It's our favourite `apt-get` command again.
 
@@ -143,7 +142,7 @@ It's our favourite `apt-get` command again.
 $ sudo apt-get install nginx
 ```
 
-- **Configure nginx**
+## Configure nginx
 
 We'll create a configuration file for your site in the `sites-available` directory.
 
@@ -170,7 +169,7 @@ server {
 }
 ```
 
-- **Enable your site**
+## Enable your site
 
 Simply symlink the file you just created to the `sites-enabled` directory and restart nginx.
 
@@ -179,7 +178,7 @@ $ sudo ln -s /etc/nginx/sites-available/ghost /etc/nginx/sites-enabled/ghost
 $ sudo service nginx restart
 ```
 
-- At this stage, test your config
+At this stage, test your config
 
 ```console
 $ cd /var/www/ghost
@@ -187,14 +186,14 @@ $ sudo npm start --production
 ```
 
 You should be able to access your new ghost blog on your new domain. If not, there's been a mistake.
-C'mon. Get working. Fix that crap!
+C'mon. Get working!
 
 # 7. Set up autostart
 
 Now that your blog is set up, we just finally need to ensure that the blog doesn't stop for any
 reason and even autostarts on droplet restart. I'll do this using supervisor.
 
-- **Install supervisor**
+## Install supervisor
 
 Again, `apt-get`.
 
@@ -202,7 +201,7 @@ Again, `apt-get`.
 $ sudo apt-get install supervisor
 ```
 
-- **Configure your blog for supervisor**
+## Configure your blog for supervisor
 
 We'll again create a config file as we did for nginx.
 
@@ -226,7 +225,7 @@ stderr_logfile = /var/log/supervisor/ghost_err.log
 environment = NODE_ENV="production"
 ```
 
-- **Restart**
+## Restart
 
 ```console
 $ sudo supervisorctl reread
