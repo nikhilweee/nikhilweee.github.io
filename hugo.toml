@@ -63,3 +63,11 @@ style = "monokailight"
 startLevel = 1
 endLevel = 3
 ordered = false
+
+[menus]
+[[menus.main]]
+name = "About"
+pageRef = "/"
+[[menus.main]]
+name = "Blog"
+pageRef = "/blog/"
