@@ -15,15 +15,15 @@
   line-height: inherit;
   font-weight: 300;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 html {
   height: 100%;
   min-height: 100%;
   font-size: 16px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   line-height: 1.25;
   color: #fff;
 }
@@ -101,7 +101,7 @@ div.sticker {
   left: 60%;
   margin-left: -7.5rem;
   -webkit-perspective: 700px;
-          perspective: 700px;
+  perspective: 700px;
 }
 .canvas:hover {
   cursor: -webkit-grab;
@@ -186,15 +186,17 @@ button.selected {
   -webkit-transition: -webkit-transform 400ms linear;
   transition: -webkit-transform 400ms linear;
   transition: transform 400ms linear;
-  transition: transform 400ms linear, -webkit-transform 400ms linear;
+  transition:
+    transform 400ms linear,
+    -webkit-transform 400ms linear;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   /*-webkit-transform: rotate3d(0, 1, 0, -35deg) rotate3d(1, 0, 0, 35deg);
           transform: rotate3d(0, 1, 0, -35deg) rotate3d(1, 0, 0, 35deg);*/
   /*-webkit-transform: rotate3d(1, 0, 0, -45deg) rotate3d(0, 1, 0, -45deg);
           transform: rotate3d(1, 0, 0, -45deg) rotate3d(0, 1, 0, -45deg);*/
   -webkit-transform: rotate3d(1, 0, 0, -45deg) rotate3d(0, 1, 0, -135deg) rotate3d(0, 0, 1, -90deg);
-          transform: rotate3d(1, 0, 0, -45deg) rotate3d(0, 1, 0, -135deg) rotate3d(0, 0, 1, -90deg);
+  transform: rotate3d(1, 0, 0, -45deg) rotate3d(0, 1, 0, -135deg) rotate3d(0, 0, 1, -90deg);
 }
 .cube .swiper {
   position: absolute;
@@ -207,27 +209,30 @@ button.selected {
 }
 .cube .swiper.top {
   -webkit-transform: rotate3d(0, 1, 0, -180deg) translate3d(0, 0, -7.89473684rem);
-          transform: rotate3d(0, 1, 0, -180deg) translate3d(0, 0, -7.89473684rem);
+  transform: rotate3d(0, 1, 0, -180deg) translate3d(0, 0, -7.89473684rem);
 }
 .cube .swiper.bottom {
   -webkit-transform: translate3d(0, 0, -7.89473684rem);
-          transform: translate3d(0, 0, -7.89473684rem);
+  transform: translate3d(0, 0, -7.89473684rem);
 }
 .cube .swiper.left {
   -webkit-transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, -7.89473684rem);
-          transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, -7.89473684rem);
+  transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, -7.89473684rem);
 }
 .cube .swiper.right {
-  -webkit-transform: rotate3d(0, 0, 1, -180deg) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, -7.89473684rem);
-          transform: rotate3d(0, 0, 1, -180deg) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, -7.89473684rem);
+  -webkit-transform: rotate3d(0, 0, 1, -180deg) rotate3d(0, 1, 0, 90deg)
+    translate3d(0, 0, -7.89473684rem);
+  transform: rotate3d(0, 0, 1, -180deg) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, -7.89473684rem);
 }
 .cube .swiper.front {
-  -webkit-transform: rotate3d(1, 0, 0, -180deg) rotate3d(1, 0, 0, -90deg) translate3d(0, 0, -7.89473684rem);
-          transform: rotate3d(1, 0, 0, -180deg) rotate3d(1, 0, 0, -90deg) translate3d(0, 0, -7.89473684rem);
+  -webkit-transform: rotate3d(1, 0, 0, -180deg) rotate3d(1, 0, 0, -90deg)
+    translate3d(0, 0, -7.89473684rem);
+  transform: rotate3d(1, 0, 0, -180deg) rotate3d(1, 0, 0, -90deg) translate3d(0, 0, -7.89473684rem);
 }
 .cube .swiper.back {
-  -webkit-transform: rotate3d(0, 1, 0, -180deg) rotate3d(1, 0, 0, -90deg) translate3d(0, 0, -7.89473684rem);
-          transform: rotate3d(0, 1, 0, -180deg) rotate3d(1, 0, 0, -90deg) translate3d(0, 0, -7.89473684rem);
+  -webkit-transform: rotate3d(0, 1, 0, -180deg) rotate3d(1, 0, 0, -90deg)
+    translate3d(0, 0, -7.89473684rem);
+  transform: rotate3d(0, 1, 0, -180deg) rotate3d(1, 0, 0, -90deg) translate3d(0, 0, -7.89473684rem);
 }
 .cube-wrapper {
   position: absolute;
@@ -236,17 +241,19 @@ button.selected {
   height: 15rem;
   width: 15rem;
   -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   transition-property: transform;
-  transition-property: transform, -webkit-transform;
+  transition-property:
+    transform,
+    -webkit-transform;
   -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
   -webkit-transition-duration: 0;
-          transition-duration: 0;
+  transition-duration: 0;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   visibility: hidden;
 }
 .cube-part {
@@ -262,7 +269,7 @@ button.selected {
   line-height: 5rem;
   text-align: center;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   border-radius: 0.6rem;
 }
 .cube-part .side.gray,
@@ -282,32 +289,32 @@ button.selected {
 .cube-part .side.green .sticker,
 .cube-part .side.yellow .sticker {
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   visibility: visible;
 }
 .cube-part .side.front {
   -webkit-transform: translate3d(-2.5rem, 0, 0) rotate3d(0, 1, 0, -90deg) scale(1);
-          transform: translate3d(-2.5rem, 0, 0) rotate3d(0, 1, 0, -90deg) scale(1);
+  transform: translate3d(-2.5rem, 0, 0) rotate3d(0, 1, 0, -90deg) scale(1);
 }
 .cube-part .side.back {
   -webkit-transform: translate3d(2.5rem, 0, 0) rotate3d(0, 1, 0, 90deg) scale(1);
-          transform: translate3d(2.5rem, 0, 0) rotate3d(0, 1, 0, 90deg) scale(1);
+  transform: translate3d(2.5rem, 0, 0) rotate3d(0, 1, 0, 90deg) scale(1);
 }
 .cube-part .side.right {
   -webkit-transform: translate3d(0, 2.5rem, 0) rotate3d(1, 0, 0, -90deg) scale(1);
-          transform: translate3d(0, 2.5rem, 0) rotate3d(1, 0, 0, -90deg) scale(1);
+  transform: translate3d(0, 2.5rem, 0) rotate3d(1, 0, 0, -90deg) scale(1);
 }
 .cube-part .side.left {
   -webkit-transform: translate3d(0, -2.5rem, 0) rotate3d(1, 0, 0, 90deg) scale(1);
-          transform: translate3d(0, -2.5rem, 0) rotate3d(1, 0, 0, 90deg) scale(1);
+  transform: translate3d(0, -2.5rem, 0) rotate3d(1, 0, 0, 90deg) scale(1);
 }
 .cube-part .side.top {
   -webkit-transform: translate3d(0, 0, 2.5rem) rotate3d(1, 0, 0, 0) scale(1);
-          transform: translate3d(0, 0, 2.5rem) rotate3d(1, 0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 2.5rem) rotate3d(1, 0, 0, 0) scale(1);
 }
 .cube-part .side.bottom {
   -webkit-transform: translate3d(0, 0, -2.5rem) rotate3d(1, 0, 0, -180deg) scale(1);
-          transform: translate3d(0, 0, -2.5rem) rotate3d(1, 0, 0, -180deg) scale(1);
+  transform: translate3d(0, 0, -2.5rem) rotate3d(1, 0, 0, -180deg) scale(1);
 }
 .cube-part-wrapper {
   position: absolute;
@@ -315,13 +322,13 @@ button.selected {
   width: 5rem;
   z-index: 0;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-transition-property: all;
-          transition-property: all;
+  transition-property: all;
   -webkit-transition-duration: 800ms;
-          transition-duration: 800ms;
+  transition-duration: 800ms;
   pointer-events: none;
   visibility: hidden;
 }
@@ -345,15 +352,15 @@ button.selected {
 }
 .cube-part-wrapper[data-z="0"] {
   -webkit-transform: translate3d(0, 0, -5rem);
-          transform: translate3d(0, 0, -5rem);
+  transform: translate3d(0, 0, -5rem);
 }
 .cube-part-wrapper[data-z="1"] {
   -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 .cube-part-wrapper[data-z="2"] {
   -webkit-transform: translate3d(0, 0, 5rem);
-          transform: translate3d(0, 0, 5rem);
+  transform: translate3d(0, 0, 5rem);
 }
 /**
  *   ██████╗ ██████╗ ██╗██████╗
@@ -371,16 +378,18 @@ button.selected {
   height: inherit;
   width: inherit;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   pointer-events: none;
 }
 .grip .axis {
   -webkit-transition: -webkit-transform 400ms;
   transition: -webkit-transform 400ms;
   transition: transform 400ms;
-  transition: transform 400ms, -webkit-transform 400ms;
+  transition:
+    transform 400ms,
+    -webkit-transform 400ms;
 }
 .grip .axis.manual {
   -webkit-transition: none;
@@ -390,7 +399,9 @@ button.selected {
   -webkit-transition: -webkit-transform 200ms;
   transition: -webkit-transform 200ms;
   transition: transform 200ms;
-  transition: transform 200ms, -webkit-transform 200ms;
+  transition:
+    transform 200ms,
+    -webkit-transform 200ms;
 }
 .axis {
   position: absolute;
@@ -399,9 +410,9 @@ button.selected {
   height: inherit;
   width: inherit;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 /**
  * ████████╗██╗  ██╗███████╗███╗   ███╗███████╗
@@ -427,7 +438,7 @@ button.selected {
 .theme-flat .cube-part .side.green .sticker,
 .theme-flat .cube-part .side.yellow .sticker {
   -webkit-transform: translateZ(1px);
-          transform: translateZ(1px);
+  transform: translateZ(1px);
   position: absolute;
   top: 0.3rem;
   left: 0.3rem;
@@ -436,7 +447,7 @@ button.selected {
   border-radius: 0.3rem;
   z-index: 2;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .theme-flat .cube-part .side.gray .sticker {
   background-color: #888;
@@ -468,17 +479,19 @@ button.selected {
  *    ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗
  *    ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝
  */
- .highlight .cube-part .side .sticker {
-   opacity: 0.5;
-   box-shadow: 0 0 0 10px #3f3f3f inset;
- }
+.highlight .cube-part .side .sticker {
+  opacity: 0.5;
+  box-shadow: 0 0 0 10px #3f3f3f inset;
+}
 .theme-realistic .cube-part-wrapper-112 .cube-part .side.black .sticker {
   /*background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28359/rubik-logo.png');*/
   background-size: 100% auto;
 }
 .theme-realistic .cube-part .side {
   /*visibility: visible;*/
-  box-shadow: 0 0 2px 0 #3f3f3f inset, 0 0 0 0.3rem #2b2b2b inset;
+  box-shadow:
+    0 0 2px 0 #3f3f3f inset,
+    0 0 0 0.3rem #2b2b2b inset;
   border-radius: 0.6rem;
   background-color: #1e1e1e;
 }
@@ -491,9 +504,22 @@ button.selected {
   border-radius: 0.6rem;
   z-index: 2;
   background-color: #1e1e1e;
-  box-shadow: 0 0 2px 0 #3f3f3f inset, 0 0 0 0.3rem #2b2b2b inset, 0 0 1px 0.4rem rgba(255, 255, 255, 0.2) inset;
-  background-image: -webkit-radial-gradient(ellipse farthest-corner, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0));
-  background-image: radial-gradient(ellipse farthest-corner, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0));
+  box-shadow:
+    0 0 2px 0 #3f3f3f inset,
+    0 0 0 0.3rem #2b2b2b inset,
+    0 0 1px 0.4rem rgba(255, 255, 255, 0.2) inset;
+  background-image: -webkit-radial-gradient(
+    ellipse farthest-corner,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  background-image: radial-gradient(
+    ellipse farthest-corner,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0)
+  );
 }
 .theme-realistic .cube-part .side.gray .sticker {
   background-color: #888;
@@ -524,5 +550,5 @@ button.selected {
 .theme-realistic .cube-part .side.green .sticker,
 .theme-realistic .cube-part .side.yellow .sticker {
   -webkit-transform: translateZ(1px);
-          transform: translateZ(1px);
+  transform: translateZ(1px);
 }

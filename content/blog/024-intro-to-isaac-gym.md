@@ -197,8 +197,6 @@ If you're planning to make any changes in the existing environment, this is the 
 at. If you're curious, the interface between `rl_games` and `isaacgymenvs` is provided in
 [`rlgames_utils.RLGPUEnv`](https://github.com/NVIDIA-Omniverse/IsaacGymEnvs/blob/9656bac7e59b96382d2c5040b90d2ea5c227d56d/isaacgymenvs/utils/rlgames_utils.py#L157-L186).
 
-> This post is a work in progress. More updates coming soon.
-
 # Resources
 
 - I highly recommend reading the technical paper about Isaac Gym available on
