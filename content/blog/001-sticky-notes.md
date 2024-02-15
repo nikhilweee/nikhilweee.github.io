@@ -1,7 +1,6 @@
 +++
 categories = ['References']
 date = '2016-01-01'
-expiryDate = '2021-12-31'
 subtitle = "Stuff I'd like to keep note of"
 tags = ['hacks', 'tutorial', 'linux']
 title = 'Sticky Notes'
@@ -16,10 +15,10 @@ you might find something relevant!
 - Timesync!
 
 ```console
-alias timesync='sudo /etc/cron.daily/timesync'
+$ alias timesync='sudo /etc/cron.daily/timesync'
 ```
 
-```console
+```bash
 # /etc/cron.daily/timesync
 sudo date -s "$(wget -qSO- --max-redirect=0 google.com \
               2>&1 | grep Date: | cut -d' ' -f5-8)Z"
@@ -27,24 +26,21 @@ sudo date -s "$(wget -qSO- --max-redirect=0 google.com \
 
 - Short for activating virtual environments
 
-```
-alias sv='source venv/bin/activate; \
-          export PS1="(${PWD##*/}-venv)$_OLD_VIRTUAL_PS1"'
+```console
+$ alias sv='source venv/bin/activate; export PS1="(${PWD##*/}-venv)$_OLD_VIRTUAL_PS1"'
 ```
 
 - I use these all the time
 
-```
-alias log='tail -f /var/log/syslog'
-alias nmr='sudo service network-manager restart; \
-           sudo service networking restart; log'
+```console
+$ alias log='tail -f /var/log/syslog'
+$ alias nmr='sudo service network-manager restart; sudo service networking restart; log'
 ```
 
 - Show folder sizes in descending order
 
-```
-alias duinfo='sudo du --all --block-size=MB \
-              --max-depth=1 | sort -n'
+```console
+$ alias duinfo='sudo du --all --block-size=MB --max-depth=1 | sort -n'
 ```
 
 - I always forget the color scheme of my terminal. It's `base16_isotope`. Oh!
@@ -65,7 +61,7 @@ by your firewall.
 
 I tested the open ports (upto 4000) in my university and here is the list as of October 2016:
 
-```
+```text
 22   SSH
 53   DNS
 80   C'mon!
@@ -87,7 +83,7 @@ to be really helpful.
 Again, there is an overload of methods used to install node and npm. Here is what works for me - the
 easy way.
 
-```
+```console
 $ sudo apt-get install nodejs npm
 $ sudo npm install -g n npm
 $ sudo ln -s "$(which nodejs)" /usr/bin/node
@@ -100,9 +96,9 @@ a bulky git repository and building it from the source. And also the fact that t
 install opencv_ way out. But as long as you don't have any constraints like using it on an embedded
 device, the folks at menpo have an easy way out using anaconda.
 
-```
-conda install -c menpo opencv
-conda install -c menpo opencv3
+```console
+$ conda install -c menpo opencv
+$ conda install -c menpo opencv3
 ```
 
 Of course, if you have specific requirements, it's better to build from source.
@@ -173,7 +169,7 @@ def pudb_stringifier(obj):
 
 `sudo apt install docker-compose` You will get an error when you try
 
-```
+```console
 $ docker compose
 docker: 'compose' is not a docker command.
 ```

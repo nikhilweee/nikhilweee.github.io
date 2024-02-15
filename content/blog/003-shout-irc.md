@@ -35,7 +35,7 @@ $ npm install -g shout
 is what you do to install shout. That's it. However, if you don't have `node` or `npm` installed on
 your Ubuntu based server, just run this
 
-```
+```console
 $ sudo apt-get install nodejs npm
 $ sudo npm install -g npm
 $ sudo ln -s "$(which nodejs)" /usr/bin/node
@@ -79,7 +79,7 @@ $ sudo nano /etc/nginx/sites-available/irc
 
 And run Shout IRC behind a proxy
 
-```
+```nginx
 server {
     listen 80;
     server_name <YOUR SITE ADDRESS>;
@@ -130,7 +130,7 @@ Now edit the file to create an autostart process so that your blog remains stabl
 an existing user on the system. Better to use a dedicated user with restricted access as a safety
 measure
 
-```
+```ini
 [program:shout]
 command = shout start
 user = server
@@ -142,7 +142,7 @@ stderr_logfile = /var/log/supervisor/shout_err.log
 
 Save it, and you're just a restart away!
 
-```
+```console
 $ sudo supervisorctl reread
 $ sudo supervisorctl update
 $ sudo supervisorctl restart shout

@@ -1,3 +1,3 @@
 +++
-siteTitle = "weeeblog"
+SiteTitle = "weeeblog"
 +++
