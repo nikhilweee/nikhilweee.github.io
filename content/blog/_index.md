@@ -1,2 +1,3 @@
 +++
+siteTitle = "weeeblog"
 +++

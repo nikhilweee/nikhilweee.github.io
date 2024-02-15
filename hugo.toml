@@ -65,9 +65,21 @@ endLevel = 3
 ordered = false
 
 [menus]
+# Default
 [[menus.main]]
 name = "About"
 pageRef = "/"
 [[menus.main]]
 name = "Blog"
 pageRef = "/blog/"
+# Homepage
+[[menus.about]]
+name = "Blog"
+pageRef = "/blog/"
+[[menus.about]]
+name = "Resume"
+pageRef = "/resume/"
+# Blog
+[[menus.blog]]
+name = "About"
+pageRef = "/"
