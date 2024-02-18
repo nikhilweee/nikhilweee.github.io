@@ -2,7 +2,7 @@
 title = "You probably don't need Zotero's File Sync"
 categories = ['Tools']
 date = '2024-02-18'
-slug = 'zotero-sync'
+slug = 'zotero-file-sync'
 draft = false
 +++
 
