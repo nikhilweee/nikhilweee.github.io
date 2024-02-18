@@ -128,3 +128,30 @@ If you have a similar use case, I hope this helps. There are a couple of caveats
 1. As mentioned before, this code hasn't been tested, so please use at your own risk.
 
 On the flip side, this approach is straightforward. you don't need to install an additional plugin.
+
+# Closing Thoughts
+
+I feel like I should highlight the pain points behind this endeavour. Zotero's JS API is a powerful
+one, but it is severly undocumented. This is
+[acknowledged](https://www.zotero.org/support/dev/client_coding/javascript_api#api_methods) on
+Zotero's documentation, and indeed I had to sift through several files, sometimes containing over
+[5000 lines](https://github.com/zotero/zotero/blob/009a2ca38abee81eec7e0bdf9d962b07c8c653d7/chrome/content/zotero/xpcom/data/item.js)
+of code.
+
+What's weird is that the source code uses JSDoc style comments intermittently in a way which doesn't
+come together. My best bet was to add a `@namespace` tag right at the beginning of a file and run
+jsdoc for individual files. For example, here is a snippet from
+[attachments.js](https://github.com/zotero/zotero/blob/009a2ca38abee81eec7e0bdf9d962b07c8c653d7/chrome/content/zotero/xpcom/attachments.js#L26)
+
+```js
+/**
+ * @namespace
+ */
+Zotero.Attachments = new function () {...}
+```
+
+Zotero definitely has a lot of potential. After all these years, it's still being actively
+maintained. Zotero 7 is in
+[open beta](https://forums.zotero.org/discussion/111074/available-for-beta-testing-zotero-redesigned).
+In fact, the screenshots in this post are from the beta version. Along with the user experience, I
+really hope that the developer experience also becomes better.
