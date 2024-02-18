@@ -22,21 +22,22 @@ But wait, what if I told you that you don't _need_ the file sync feature? Let me
 
 I like to annotate PDFs on Zotero, and my primary use case for file sync is to sync these
 annotations. I want to be able to add an item to my library from one computer, annotate it, then
-continue annotating the same item from another computer. If I have file sync turned on, Zotero
-already allows me to do this. But what happens when file sync is turned off?
+continue annotating the same item from another computer. If I have file sync turned on, Zotero will
+sync the PDF attachment across devices, so it all works out just fine.
 
 {{<figure src="https://i.imgur.com/BdSmWMt.jpg" caption="Zotero throws an error when file sync is disabled.">}}
 
-Zotero syncs the library entry for the item, but Zotero does not sync the actual PDF. So if you try
-to open the PDF entry attached to the synced item, you will get a File Not Found error. But if you
-notice closely, your annotations will appear if you click on the PDF entry once.
+But what happens when file sync is turned off? In this case Zotero will sync the library entry for
+the item, including the library entry for the PDF, but Zotero does not sync the actual PDF file. So
+if you try to open the PDF entry attached to the synced item, you will get a File Not Found error.
+But if you notice closely, your annotations _do_ appear if you click on the PDF entry once.
 
 {{<figure src="https://i.imgur.com/261XzG4.jpg" caption="Zotero syncs annotations independently of the PDF.">}}
 
-So what's happening here? As a matter of fact, Zotero saves annotations in its database and not in
-the PDF [[2]]. This means that Zotero uses data sync for annotations as opposed to file sync. If we
-were to locate the missing PDF somehow, we would essentially have synced everything (that we care
-about) without even using file sync! So how do we do this?
+So what's happening here? As a matter of fact, Zotero saves annotations in its database separate
+from the PDF file itself [[2]]. This means that Zotero uses data sync for annotations as opposed to
+file sync. If we were to locate the missing PDF somehow, we would essentially have synced everything
+(that we care about) without even using file sync. Great! So how do we do this?
 
 [2]: https://forums.zotero.org/discussion/comment/455487/#Comment_455487
 
@@ -47,13 +48,13 @@ But this option only appears if you don't already have a PDF entry associated wi
 
 [3]: https://forums.zotero.org/discussion/comment/342161/#Comment_342161
 
-{{<figure src="https://i.imgur.com/7VjkJIt.jpg" caption="Zotero has an option to Find Available PDF.">}}
+{{<figure src="https://i.imgur.com/KoRpob0.jpg" caption="Zotero has an option to Find Available PDF.">}}
 
 In our case, however, Zotero has already synced the PDF entry from its database, which is why we
 were able to see annotations in the first place. It's just that the actual file is missing.
 Therefore, we don't see this option. Only if we had a way to hack into Zotero!
 
-# Zotero JavaScript API
+# Zotero's JavaScript API
 
 Say no more! It turns out that Zotero has a
 [Javascript API](https://www.zotero.org/support/dev/client_coding/javascript_api) that we can use.
