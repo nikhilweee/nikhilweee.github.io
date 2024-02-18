@@ -1,5 +1,5 @@
 +++
-categories = ['Tutorials']
+categories = ['Tools']
 date = '2016-09-12T00:00:00Z'
 subtitle = 'Dont let your ISP block you'
 title = 'Shadowsocks'

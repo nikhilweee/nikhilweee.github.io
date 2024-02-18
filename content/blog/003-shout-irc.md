@@ -1,5 +1,5 @@
 +++
-categories = ['Tutorials']
+categories = ['Tools']
 date = '2016-01-28T00:00:00Z'
 subtitle = 'Set up IRC on a blocked connection'
 tags = ['irc', 'web']

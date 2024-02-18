@@ -1,6 +1,6 @@
 +++
-categories = ['Tutorials']
-date = '2016-01-08T00:00:00Z'
+categories = ['Tools']
+date = '2016-01-08'
 slug = 'setup-ghost-blog'
 subtitle = 'from scratch, in under 30 minutes!'
 tags = ['supervisor', 'nginx', 'node', 'digitalocean', 'linux']

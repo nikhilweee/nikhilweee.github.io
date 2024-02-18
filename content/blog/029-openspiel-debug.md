@@ -1,5 +1,5 @@
 +++
-categories = ['References']
+categories = ['Tools']
 date = '2022-11-25'
 subtitle = 'Getting behind the scenes with OpenSpiel and GDB'
 slug = 'debugging-python-c-extensions'
