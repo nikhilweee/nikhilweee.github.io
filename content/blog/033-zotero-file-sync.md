@@ -34,12 +34,12 @@ But if you notice closely, your annotations _do_ appear if you click on the PDF 
 
 {{<figure src="https://i.imgur.com/261XzG4.jpg" caption="Zotero syncs annotations independently of the PDF.">}}
 
-So what's happening here? As a matter of fact, Zotero saves annotations in its database separate
-from the PDF file itself [[2]]. This means that Zotero uses data sync for annotations as opposed to
-file sync. If we were to locate the missing PDF somehow, we would essentially have synced everything
-(that we care about) without even using file sync. Great! So how do we do this?
+So what's happening here? As a matter of fact, Zotero saves annotations in its database [[2]]
+separate from the PDF file. This means that Zotero uses data sync for annotations, not file sync. If
+we were to locate the missing PDF somehow, we would essentially have synced everything (that we care
+about) without even using file sync. Great! So how do we do this?
 
-[2]: https://forums.zotero.org/discussion/comment/455487/#Comment_455487
+[2]: https://www.zotero.org/support/kb/annotations_in_database
 
 # Find Available PDF
 
