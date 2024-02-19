@@ -127,6 +127,7 @@ If you have a similar use case, I hope this helps. There are a couple of caveats
 1. This approach involves pasting a few lines of code every time you need to sync.
 1. Running JavaScript is not possible on iOS and Android versions.
 1. As mentioned before, this code hasn't been tested, so please use at your own risk.
+1. Most importantly, this option won't work if Zotero couldn't find the right PDF.
 
 On the flip side, this approach is straightforward. you don't need to install an additional plugin.
 
