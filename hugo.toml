@@ -69,17 +69,17 @@ ordered = false
 [[menus.main]]
 name = "About"
 pageRef = "/"
+weight = 10
 [[menus.main]]
 name = "Blog"
 pageRef = "/blog/"
+weight = 20
 # Homepage
-[[menus.about]]
-name = "Blog"
-pageRef = "/blog/"
 [[menus.about]]
 name = "Resume"
 pageRef = "/resume/"
-# Blog
-[[menus.blog]]
-name = "About"
-pageRef = "/"
+weight = 10
+[[menus.about]]
+name = "Blog"
+pageRef = "/blog/"
+weight = 20
