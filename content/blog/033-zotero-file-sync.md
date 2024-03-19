@@ -1,5 +1,5 @@
 +++
-title = "You probably don't need Zotero's File Sync"
+title = "You probably don't need Zotero's File Sync feature"
 categories = ['Tools']
 date = '2024-02-18'
 slug = 'zotero-file-sync'
